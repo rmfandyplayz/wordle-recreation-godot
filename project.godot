@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Project 1 - Wordle"
+config/name="andy's funny wordle gaem"
+config/version="0.1"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.14, 0.14, 0.28, 1)
@@ -20,7 +21,7 @@ config/icon="res://Media/Sprites/icon.svg"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=2
 
 [dotnet]

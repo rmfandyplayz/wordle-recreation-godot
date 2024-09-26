@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wysg3k5ktwka"
-path="res://.godot/imported/PlayArrow.png-3c8699d3e194b67c70a1cc82d26dd4ba.ctex"
+uid="uid://4gem1vaktu4t"
+path="res://.godot/imported/Skull.png-19d1715fe099e10092424cdfc16cae23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Media/UserInterface/PlayArrow.png"
-dest_files=["res://.godot/imported/PlayArrow.png-3c8699d3e194b67c70a1cc82d26dd4ba.ctex"]
+source_file="res://Media/UserInterface/Skull.png"
+dest_files=["res://.godot/imported/Skull.png-19d1715fe099e10092424cdfc16cae23.ctex"]
 
 [params]
 

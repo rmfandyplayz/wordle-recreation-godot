@@ -1,0 +1,126 @@
+[gd_scene load_steps=14 format=3 uid="uid://cx2prhipw0kqf"]
+
+[ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="1_gk1ax"]
+[ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="2_x0tv6"]
+[ext_resource type="StyleBox" uid="uid://dipna67hs4di4" path="res://ThemeOverrides/Button - General/ButtonFocus.tres" id="3_h0sxj"]
+[ext_resource type="StyleBox" uid="uid://cd6rkfv3wd2ps" path="res://ThemeOverrides/Accent Button/AccentButtonHover.tres" id="3_rio16"]
+[ext_resource type="Texture2D" uid="uid://wysg3k5ktwka" path="res://Media/UserInterface/PlayArrow.png" id="3_tevix"]
+[ext_resource type="StyleBox" uid="uid://bt8pb53s1st4b" path="res://ThemeOverrides/Accent Button/AccentButtonDefault.tres" id="3_ts10y"]
+[ext_resource type="Texture2D" uid="uid://cfvqbejjqn4m1" path="res://Media/UserInterface/SettingsIcon.png" id="4_hic2a"]
+[ext_resource type="StyleBox" uid="uid://owgu1gepyuat" path="res://ThemeOverrides/Accent Button/AccentButtonPressed.tres" id="4_p3q3x"]
+[ext_resource type="Texture2D" uid="uid://cd8ixj2b8els1" path="res://Media/UserInterface/SkullIcon.png" id="5_3f8h4"]
+[ext_resource type="StyleBox" uid="uid://c0ymi86m77o7l" path="res://ThemeOverrides/DefaultButton/DefaultButtonNormal.tres" id="5_5r77x"]
+[ext_resource type="StyleBox" uid="uid://bt4ndit5325vf" path="res://ThemeOverrides/DefaultButton/DefaultButtonHover.tres" id="7_abux4"]
+[ext_resource type="StyleBox" uid="uid://dicuqqcid0d4t" path="res://ThemeOverrides/DefaultButton/DefaultButtonPressed.tres" id="8_nn2vb"]
+[ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="8_ns634"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997855, 0.997649)
+color = Color(0.109804, 0.109804, 0.211765, 1)
+
+[node name="Game Title" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0546875
+anchor_top = 0.0453704
+anchor_right = 0.950333
+anchor_bottom = 0.378556
+offset_right = -549.64
+offset_bottom = 0.159973
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_gk1ax")
+theme_override_fonts/bold_font = ExtResource("2_x0tv6")
+theme_override_font_sizes/bold_italics_font_size = 150
+theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/bold_font_size = 150
+bbcode_enabled = true
+text = "[b]andy's funny wordle gaem.[/b]"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055
+anchor_top = 0.432
+anchor_right = 0.409
+anchor_bottom = 0.899
+offset_left = -0.600006
+offset_top = 0.440002
+offset_right = -180.28
+offset_bottom = 0.0799561
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 130)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gk1ax")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = ExtResource("3_h0sxj")
+theme_override_styles/hover = ExtResource("3_rio16")
+theme_override_styles/pressed = ExtResource("4_p3q3x")
+theme_override_styles/normal = ExtResource("3_ts10y")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "PLAY"
+icon = ExtResource("3_tevix")
+alignment = 0
+text_direction = 1
+script = ExtResource("8_ns634")
+tweenDuration = 0.25
+buttonHoverSize = Vector2(2, 2)
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 130)
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/icon_max_width = 80
+theme_override_fonts/font = ExtResource("1_gk1ax")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = ExtResource("3_h0sxj")
+theme_override_styles/hover = ExtResource("7_abux4")
+theme_override_styles/pressed = ExtResource("8_nn2vb")
+theme_override_styles/normal = ExtResource("5_5r77x")
+text = "Settings"
+icon = ExtResource("4_hic2a")
+alignment = 0
+clip_text = true
+text_direction = 1
+
+[node name="Mr Kinney Jumpscare" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(500, 130)
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/icon_max_width = 80
+theme_override_fonts/font = ExtResource("1_gk1ax")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = ExtResource("3_h0sxj")
+theme_override_styles/hover = ExtResource("7_abux4")
+theme_override_styles/pressed = ExtResource("8_nn2vb")
+theme_override_styles/normal = ExtResource("5_5r77x")
+text = "Mr. Kinney
+Jumpscare"
+icon = ExtResource("5_3f8h4")
+alignment = 0
+text_overrun_behavior = 3
+clip_text = true
+text_direction = 1
+
+[connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="_on_pressed"]

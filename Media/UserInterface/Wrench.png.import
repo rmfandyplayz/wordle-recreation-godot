@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd8ixj2b8els1"
-path="res://.godot/imported/SkullIcon.png-6857f73ae8018def10e28a472140179d.ctex"
+uid="uid://cgwysqs26w0hq"
+path="res://.godot/imported/Wrench.png-66dff3bb3396e1ad340abae6a1705b0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Media/UserInterface/SkullIcon.png"
-dest_files=["res://.godot/imported/SkullIcon.png-6857f73ae8018def10e28a472140179d.ctex"]
+source_file="res://Media/UserInterface/Wrench.png"
+dest_files=["res://.godot/imported/Wrench.png-66dff3bb3396e1ad340abae6a1705b0f.ctex"]
 
 [params]
 

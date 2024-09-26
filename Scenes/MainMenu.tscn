@@ -1,18 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=15 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="1_gk1ax"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="2_x0tv6"]
 [ext_resource type="StyleBox" uid="uid://dipna67hs4di4" path="res://ThemeOverrides/Button - General/ButtonFocus.tres" id="3_h0sxj"]
 [ext_resource type="StyleBox" uid="uid://cd6rkfv3wd2ps" path="res://ThemeOverrides/Accent Button/AccentButtonHover.tres" id="3_rio16"]
-[ext_resource type="Texture2D" uid="uid://wysg3k5ktwka" path="res://Media/UserInterface/PlayArrow.png" id="3_tevix"]
 [ext_resource type="StyleBox" uid="uid://bt8pb53s1st4b" path="res://ThemeOverrides/Accent Button/AccentButtonDefault.tres" id="3_ts10y"]
-[ext_resource type="Texture2D" uid="uid://cfvqbejjqn4m1" path="res://Media/UserInterface/SettingsIcon.png" id="4_hic2a"]
 [ext_resource type="StyleBox" uid="uid://owgu1gepyuat" path="res://ThemeOverrides/Accent Button/AccentButtonPressed.tres" id="4_p3q3x"]
-[ext_resource type="Texture2D" uid="uid://cd8ixj2b8els1" path="res://Media/UserInterface/SkullIcon.png" id="5_3f8h4"]
 [ext_resource type="StyleBox" uid="uid://c0ymi86m77o7l" path="res://ThemeOverrides/DefaultButton/DefaultButtonNormal.tres" id="5_5r77x"]
 [ext_resource type="StyleBox" uid="uid://bt4ndit5325vf" path="res://ThemeOverrides/DefaultButton/DefaultButtonHover.tres" id="7_abux4"]
+[ext_resource type="Texture2D" uid="uid://bpavbjfxyn6dm" path="res://Media/UserInterface/Play.png" id="7_wydoj"]
 [ext_resource type="StyleBox" uid="uid://dicuqqcid0d4t" path="res://ThemeOverrides/DefaultButton/DefaultButtonPressed.tres" id="8_nn2vb"]
 [ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="8_ns634"]
+[ext_resource type="StyleBox" uid="uid://jewnl8tw2lwc" path="res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres" id="9_k5nsv"]
+[ext_resource type="Texture2D" uid="uid://cywsdgcl07rm2" path="res://Media/UserInterface/Settings.png" id="13_op5nv"]
+[ext_resource type="Texture2D" uid="uid://4gem1vaktu4t" path="res://Media/UserInterface/Skull.png" id="14_j6uud"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -24,13 +25,18 @@ grow_vertical = 2
 
 [node name="Background Color" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 34.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.997855, 0.997649)
 color = Color(0.109804, 0.109804, 0.211765, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Game Title" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -48,29 +54,22 @@ theme_override_font_sizes/bold_italics_font_size = 150
 theme_override_font_sizes/normal_font_size = 150
 theme_override_font_sizes/bold_font_size = 150
 bbcode_enabled = true
-text = "[b]andy's funny wordle gaem[/b]"
+text = "[b]andy's funny wordle gaem.[/b]"
 fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
 metadata/_edit_use_anchors_ = true
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.055
-anchor_top = 0.655
-anchor_right = 0.055
-anchor_bottom = 0.655
-offset_left = -0.600006
-offset_top = -240.4
-offset_right = 499.4
-offset_bottom = 239.6
-theme_override_constants/v_separation = 45
+[node name="Buttons" type="Node" parent="."]
 
-[node name="Play" type="Button" parent="GridContainer"]
+[node name="Play" type="Button" parent="Buttons"]
 custom_minimum_size = Vector2(500, 130)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_gk1ax")
+offset_left = 105.0
+offset_top = 500.0
+offset_right = 605.0
+offset_bottom = 630.0
+pivot_offset = Vector2(0, 65)
+theme_override_fonts/font = ExtResource("2_x0tv6")
 theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = ExtResource("3_h0sxj")
 theme_override_styles/hover = ExtResource("3_rio16")
@@ -78,49 +77,59 @@ theme_override_styles/pressed = ExtResource("4_p3q3x")
 theme_override_styles/normal = ExtResource("3_ts10y")
 shortcut_feedback = false
 shortcut_in_tooltip = false
-text = "PLAY"
-icon = ExtResource("3_tevix")
+icon = ExtResource("7_wydoj")
 alignment = 0
 text_direction = 1
 script = ExtResource("8_ns634")
 tweenDuration = 0.25
-tweenIntensity = 1.2
+pressedTweenDuration = 0.1
+buttonHoverSizeModifier = 1.2
 
-[node name="Settings" type="Button" parent="GridContainer"]
+[node name="Settings" type="Button" parent="Buttons"]
 custom_minimum_size = Vector2(500, 130)
-layout_mode = 2
+offset_left = 105.0
+offset_top = 665.0
+offset_right = 605.0
+offset_bottom = 795.0
 theme_override_constants/h_separation = 25
 theme_override_constants/icon_max_width = 80
 theme_override_fonts/font = ExtResource("1_gk1ax")
 theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = ExtResource("3_h0sxj")
+theme_override_styles/disabled = ExtResource("9_k5nsv")
 theme_override_styles/hover = ExtResource("7_abux4")
 theme_override_styles/pressed = ExtResource("8_nn2vb")
 theme_override_styles/normal = ExtResource("5_5r77x")
 text = "Settings"
-icon = ExtResource("4_hic2a")
+icon = ExtResource("13_op5nv")
 alignment = 0
 clip_text = true
 text_direction = 1
 
-[node name="Mr Kinney Jumpscare" type="Button" parent="GridContainer"]
+[node name="Mr Kinney Jumpscare" type="Button" parent="Buttons"]
 custom_minimum_size = Vector2(500, 130)
-layout_mode = 2
+offset_left = 105.0
+offset_top = 830.0
+offset_right = 605.0
+offset_bottom = 960.0
+tooltip_text = "i added this same button for my AP CSA semester 2 final project. it's here to haunt you again."
 theme_override_constants/h_separation = 25
 theme_override_constants/icon_max_width = 80
 theme_override_fonts/font = ExtResource("1_gk1ax")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/focus = ExtResource("3_h0sxj")
+theme_override_styles/disabled = ExtResource("9_k5nsv")
 theme_override_styles/hover = ExtResource("7_abux4")
 theme_override_styles/pressed = ExtResource("8_nn2vb")
 theme_override_styles/normal = ExtResource("5_5r77x")
-text = "Mr. Kinney
+text = "(scary!) Mr. Kinney
 Jumpscare"
-icon = ExtResource("5_3f8h4")
+icon = ExtResource("14_j6uud")
 alignment = 0
 text_overrun_behavior = 3
 clip_text = true
 text_direction = 1
 
-[connection signal="mouse_entered" from="GridContainer/Play" to="GridContainer/Play" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="GridContainer/Play" to="GridContainer/Play" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_pressed"]
