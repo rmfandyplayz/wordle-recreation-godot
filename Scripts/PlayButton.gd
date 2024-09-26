@@ -20,8 +20,6 @@ extends Button
 var isPlayButtonActive : bool = false #if the play button is pressed and in the play menu, don't allow the mouse enter and exit things happen
 
 
-
-
 func _on_pressed() -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	isPlayButtonActive = true
@@ -30,6 +28,7 @@ func _on_pressed() -> void:
 	tween.tween_property(self, "scale", Vector2.ONE * buttonHoverSizeModifier, tweenDuration)
 	
 	await tween.finished
+	tween.kill()
 	$"../Settings".disabled = true
 	$"../Mr Kinney Jumpscare".disabled = true
 	
@@ -38,22 +37,26 @@ func _on_pressed() -> void:
 	
 	#fade out the text and icon
 	#continue here
+	var tween2 = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	
-	
+	tween2.tween_property(self, "theme_override_colors/font_color", Color(255, 255, 255, 0), 0.3)
+	await tween.finished
+	text = ""
+	tween2.tween_property(self, "size", Vector2(130, 130), 0.3)
 
 func _on_mouse_entered() -> void:
-	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	
 	if isPlayButtonActive == false:
+		var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		
 		tween.tween_property(self, "scale", Vector2.ONE * buttonHoverSizeModifier, tweenDuration)
 		tween.parallel().tween_property($"../Settings", "position", settingsButtonPos + Vector2(0, 15), tweenDuration)
 		tween.parallel().tween_property($"../Mr Kinney Jumpscare", "position", jumpscareButtonPos + Vector2(0, 15), tweenDuration)
 
 
 func _on_mouse_exited() -> void:
-	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	
 	if isPlayButtonActive == false:
+		var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		
 		tween.tween_property(self, "scale", Vector2.ONE, tweenDuration)
 		tween.parallel().tween_property($"../Settings", "position", settingsButtonPos, tweenDuration)
 		tween.parallel().tween_property($"../Mr Kinney Jumpscare", "position", jumpscareButtonPos, tweenDuration)

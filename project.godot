@@ -15,7 +15,7 @@ config/version="0.1"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.14, 0.14, 0.28, 1)
-config/icon="res://Media/Sprites/icon.svg"
+config/icon="res://Media/Sprites/GameIcon.jpg"
 
 [display]
 
