@@ -1,2 +1,5 @@
+TextureRect
+Label
+RichTextLabel
 Node
 VBoxContainer

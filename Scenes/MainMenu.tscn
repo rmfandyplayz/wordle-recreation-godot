@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=17 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="1_gk1ax"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="2_x0tv6"]
@@ -11,9 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://bpavbjfxyn6dm" path="res://Media/UserInterface/Play.png" id="7_wydoj"]
 [ext_resource type="StyleBox" uid="uid://dicuqqcid0d4t" path="res://ThemeOverrides/DefaultButton/DefaultButtonPressed.tres" id="8_nn2vb"]
 [ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="8_ns634"]
+[ext_resource type="FontFile" uid="uid://bfstxbx3ew00a" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Black.otf" id="9_cag5l"]
 [ext_resource type="StyleBox" uid="uid://jewnl8tw2lwc" path="res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres" id="9_k5nsv"]
 [ext_resource type="Texture2D" uid="uid://cywsdgcl07rm2" path="res://Media/UserInterface/Settings.png" id="13_op5nv"]
 [ext_resource type="Texture2D" uid="uid://4gem1vaktu4t" path="res://Media/UserInterface/Skull.png" id="14_j6uud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ftu0q"]
+font = ExtResource("9_cag5l")
+font_size = 75
+shadow_size = 0
+shadow_color = Color(0.1988, 0.1988, 0.28, 0)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -76,21 +83,43 @@ pivot_offset = Vector2(0, 65)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_x0tv6")
 theme_override_font_sizes/font_size = 75
-theme_override_icons/icon = ExtResource("7_wydoj")
 theme_override_styles/focus = ExtResource("3_h0sxj")
 theme_override_styles/hover = ExtResource("3_rio16")
 theme_override_styles/pressed = ExtResource("4_p3q3x")
 theme_override_styles/normal = ExtResource("3_ts10y")
 shortcut_feedback = false
 shortcut_in_tooltip = false
-text = "PLAY"
-icon = ExtResource("7_wydoj")
 alignment = 0
 text_direction = 1
 script = ExtResource("8_ns634")
 tweenDuration = 0.25
 pressedTweenDuration = 0.1
 buttonHoverSizeModifier = 1.2
+
+[node name="Play Text" type="Label" parent="Buttons/Play"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 124.0
+offset_top = -65.0
+offset_right = 497.0
+offset_bottom = 65.0
+grow_vertical = 2
+text = "PLAY"
+label_settings = SubResource("LabelSettings_ftu0q")
+vertical_alignment = 1
+justification_flags = 1
+
+[node name="Play Button Image" type="TextureRect" parent="Buttons/Play"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_right = 120.0
+offset_bottom = 60.0
+texture = ExtResource("7_wydoj")
 
 [node name="Settings" type="Button" parent="Buttons"]
 anchors_preset = -1

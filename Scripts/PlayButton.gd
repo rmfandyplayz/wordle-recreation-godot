@@ -21,28 +21,10 @@ var isPlayButtonActive : bool = false #if the play button is pressed and in the 
 
 
 func _on_pressed() -> void:
-	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	isPlayButtonActive = true
-	
-	tween.tween_property(self, "scale", Vector2.ONE, pressedTweenDuration)
-	tween.tween_property(self, "scale", Vector2.ONE * buttonHoverSizeModifier, tweenDuration)
-	
-	await tween.finished
-	tween.kill()
-	$"../Settings".disabled = true
-	$"../Mr Kinney Jumpscare".disabled = true
-	
-	#animation for the buttons under the play submenu goes under here
-	#note: the size for the buttons post-play should be 156 pixels in height.
-	
-	#fade out the text and icon
-	#continue here
-	var tween2 = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
-	
-	tween2.tween_property(self, "theme_override_colors/font_color", Color(255, 255, 255, 0), 0.3)
-	await tween.finished
-	text = ""
-	tween2.tween_property(self, "size", Vector2(130, 130), 0.3)
+	if isPlayButtonActive == true:
+		SwitchBackToPlayButton()
+	else:
+		SwitchToPlayOptionsMenu()
 
 func _on_mouse_entered() -> void:
 	if isPlayButtonActive == false:
@@ -62,9 +44,34 @@ func _on_mouse_exited() -> void:
 		tween.parallel().tween_property($"../Mr Kinney Jumpscare", "position", jumpscareButtonPos, tweenDuration)
 
 
+#animates the transition to show the buttons that allow the player 
+func SwitchToPlayOptionsMenu() -> void:
+	disabled = true
+	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	isPlayButtonActive = true
+	
+	tween.tween_property(self, "scale", Vector2.ONE, pressedTweenDuration)
+	tween.tween_property(self, "scale", Vector2.ONE * buttonHoverSizeModifier, tweenDuration)
+	
+	await tween.finished
+	$"../Settings".disabled = true
+	$"../Mr Kinney Jumpscare".disabled = true
+	
+	#animation for the buttons under the play submenu goes under here
+	#note: the size for the buttons post-play should be 156 pixels in height.
+	
+	#fade out the text and icon
+	#continue here
+	var tween2 = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween2.tween_property($"Play Text", "self_modulate", Color.TRANSPARENT, 0.4)
+	tween2.parallel().tween_property($"Play Button Image", "self_modulate", Color.TRANSPARENT, 0.4)
+	tween2.tween_property(self, "size", Vector2(130, 130), 0.3)
+	await tween2.finished
+	disabled = false
+
 #this should be called after pressing the back button after pressing the play button
 #this function restores the original buttons' properties
-func RestoreButtons():
+func SwitchBackToPlayButton():
 	isPlayButtonActive = false
 	$"../Settings".disabled = false
 	$"../Mr Kinney Jumpscare".disabled = false
