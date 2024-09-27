@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=23 format=3 uid="uid://cx2prhipw0kqf"]
 
+[ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="1_gk1ax"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="2_x0tv6"]
 [ext_resource type="StyleBox" uid="uid://dipna67hs4di4" path="res://ThemeOverrides/Button - General/ButtonFocus.tres" id="3_h0sxj"]
@@ -17,6 +18,14 @@
 [ext_resource type="Texture2D" uid="uid://cgwysqs26w0hq" path="res://Media/UserInterface/Wrench.png" id="11_jmyay"]
 [ext_resource type="Texture2D" uid="uid://cywsdgcl07rm2" path="res://Media/UserInterface/Settings.png" id="13_op5nv"]
 [ext_resource type="Texture2D" uid="uid://4gem1vaktu4t" path="res://Media/UserInterface/Skull.png" id="14_j6uud"]
+[ext_resource type="Script" path="res://Scripts/KinneyJumpscare.gd" id="18_rcfa2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2cs4"]
+bg_color = Color(0.1562, 0.1562, 0.22, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_ftu0q"]
 font = ExtResource("9_cag5l")
@@ -52,6 +61,19 @@ grow_vertical = 2
 scale = Vector2(0.997855, 0.997649)
 color = Color(0.109804, 0.109804, 0.211765, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="MrKinneyJumpscare" type="TextureRect" parent="."]
+visible = false
+z_index = 1000
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1iw1j")
+expand_mode = 1
 
 [node name="Game Title" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -92,6 +114,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_x0tv6")
 theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = ExtResource("3_h0sxj")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_t2cs4")
 theme_override_styles/hover = ExtResource("3_rio16")
 theme_override_styles/pressed = ExtResource("4_p3q3x")
 theme_override_styles/normal = ExtResource("3_ts10y")
@@ -305,7 +328,9 @@ alignment = 0
 text_overrun_behavior = 3
 clip_text = true
 text_direction = 1
+script = ExtResource("18_rcfa2")
 
 [connection signal="mouse_entered" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Mr Kinney Jumpscare" to="Buttons/Mr Kinney Jumpscare" method="_on_pressed"]

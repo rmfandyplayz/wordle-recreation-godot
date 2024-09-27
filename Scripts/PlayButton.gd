@@ -43,6 +43,7 @@ func _on_mouse_entered() -> void:
 		tween.tween_property(self, "scale", Vector2.ONE * buttonHoverSizeModifier, tweenDuration)
 		tween.parallel().tween_property($"../Settings", "position", settingsButtonPos + Vector2(0, 15), tweenDuration)
 		tween.parallel().tween_property($"../Mr Kinney Jumpscare", "position", jumpscareButtonPos + Vector2(0, 15), tweenDuration)
+		mouseHovering = true
 	else:
 		mouseHovering = true
 
@@ -55,6 +56,7 @@ func _on_mouse_exited() -> void:
 		tween.tween_property(self, "scale", Vector2.ONE, tweenDuration)
 		tween.parallel().tween_property($"../Settings", "position", settingsButtonPos, tweenDuration)
 		tween.parallel().tween_property($"../Mr Kinney Jumpscare", "position", jumpscareButtonPos, tweenDuration)
+		mouseHovering = false
 	else:
 		mouseHovering = false
 		
@@ -86,7 +88,7 @@ func SwitchToPlayOptionsMenu() -> void:
 	
 	#enable play options menu (default, customize, etc)
 	#note: position is + 35
-	var tween4 = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	var tween4 = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	$"Default Preset".position.x -= 35
 	$Customize.position.x -= 35
 	
@@ -114,7 +116,7 @@ func SwitchBackToPlayButton():
 	disabled = true
 	
 	#disable play options button (default, customize, etc)
-	var tween4 = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	var tween4 = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	tween4.tween_property($"Default Preset", "position", Vector2(defPresetPos.x - 35, defPresetPos.y), 0.3)
 	tween4.parallel().tween_property($Customize, "position", Vector2(customizePos.x - 35, customizePos.y), 0.3)
 	tween4.parallel().tween_property($"Default Preset", "modulate", Color.TRANSPARENT, 0.3)
