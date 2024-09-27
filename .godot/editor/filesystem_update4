@@ -1,3 +1,4 @@
 res://Scenes/MainMenu.tscn
 res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres
 res://Scripts/PlayButton.gd
+res://ThemeOverrides/Accent Button/AccentButtonDefault.tres
