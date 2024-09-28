@@ -1,15 +1,23 @@
-[gd_scene load_steps=23 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=32 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
+[ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="1_gk1ax"]
+[ext_resource type="AudioStream" uid="uid://cdcqajf0mhxku" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf2.mp3" id="2_d5ssk"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="2_x0tv6"]
 [ext_resource type="StyleBox" uid="uid://dipna67hs4di4" path="res://ThemeOverrides/Button - General/ButtonFocus.tres" id="3_h0sxj"]
 [ext_resource type="StyleBox" uid="uid://cd6rkfv3wd2ps" path="res://ThemeOverrides/Accent Button/AccentButtonHover.tres" id="3_rio16"]
+[ext_resource type="AudioStream" uid="uid://bcbmhoajsv6sd" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf3.mp3" id="3_sdtju"]
 [ext_resource type="StyleBox" uid="uid://bt8pb53s1st4b" path="res://ThemeOverrides/Accent Button/AccentButtonDefault.tres" id="3_ts10y"]
+[ext_resource type="AudioStream" uid="uid://ckkuerhd050q7" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf4.mp3" id="4_8deyp"]
 [ext_resource type="StyleBox" uid="uid://owgu1gepyuat" path="res://ThemeOverrides/Accent Button/AccentButtonPressed.tres" id="4_p3q3x"]
 [ext_resource type="StyleBox" uid="uid://c0ymi86m77o7l" path="res://ThemeOverrides/DefaultButton/DefaultButtonNormal.tres" id="5_5r77x"]
+[ext_resource type="AudioStream" uid="uid://dam7xvojou6cj" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf5SL-1.mp3" id="5_csjwt"]
+[ext_resource type="AudioStream" uid="uid://cmrgeb5tw4m3g" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf5SL-2.mp3" id="6_h4kco"]
+[ext_resource type="AudioStream" uid="uid://p5o0mj0h1185" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf6.mp3" id="7_12ggn"]
 [ext_resource type="StyleBox" uid="uid://bt4ndit5325vf" path="res://ThemeOverrides/DefaultButton/DefaultButtonHover.tres" id="7_abux4"]
 [ext_resource type="Texture2D" uid="uid://bpavbjfxyn6dm" path="res://Media/UserInterface/Play.png" id="7_wydoj"]
+[ext_resource type="AudioStream" uid="uid://blgco4imjlf40" path="res://Media/Audio/Sounds/KinneyJumpscare/fnafSB.mp3" id="8_hk3py"]
 [ext_resource type="StyleBox" uid="uid://dicuqqcid0d4t" path="res://ThemeOverrides/DefaultButton/DefaultButtonPressed.tres" id="8_nn2vb"]
 [ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="8_ns634"]
 [ext_resource type="FontFile" uid="uid://bfstxbx3ew00a" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Black.otf" id="9_cag5l"]
@@ -19,6 +27,18 @@
 [ext_resource type="Texture2D" uid="uid://cywsdgcl07rm2" path="res://Media/UserInterface/Settings.png" id="13_op5nv"]
 [ext_resource type="Texture2D" uid="uid://4gem1vaktu4t" path="res://Media/UserInterface/Skull.png" id="14_j6uud"]
 [ext_resource type="Script" path="res://Scripts/KinneyJumpscare.gd" id="18_rcfa2"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0kli2"]
+playback_mode = 1
+streams_count = 8
+stream_0/stream = ExtResource("1_3tgra")
+stream_1/stream = ExtResource("2_d5ssk")
+stream_2/stream = ExtResource("3_sdtju")
+stream_3/stream = ExtResource("4_8deyp")
+stream_4/stream = ExtResource("5_csjwt")
+stream_5/stream = ExtResource("6_h4kco")
+stream_6/stream = ExtResource("7_12ggn")
+stream_7/stream = ExtResource("8_hk3py")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2cs4"]
 bg_color = Color(0.1562, 0.1562, 0.22, 1)
@@ -46,6 +66,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="JumpscareAudio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_0kli2")
+volume_db = -10.0
 
 [node name="Background Color" type="ColorRect" parent="."]
 layout_mode = 1

@@ -1,9 +1,6 @@
 extends Button
 
-#this script handles the animation for:
-#- hover over the play button
-#- un-hovering the play button
-#- pressing the play button
+#this script handles the logic and animations for the play button
 
 #buttons that don't mention "which button" are assumed to be the button this script is attached to (play button)
 @export var tweenDuration : float
@@ -28,6 +25,8 @@ var mouseHovering : bool = false
 
 
 
+func _ready() -> void:
+	DisplayServer.window_set_title("made with your mom engine (real) (100% legit) (truth) (not lie)")
 
 
 func _on_pressed() -> void:

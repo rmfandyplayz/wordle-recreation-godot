@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="andy's funny wordle gaem"
+config/name="Wordle Godot Recreation"
 config/version="0.1"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
