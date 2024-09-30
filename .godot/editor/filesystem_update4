@@ -1,5 +1,4 @@
 res://Scenes/MainMenu.tscn
 res://ThemeOverrides/Accent Button/AccentButtonDefault.tres
 res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres
-res://Scripts/KinneyJumpscare.gd
-res://Scripts/PlayButton.gd
+res://Shaders/Blur.tres
