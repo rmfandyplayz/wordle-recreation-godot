@@ -1,8 +1,10 @@
-ShaderGlobalsOverride
+LineEdit
+Button
+Node
 Panel
+ShaderGlobalsOverride
 AudioStreamPlayer
 TextureRect
 Label
 RichTextLabel
-Node
 VBoxContainer

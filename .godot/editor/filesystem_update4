@@ -2,3 +2,5 @@ res://Scenes/MainMenu.tscn
 res://ThemeOverrides/Accent Button/AccentButtonDefault.tres
 res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres
 res://Shaders/Blur.tres
+res://ThemeOverrides/TextEdit/TextEditDefault.tres
+res://ThemeOverrides/TextEdit/TextEditFocus.tres
