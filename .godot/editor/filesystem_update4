@@ -1,6 +1,8 @@
 res://Scenes/MainMenu.tscn
+res://ThemeOverrides/Button - General/ButtonFocus.tres
 res://ThemeOverrides/Accent Button/AccentButtonDefault.tres
 res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres
 res://Shaders/Blur.tres
-res://ThemeOverrides/TextEdit/TextEditDefault.tres
 res://ThemeOverrides/TextEdit/TextEditFocus.tres
+res://ThemeOverrides/TextEdit/TextEditDefault.tres
+res://Scripts/MainMenu/CustomizeStartButton.gd

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=46 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://c7rttn0xbmgyo" path="res://Media/UserInterface/X.png" id="30_vuehy"]
 [ext_resource type="StyleBox" uid="uid://bm1yes0bdp23s" path="res://ThemeOverrides/TextEdit/TextEditFocus.tres" id="31_nahbe"]
 [ext_resource type="StyleBox" uid="uid://btr1rmm8f8e4h" path="res://ThemeOverrides/TextEdit/TextEditDefault.tres" id="31_v7rbi"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/CustomizeStartButton.gd" id="33_8bybv"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0kli2"]
 playback_mode = 1
@@ -59,14 +60,71 @@ shadow_size = 0
 shadow_color = Color(0.1988, 0.1988, 0.28, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s54ws"]
+font = ExtResource("1_gk1ax")
+font_size = 75
+shadow_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_fo4v4"]
 font = ExtResource("2_x0tv6")
 font_size = 75
 shadow_size = 4
 
 [sub_resource type="LabelSettings" id="LabelSettings_gn5ru"]
 font = ExtResource("1_gk1ax")
-font_size = 40
+font_size = 30
 shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6m1i"]
+bg_color = Color(0.497, 0.497, 0.7, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.88, 0.898, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdurq"]
+content_margin_left = 20.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.2, 0.2, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oakah"]
+bg_color = Color(0.4047, 0.4047, 0.57, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4oh0"]
+bg_color = Color(0.2698, 0.2698, 0.38, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lig0o"]
+bg_color = Color(0.497, 0.497, 0.7, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_yqq4g"]
+font = ExtResource("9_cag5l")
+font_size = 60
+shadow_size = 0
+shadow_color = Color(0.1988, 0.1988, 0.28, 0)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -368,9 +426,9 @@ clip_text = true
 text_direction = 1
 script = ExtResource("18_rcfa2")
 
-[node name="Customize Game Options2" type="Node" parent="."]
+[node name="Customize Game Options" type="Node" parent="."]
 
-[node name="Blur BG" type="Panel" parent="Customize Game Options2"]
+[node name="Blur BG" type="Panel" parent="Customize Game Options"]
 top_level = true
 z_index = 10
 z_as_relative = false
@@ -383,7 +441,7 @@ grow_vertical = 2
 mouse_force_pass_scroll_events = false
 mouse_default_cursor_shape = 8
 
-[node name="Panel" type="Panel" parent="Customize Game Options2/Blur BG"]
+[node name="Panel" type="Panel" parent="Customize Game Options/Blur BG"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.49
@@ -397,57 +455,20 @@ offset_bottom = 405.08
 pivot_offset = Vector2(335, 405)
 theme_override_styles/panel = ExtResource("29_23b5b")
 
-[node name="Customize Icon" type="TextureRect" parent="Customize Game Options2/Blur BG/Panel"]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 130.0
-offset_bottom = 130.0
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
-pivot_offset = Vector2(60, 60)
-texture = ExtResource("11_jmyay")
-
-[node name="Customize Text" type="Label" parent="Customize Game Options2/Blur BG/Panel"]
-layout_mode = 1
-offset_left = 130.0
-offset_top = 5.0
-offset_right = 503.0
-offset_bottom = 135.0
-text = "Customize"
-label_settings = SubResource("LabelSettings_s54ws")
-vertical_alignment = 1
-justification_flags = 1
-
-[node name="WordChoiceText" type="Label" parent="Customize Game Options2/Blur BG/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.264
-anchor_bottom = 0.264
-offset_left = 68.0
-offset_top = -24.84
-offset_right = 441.0
-offset_bottom = 24.16
-text = "WORD"
-label_settings = SubResource("LabelSettings_gn5ru")
-vertical_alignment = 1
-justification_flags = 1
-
-[node name="Close Button" type="Button" parent="Customize Game Options2/Blur BG/Panel"]
+[node name="Close Button" type="Button" parent="Customize Game Options/Blur BG/Panel"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -94.0
+offset_left = -94.0001
 offset_top = 46.0
-offset_right = -44.0
+offset_right = -44.0001
 offset_bottom = 96.0
 pivot_offset = Vector2(25, 25)
 mouse_default_cursor_shape = 2
 
-[node name="Close Icon" type="TextureRect" parent="Customize Game Options2/Blur BG/Panel/Close Button"]
+[node name="Close Icon" type="TextureRect" parent="Customize Game Options/Blur BG/Panel/Close Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.88
@@ -464,20 +485,57 @@ pivot_offset = Vector2(60, 60)
 mouse_filter = 2
 texture = ExtResource("30_vuehy")
 
-[node name="WordChoiceInput" type="LineEdit" parent="Customize Game Options2/Blur BG/Panel"]
+[node name="Customize Icon" type="TextureRect" parent="Customize Game Options/Blur BG/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.343
-anchor_bottom = 0.343
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 130.0
+offset_bottom = 130.0
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(60, 60)
+texture = ExtResource("11_jmyay")
+
+[node name="Customize Text" type="Label" parent="Customize Game Options/Blur BG/Panel"]
+layout_mode = 1
+offset_left = 130.0
+offset_top = 5.0
+offset_right = 503.0
+offset_bottom = 135.0
+text = "Customize"
+label_settings = SubResource("LabelSettings_fo4v4")
+vertical_alignment = 1
+justification_flags = 1
+
+[node name="WordChoiceText" type="Label" parent="Customize Game Options/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.215
+anchor_bottom = 0.215
+offset_left = 70.9999
+offset_top = -18.15
+offset_right = 176.0
+offset_bottom = 18.85
+text = "WORD"
+label_settings = SubResource("LabelSettings_gn5ru")
+vertical_alignment = 1
+justification_flags = 1
+
+[node name="WordChoiceInput" type="LineEdit" parent="Customize Game Options/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.299
+anchor_bottom = 0.299
 offset_left = 45.0
-offset_top = -39.83
+offset_top = -40.19
 offset_right = 627.0
-offset_bottom = 40.17
+offset_bottom = 39.81
 theme_override_fonts/font = ExtResource("1_gk1ax")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = ExtResource("31_nahbe")
 theme_override_styles/normal = ExtResource("31_v7rbi")
-placeholder_text = "Max Length: 10"
+placeholder_text = "max length: 10 characters"
 max_length = 10
 context_menu_enabled = false
 deselect_on_focus_loss_enabled = false
@@ -485,7 +543,139 @@ caret_blink = true
 caret_blink_interval = 0.5
 caret_mid_grapheme = true
 
+[node name="LivesText" type="Label" parent="Customize Game Options/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.415
+anchor_bottom = 0.415
+offset_left = 70.9999
+offset_top = -18.1501
+offset_right = 176.0
+offset_bottom = 18.8499
+text = "LIVES"
+label_settings = SubResource("LabelSettings_gn5ru")
+vertical_alignment = 1
+justification_flags = 1
+
+[node name="LivesInput" type="LineEdit" parent="Customize Game Options/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 44.9999
+offset_top = -41.0
+offset_right = 627.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("1_gk1ax")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = ExtResource("31_nahbe")
+theme_override_styles/normal = ExtResource("31_v7rbi")
+placeholder_text = "\"-1\" for infinite lives"
+max_length = 9
+context_menu_enabled = false
+virtual_keyboard_type = 2
+deselect_on_focus_loss_enabled = false
+caret_blink = true
+caret_blink_interval = 0.5
+caret_mid_grapheme = true
+
+[node name="TimeLimitText" type="Label" parent="Customize Game Options/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.614
+anchor_bottom = 0.614
+offset_left = 70.9999
+offset_top = -18.3401
+offset_right = 450.0
+offset_bottom = 18.66
+text = "TIME LIMIT (hh:mm:ss)"
+label_settings = SubResource("LabelSettings_gn5ru")
+vertical_alignment = 1
+justification_flags = 1
+
+[node name="TimeLimitInput" type="LineEdit" parent="Customize Game Options/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.698
+anchor_bottom = 0.698
+offset_left = 44.9999
+offset_top = -40.38
+offset_right = 627.0
+offset_bottom = 39.62
+theme_override_fonts/font = ExtResource("1_gk1ax")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = ExtResource("31_nahbe")
+theme_override_styles/normal = ExtResource("31_v7rbi")
+placeholder_text = "\"0\" for no limit; max 99:59:59"
+max_length = 9
+context_menu_enabled = false
+deselect_on_focus_loss_enabled = false
+caret_blink = true
+caret_blink_interval = 0.5
+caret_mid_grapheme = true
+
+[node name="Start Button" type="Button" parent="Customize Game Options/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -355.0
+offset_top = -151.0
+offset_right = -43.0001
+offset_bottom = -47.0
+pivot_offset = Vector2(0, 52)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_x0tv6")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxFlat_p6m1i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_fdurq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oakah")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o4oh0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lig0o")
+disabled = true
+shortcut_feedback = false
+shortcut_in_tooltip = false
+alignment = 0
+text_direction = 1
+script = ExtResource("33_8bybv")
+
+[node name="Default Text" type="Label" parent="Customize Game Options/Blur BG/Panel/Start Button"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 102.0
+offset_top = -36.0
+offset_right = 275.0
+offset_bottom = 37.0
+grow_vertical = 2
+text = "Start!"
+label_settings = SubResource("LabelSettings_yqq4g")
+vertical_alignment = 1
+justification_flags = 1
+metadata/_edit_lock_ = true
+
+[node name="Default Icon" type="TextureRect" parent="Customize Game Options/Blur BG/Panel/Start Button"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -6.10352e-05
+offset_top = -53.0
+offset_right = 105.0
+offset_bottom = 52.0
+grow_vertical = 2
+texture = ExtResource("7_wydoj")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
 [connection signal="mouse_entered" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Mr Kinney Jumpscare" to="Buttons/Mr Kinney Jumpscare" method="_on_pressed"]
+[connection signal="text_changed" from="Customize Game Options/Blur BG/Panel/WordChoiceInput" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_word_choice_input_text_changed"]
+[connection signal="text_changed" from="Customize Game Options/Blur BG/Panel/LivesInput" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_lives_input_text_changed"]
+[connection signal="text_changed" from="Customize Game Options/Blur BG/Panel/TimeLimitInput" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_time_limit_input_text_changed"]

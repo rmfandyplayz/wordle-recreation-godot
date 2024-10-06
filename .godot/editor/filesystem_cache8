@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1727885397
+::res://::1728166571
 README.md::TextFile::-1::1727316785::0::1::::<><>::
 ::res://Media/::1727370548
 ::res://Media/Audio/::1727109771
@@ -117,25 +117,29 @@ Skull.png::CompressedTexture2D::2048128427587353141::1727370234::1727560355::1::
 Warning.png::CompressedTexture2D::1648421646129391321::1727884743::1727884744::1::::<><>::
 Wrench.png::CompressedTexture2D::5240880961369553250::1727370234::1727560355::1::::<><>::
 X.png::CompressedTexture2D::7055167061039503206::1727885731::1727885732::1::::<><>::
-::res://Scenes/::1727887144
-MainMenu.tscn::PackedScene::6443864464542252885::1727887144::0::1::::<><>::uid://5wmeyd47o28x::::res://Media/UserInterface/Kinney.JPG<>uid://bqwatigbrqtvm::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3<>uid://ccfj421arqtql::::res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf<>uid://cdcqajf0mhxku::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf2.mp3<>uid://deifif008djay::::res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf<>uid://dipna67hs4di4::::res://ThemeOverrides/Button - General/ButtonFocus.tres<>uid://cd6rkfv3wd2ps::::res://ThemeOverrides/Accent Button/AccentButtonHover.tres<>uid://bcbmhoajsv6sd::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf3.mp3<>uid://bt8pb53s1st4b::::res://ThemeOverrides/Accent Button/AccentButtonDefault.tres<>uid://ckkuerhd050q7::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf4.mp3<>uid://owgu1gepyuat::::res://ThemeOverrides/Accent Button/AccentButtonPressed.tres<>uid://c0ymi86m77o7l::::res://ThemeOverrides/DefaultButton/DefaultButtonNormal.tres<>uid://dam7xvojou6cj::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf5SL-1.mp3<>uid://cmrgeb5tw4m3g::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf5SL-2.mp3<>uid://p5o0mj0h1185::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf6.mp3<>uid://bt4ndit5325vf::::res://ThemeOverrides/DefaultButton/DefaultButtonHover.tres<>uid://bpavbjfxyn6dm::::res://Media/UserInterface/Play.png<>uid://blgco4imjlf40::::res://Media/Audio/Sounds/KinneyJumpscare/fnafSB.mp3<>uid://dicuqqcid0d4t::::res://ThemeOverrides/DefaultButton/DefaultButtonPressed.tres<>res://Scripts/MainMenu/PlayButton.gd<>uid://bfstxbx3ew00a::::res://Media/Fonts/SF Pro/SF-Pro-Display-Black.otf<>uid://jewnl8tw2lwc::::res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres<>uid://bxy6tm303yx18::::res://Media/UserInterface/Back.png<>uid://cgwysqs26w0hq::::res://Media/UserInterface/Wrench.png<>uid://cywsdgcl07rm2::::res://Media/UserInterface/Settings.png<>uid://4gem1vaktu4t::::res://Media/UserInterface/Skull.png<>res://Scripts/MainMenu/KinneyJumpscare.gd<>uid://fq7cjre7t2d8::::res://Shaders/Blur.tres<>uid://ctf2j8fuup86y::::res://ThemeOverrides/Panels/PanelPrimaryCol.tres<>uid://c7rttn0xbmgyo::::res://Media/UserInterface/X.png
+::res://Scenes/::1728060367
+MainMenu.tscn::PackedScene::6443864464542252885::1728060367::0::1::::<><>::uid://5wmeyd47o28x::::res://Media/UserInterface/Kinney.JPG<>uid://bqwatigbrqtvm::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3<>uid://ccfj421arqtql::::res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf<>uid://cdcqajf0mhxku::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf2.mp3<>uid://deifif008djay::::res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf<>uid://dipna67hs4di4::::res://ThemeOverrides/Button - General/ButtonFocus.tres<>uid://cd6rkfv3wd2ps::::res://ThemeOverrides/Accent Button/AccentButtonHover.tres<>uid://bcbmhoajsv6sd::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf3.mp3<>uid://bt8pb53s1st4b::::res://ThemeOverrides/Accent Button/AccentButtonDefault.tres<>uid://ckkuerhd050q7::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf4.mp3<>uid://owgu1gepyuat::::res://ThemeOverrides/Accent Button/AccentButtonPressed.tres<>uid://c0ymi86m77o7l::::res://ThemeOverrides/DefaultButton/DefaultButtonNormal.tres<>uid://dam7xvojou6cj::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf5SL-1.mp3<>uid://cmrgeb5tw4m3g::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf5SL-2.mp3<>uid://p5o0mj0h1185::::res://Media/Audio/Sounds/KinneyJumpscare/fnaf6.mp3<>uid://bt4ndit5325vf::::res://ThemeOverrides/DefaultButton/DefaultButtonHover.tres<>uid://bpavbjfxyn6dm::::res://Media/UserInterface/Play.png<>uid://blgco4imjlf40::::res://Media/Audio/Sounds/KinneyJumpscare/fnafSB.mp3<>uid://dicuqqcid0d4t::::res://ThemeOverrides/DefaultButton/DefaultButtonPressed.tres<>res://Scripts/MainMenu/PlayButton.gd<>uid://bfstxbx3ew00a::::res://Media/Fonts/SF Pro/SF-Pro-Display-Black.otf<>uid://jewnl8tw2lwc::::res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres<>uid://bxy6tm303yx18::::res://Media/UserInterface/Back.png<>uid://cgwysqs26w0hq::::res://Media/UserInterface/Wrench.png<>uid://cywsdgcl07rm2::::res://Media/UserInterface/Settings.png<>uid://4gem1vaktu4t::::res://Media/UserInterface/Skull.png<>res://Scripts/MainMenu/KinneyJumpscare.gd<>uid://fq7cjre7t2d8::::res://Shaders/Blur.tres<>uid://ctf2j8fuup86y::::res://ThemeOverrides/Panels/PanelPrimaryCol.tres<>uid://c7rttn0xbmgyo::::res://Media/UserInterface/X.png<>uid://bm1yes0bdp23s::::res://ThemeOverrides/TextEdit/TextEditFocus.tres<>uid://btr1rmm8f8e4h::::res://ThemeOverrides/TextEdit/TextEditDefault.tres<>res://Scripts/MainMenu/CustomizeStartButton.gd
 ::res://Scripts/::1727884217
-::res://Scripts/MainMenu/::1727884217
+::res://Scripts/MainMenu/::1728060351
+CustomizeStartButton.gd::GDScript::-1::1728060351::0::1::::<>Button<>::
 KinneyJumpscare.gd::GDScript::-1::1727560340::0::1::::<>Button<>::
-PlayButton.gd::GDScript::-1::1727560340::0::1::::<>Button<>::
-::res://Shaders/::1727885188
-Blur.tres::ShaderMaterial::385921276808563915::1727885188::0::1::::<><>::
-::res://ThemeOverrides/::1727885397
-::res://ThemeOverrides/Accent Button/::1727884224
-AccentButtonDefault.tres::StyleBoxFlat::3789047339193431575::1727884224::0::1::::<><>::
+PlayButton.gd::GDScript::-1::1728058993::0::1::::<>Button<>::
+::res://Shaders/::1728055938
+Blur.tres::ShaderMaterial::385921276808563915::1728055938::0::1::::<><>::
+::res://ThemeOverrides/::1727887298
+::res://ThemeOverrides/Accent Button/::1728055938
+AccentButtonDefault.tres::StyleBoxFlat::3789047339193431575::1728055938::0::1::::<><>::
 AccentButtonHover.tres::StyleBoxFlat::5048453951851615540::1727291956::0::1::::<><>::
 AccentButtonPressed.tres::StyleBoxFlat::1028461514435148563::1727290964::0::1::::<><>::
-::res://ThemeOverrides/Button - General/::1727292494
-ButtonFocus.tres::StyleBoxFlat::7752529465401264289::1727292494::0::1::::<><>::
-::res://ThemeOverrides/DefaultButton/::1727884224
-DefaultButtonDisabled.tres::StyleBoxFlat::641316722549300850::1727884224::0::1::::<><>::
+::res://ThemeOverrides/Button - General/::1728057870
+ButtonFocus.tres::StyleBoxFlat::7752529465401264289::1728057870::0::1::::<><>::
+::res://ThemeOverrides/DefaultButton/::1728055938
+DefaultButtonDisabled.tres::StyleBoxFlat::641316722549300850::1728055938::0::1::::<><>::
 DefaultButtonHover.tres::StyleBoxFlat::3780670796910790367::1727291287::0::1::::<><>::
 DefaultButtonNormal.tres::StyleBoxFlat::6577852196447637571::1727291956::0::1::::<><>::
 DefaultButtonPressed.tres::StyleBoxFlat::7726145312081180017::1727291270::0::1::::<><>::
-::res://ThemeOverrides/Panels/::1727885419
-PanelPrimaryCol.tres::StyleBoxFlat::6118408458159595698::1727885419::0::1::::<><>::
+::res://ThemeOverrides/Panels/::1728057135
+PanelPrimaryCol.tres::StyleBoxFlat::6118408458159595698::1728057135::0::1::::<><>::
+::res://ThemeOverrides/TextEdit/::1728058341
+TextEditDefault.tres::StyleBoxFlat::3756712785268251881::1728055938::0::1::::<><>::
+TextEditFocus.tres::StyleBoxFlat::3283825964047537726::1728058341::0::1::::<><>::
