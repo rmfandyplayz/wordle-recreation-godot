@@ -6,3 +6,5 @@ res://Shaders/Blur.tres
 res://ThemeOverrides/TextEdit/TextEditFocus.tres
 res://ThemeOverrides/TextEdit/TextEditDefault.tres
 res://Scripts/MainMenu/CustomizeStartButton.gd
+res://Scripts/MainMenu/Customize.gd
+res://Scripts/MainMenu/CustomizeCloseButton.gd

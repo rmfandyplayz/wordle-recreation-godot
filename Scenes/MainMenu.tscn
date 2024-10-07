@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=48 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
@@ -27,9 +27,11 @@
 [ext_resource type="Texture2D" uid="uid://cywsdgcl07rm2" path="res://Media/UserInterface/Settings.png" id="13_op5nv"]
 [ext_resource type="Texture2D" uid="uid://4gem1vaktu4t" path="res://Media/UserInterface/Skull.png" id="14_j6uud"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/KinneyJumpscare.gd" id="18_rcfa2"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/Customize.gd" id="20_s55qk"]
 [ext_resource type="Material" uid="uid://fq7cjre7t2d8" path="res://Shaders/Blur.tres" id="28_uxq5y"]
 [ext_resource type="StyleBox" uid="uid://ctf2j8fuup86y" path="res://ThemeOverrides/Panels/PanelPrimaryCol.tres" id="29_23b5b"]
 [ext_resource type="Texture2D" uid="uid://c7rttn0xbmgyo" path="res://Media/UserInterface/X.png" id="30_vuehy"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/CustomizeCloseButton.gd" id="31_btlme"]
 [ext_resource type="StyleBox" uid="uid://bm1yes0bdp23s" path="res://ThemeOverrides/TextEdit/TextEditFocus.tres" id="31_nahbe"]
 [ext_resource type="StyleBox" uid="uid://btr1rmm8f8e4h" path="res://ThemeOverrides/TextEdit/TextEditDefault.tres" id="31_v7rbi"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/CustomizeStartButton.gd" id="33_8bybv"]
@@ -346,6 +348,7 @@ shortcut_feedback = false
 shortcut_in_tooltip = false
 alignment = 0
 text_direction = 1
+script = ExtResource("20_s55qk")
 
 [node name="Customize Text" type="Label" parent="Buttons/Play/Customize"]
 layout_mode = 1
@@ -434,6 +437,7 @@ script = ExtResource("18_rcfa2")
 [node name="Customize Game Options" type="Node" parent="."]
 
 [node name="Blur BG" type="Panel" parent="Customize Game Options"]
+visible = false
 top_level = true
 z_index = 10
 z_as_relative = false
@@ -457,6 +461,7 @@ offset_left = -335.8
 offset_top = -404.92
 offset_right = 334.2
 offset_bottom = 405.08
+scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(335, 405)
 theme_override_styles/panel = ExtResource("29_23b5b")
 
@@ -472,6 +477,7 @@ offset_right = -44.0001
 offset_bottom = 96.0
 pivot_offset = Vector2(25, 25)
 mouse_default_cursor_shape = 2
+script = ExtResource("31_btlme")
 
 [node name="Close Icon" type="TextureRect" parent="Customize Game Options/Blur BG/Panel/Close Button"]
 layout_mode = 1
@@ -681,7 +687,10 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_entered" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Play/Customize" to="Buttons/Play/Customize" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Mr Kinney Jumpscare" to="Buttons/Mr Kinney Jumpscare" method="_on_pressed"]
+[connection signal="pressed" from="Customize Game Options/Blur BG/Panel/Close Button" to="Customize Game Options/Blur BG/Panel/Close Button" method="_on_pressed"]
 [connection signal="text_changed" from="Customize Game Options/Blur BG/Panel/WordChoiceInput" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_word_choice_input_text_changed"]
 [connection signal="text_changed" from="Customize Game Options/Blur BG/Panel/LivesInput" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_lives_input_text_changed"]
 [connection signal="text_changed" from="Customize Game Options/Blur BG/Panel/TimeLimitInput" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_time_limit_input_text_changed"]
+[connection signal="pressed" from="Customize Game Options/Blur BG/Panel/Start Button" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_pressed"]

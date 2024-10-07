@@ -41,8 +41,7 @@ func _on_time_limit_input_text_changed(new_text: String) -> void:
 	#only will be handled if timeParts ends up being a list, aka player typed in hh:mm:ss or mm:ss
 	if new_text.contains(":"):
 		timeParts = new_text.split(":")
-		
-		print("timeparts: ", timeParts)
+	
 		match timeParts.size():
 			2:  # mm:ss
 				var minutes = int(timeParts[0])
@@ -60,8 +59,6 @@ func _on_time_limit_input_text_changed(new_text: String) -> void:
 		timeParts = int(new_text)
 		totalSeconds = timeParts
 	
-	print("totalseconds: ", totalSeconds)
-	
 	#button enable/disable logic
 	if(totalSeconds > 0 or totalSeconds == -1):
 		timeLimit = totalSeconds
@@ -73,6 +70,10 @@ func _on_time_limit_input_text_changed(new_text: String) -> void:
 		StartButtonValidation()
 
 
+#handles logic for when the button is actually pressed.
+func _on_pressed() -> void:
+	print("pressed")
+
 
 
 #checks whether or not all the input fields have valid properties
@@ -81,3 +82,4 @@ func StartButtonValidation():
 		disabled = false
 	else: 
 		disabled = true
+		
