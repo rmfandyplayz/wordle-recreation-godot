@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://mq1piu8im1f"]
+
+[node name="GameDefault" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 36.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997855, 0.997649)
+color = Color(0.109804, 0.109804, 0.211765, 1)
+metadata/_edit_use_anchors_ = true

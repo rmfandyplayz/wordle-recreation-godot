@@ -5,5 +5,7 @@ res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres
 res://Shaders/Blur.tres
 res://ThemeOverrides/TextEdit/TextEditFocus.tres
 res://ThemeOverrides/TextEdit/TextEditDefault.tres
-res://Scripts/MainMenu/CustomizeCloseButton.gd
-res://Scripts/MainMenu/Customize.gd
+res://Scenes/GameDefault.tscn
+res://Scenes/GameCustomize.tscn
+res://Scenes/Node Collections/LetterSquare.tscn
+res://Scenes/NodeCollections/LetterSquare.tscn
