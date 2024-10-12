@@ -1,3 +1,5 @@
+GridContainer
+HBoxContainer
 ColorPicker
 VBoxContainer
 Control
@@ -10,6 +12,3 @@ VScrollBar
 CodeEdit
 LineEdit
 Button
-Node
-ShaderGlobalsOverride
-AudioStreamPlayer

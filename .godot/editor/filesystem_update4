@@ -1,11 +1,12 @@
-res://Scenes/MainMenu.tscn
+res://Scenes/NodeCollections/LetterSquare.tscn
 res://ThemeOverrides/Button - General/ButtonFocus.tres
 res://ThemeOverrides/Accent Button/AccentButtonDefault.tres
 res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres
 res://Shaders/Blur.tres
 res://ThemeOverrides/TextEdit/TextEditFocus.tres
 res://ThemeOverrides/TextEdit/TextEditDefault.tres
-res://Scenes/GameDefault.tscn
 res://Scenes/GameCustomize.tscn
-res://Scenes/Node Collections/LetterSquare.tscn
-res://Scenes/NodeCollections/LetterSquare.tscn
+res://Scripts/LetterSquare/LetterSquare.gd
+res://Scenes/MainMenu.tscn
+res://Scenes/GameDefault.tscn
+res://ThemeOverrides/LetterSquare/Answered.tres

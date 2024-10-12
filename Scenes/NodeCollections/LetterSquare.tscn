@@ -1,58 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1ups0hr85n20"]
+[gd_scene load_steps=10 format=3 uid="uid://d1ups0hr85n20"]
 
+[ext_resource type="Script" path="res://Scripts/LetterSquare/LetterSquare.gd" id="1_04k8w"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="1_5hotk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7g3b"]
-bg_color = Color(0.1848, 0.209, 0.33, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.3905, 0.449075, 0.71, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ou6p"]
-bg_color = Color(0.1316, 0.49538, 0.94, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mr6tf"]
-bg_color = Color(0.0798, 0.30039, 0.57, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.5607, 0.708885, 0.89, 1)
-corner_radius_top_left = 30
-corner_radius_top_right = 30
-corner_radius_bottom_right = 30
-corner_radius_bottom_left = 30
+[ext_resource type="StyleBox" uid="uid://cc1qre5klevff" path="res://ThemeOverrides/LetterSquare/Answered.tres" id="1_fj4a1"]
+[ext_resource type="StyleBox" uid="uid://u8nuab2cigb3" path="res://ThemeOverrides/LetterSquare/DoesntExist.tres" id="2_us0ks"]
+[ext_resource type="StyleBox" uid="uid://cymhcgh0f7gqn" path="res://ThemeOverrides/LetterSquare/ExistsRightPlace.tres" id="3_26t82"]
+[ext_resource type="StyleBox" uid="uid://to0kj6e1g60g" path="res://ThemeOverrides/LetterSquare/ExistsWrongPlace.tres" id="4_hnre8"]
+[ext_resource type="StyleBox" uid="uid://cqt8laj5jt41l" path="res://ThemeOverrides/LetterSquare/Unanswered.tres" id="5_5g6vc"]
 
 [sub_resource type="Theme" id="Theme_vh8v0"]
-/styles/DoesntExist = SubResource("StyleBoxFlat_p7g3b")
-/styles/ExistsRightPlace = SubResource("StyleBoxFlat_6ou6p")
-/styles/ExistsWrongPlace = SubResource("StyleBoxFlat_mr6tf")
+/styles/Answered = ExtResource("1_fj4a1")
+/styles/DoesntExist = ExtResource("2_us0ks")
+/styles/ExistsRightPlace = ExtResource("3_26t82")
+/styles/ExistsWrongPlace = ExtResource("4_hnre8")
+/styles/Unanswered = ExtResource("5_5g6vc")
 
 [sub_resource type="LabelSettings" id="LabelSettings_c4ykf"]
 font = ExtResource("1_5hotk")
-font_size = 40
+font_size = 120
 
 [node name="LetterSquare" type="Panel"]
-offset_right = 75.0
-offset_bottom = 75.0
+custom_minimum_size = Vector2(200, 200)
+offset_right = 200.0
+offset_bottom = 200.0
 theme = SubResource("Theme_vh8v0")
-theme_override_styles/panel = SubResource("StyleBoxFlat_p7g3b")
+theme_override_styles/panel = ExtResource("5_5g6vc")
+script = ExtResource("1_04k8w")
 
 [node name="LetterText" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 label_settings = SubResource("LabelSettings_c4ykf")
 horizontal_alignment = 1
 vertical_alignment = 1
