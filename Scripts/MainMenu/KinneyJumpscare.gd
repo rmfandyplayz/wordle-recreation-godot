@@ -2,7 +2,11 @@ extends Button
 
 var isActive : bool = false #is jumpscare currently happening?
 
+func test() -> void:
+	print('test')
+
 func _on_pressed() -> void:
+	
 	if isActive == false:
 		#initializations
 		isActive = true

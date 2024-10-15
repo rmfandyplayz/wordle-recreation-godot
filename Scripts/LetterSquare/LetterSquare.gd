@@ -1,12 +1,14 @@
 extends Panel
-	
 
 func _ready() -> void:
-	SetText("T")
+	self_modulate = Color("#67671f") #make sure all squares are that color
+
 
 #sets the text and changes the color
 func SetText(text : String):
 	$LetterText.text = text
+	
+
 
 #removes the text and changes the color
 func RemoveText():

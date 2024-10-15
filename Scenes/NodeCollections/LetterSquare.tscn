@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1ups0hr85n20"]
+[gd_scene load_steps=11 format=3 uid="uid://d1ups0hr85n20"]
 
 [ext_resource type="Script" path="res://Scripts/LetterSquare/LetterSquare.gd" id="1_04k8w"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="1_5hotk"]
@@ -15,16 +15,23 @@
 /styles/ExistsWrongPlace = ExtResource("4_hnre8")
 /styles/Unanswered = ExtResource("5_5g6vc")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msjnq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
 [sub_resource type="LabelSettings" id="LabelSettings_c4ykf"]
 font = ExtResource("1_5hotk")
-font_size = 120
+font_size = 100
 
 [node name="LetterSquare" type="Panel"]
-custom_minimum_size = Vector2(200, 200)
-offset_right = 200.0
-offset_bottom = 200.0
+custom_minimum_size = Vector2(175, 175)
+offset_right = 175.0
+offset_bottom = 175.0
 theme = SubResource("Theme_vh8v0")
-theme_override_styles/panel = ExtResource("5_5g6vc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_msjnq")
 script = ExtResource("1_04k8w")
 
 [node name="LetterText" type="Label" parent="."]

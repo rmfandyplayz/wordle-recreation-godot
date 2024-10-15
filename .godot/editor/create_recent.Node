@@ -1,3 +1,5 @@
+CenterContainer
+CanvasLayer
 GridContainer
 HBoxContainer
 ColorPicker
@@ -11,4 +13,3 @@ ScrollContainer
 VScrollBar
 CodeEdit
 LineEdit
-Button

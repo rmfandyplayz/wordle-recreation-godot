@@ -4,6 +4,8 @@ extends Button
 @onready var lives : int = 0 #0 for no limit
 @onready var timeLimit : int = 0 #0 for no limit
 
+@onready var gameCustomizeScene = preload("res://Scenes/GameCustomize.tscn").instantiate()
+
 var validationRequirements : Array = [0, 0, 0]
 #validatonRequirements[0] is for wordChoice, [1] is for lives, and [2] is for time limit
 
@@ -34,7 +36,7 @@ func _on_lives_input_text_changed(new_text: String) -> void:
 
 
 func _on_time_limit_input_text_changed(new_text: String) -> void:
-	var timeParts # can be an array or int. this is the one time i kina like static typing
+	var timeParts # can be an array or int. this is the one time i kinda like static typing
 	var totalSeconds : int = 0
 	
 	#player can type hh:mm:ss, mm:ss, or pure seconds. cases are handled here.
@@ -72,8 +74,14 @@ func _on_time_limit_input_text_changed(new_text: String) -> void:
 
 #handles logic for when the button is actually pressed.
 func _on_pressed() -> void:
-	print("pressed")
-
+	var sceneInstance = gameCustomizeScene.instantiate()
+	
+	sceneInstance.wordChoice = wordChoice
+	sceneInstance.lives = lives
+	sceneInstance.timeLimit = timeLimit
+	
+	get_tree().change_scene_to_packed(sceneInstance)
+	#todo: complete this thing
 
 
 #checks whether or not all the input fields have valid properties

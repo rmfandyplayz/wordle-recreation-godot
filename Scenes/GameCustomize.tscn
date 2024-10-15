@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d534c33ufvdx"]
+[gd_scene load_steps=3 format=3 uid="uid://d534c33ufvdx"]
 
 [ext_resource type="PackedScene" uid="uid://d1ups0hr85n20" path="res://Scenes/NodeCollections/LetterSquare.tscn" id="1_fdad5"]
+[ext_resource type="Script" path="res://Scripts/GameCustomize/GameCustomize.gd" id="1_rm477"]
 
 [node name="GameCustomize" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rm477")
 
 [node name="Background Color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -33,40 +35,56 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 34.0
 offset_top = 0.480011
-offset_right = -34.0
-offset_bottom = -31.0
+offset_right = -33.0
+offset_bottom = -221.0
 grow_horizontal = 2
+follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Scrolling"]
+[node name="VerticalContainer" type="VBoxContainer" parent="Scrolling"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 20
+size_flags_vertical = 0
+theme_override_constants/separation = 35
+alignment = 2
 
-[node name="GridContainer" type="GridContainer" parent="Scrolling/VBoxContainer"]
+[node name="Row0" type="CenterContainer" parent="Scrolling/VerticalContainer"]
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="Scrolling/VerticalContainer/Row0"]
 layout_mode = 2
 size_flags_vertical = 2
-theme_override_constants/h_separation = 40
+theme_override_constants/h_separation = 35
 columns = 8
 
-[node name="LetterSquare" parent="Scrolling/VBoxContainer/GridContainer" instance=ExtResource("1_fdad5")]
+[node name="LetterSquare" parent="Scrolling/VerticalContainer/Row0/Grid" instance=ExtResource("1_fdad5")]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
-[node name="LetterSquare2" parent="Scrolling/VBoxContainer/GridContainer" instance=ExtResource("1_fdad5")]
+[node name="LetterSquare2" parent="Scrolling/VerticalContainer/Row0/Grid" instance=ExtResource("1_fdad5")]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
-[node name="LetterSquare3" parent="Scrolling/VBoxContainer/GridContainer" instance=ExtResource("1_fdad5")]
+[node name="LetterSquare3" parent="Scrolling/VerticalContainer/Row0/Grid" instance=ExtResource("1_fdad5")]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
-[node name="LetterSquare4" parent="Scrolling/VBoxContainer/GridContainer" instance=ExtResource("1_fdad5")]
+[node name="LetterSquare4" parent="Scrolling/VerticalContainer/Row0/Grid" instance=ExtResource("1_fdad5")]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
-[node name="LetterSquare5" parent="Scrolling/VBoxContainer/GridContainer" instance=ExtResource("1_fdad5")]
+[node name="LetterSquare5" parent="Scrolling/VerticalContainer/Row0/Grid" instance=ExtResource("1_fdad5")]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
-[node name="LetterSquare6" parent="Scrolling/VBoxContainer/GridContainer" instance=ExtResource("1_fdad5")]
+[node name="LetterSquare6" parent="Scrolling/VerticalContainer/Row0/Grid" instance=ExtResource("1_fdad5")]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
-[node name="LetterSquare7" parent="Scrolling/VBoxContainer/GridContainer" instance=ExtResource("1_fdad5")]
+[node name="LetterSquare7" parent="Scrolling/VerticalContainer/Row0/Grid" instance=ExtResource("1_fdad5")]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="LetterSquare8" parent="Scrolling/VerticalContainer/Row0/Grid" instance=ExtResource("1_fdad5")]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
