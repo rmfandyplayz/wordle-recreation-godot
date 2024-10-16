@@ -10,6 +10,6 @@ res://ThemeOverrides/LetterSquare/Unanswered.tres
 res://Scenes/MainMenu.tscn
 res://Scenes/NodeCollections/LetterSquare.tscn
 res://Scenes/GameDefault.tscn
-res://Scripts/LetterSquare/LetterSquare.gd
 res://Scripts/MainMenu/CustomizeStartButton.gd
+res://Scripts/GlobalVariables.gd
 res://Scripts/GameCustomize/GameCustomize.gd

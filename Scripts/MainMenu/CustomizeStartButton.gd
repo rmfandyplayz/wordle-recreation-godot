@@ -73,15 +73,12 @@ func _on_time_limit_input_text_changed(new_text: String) -> void:
 
 
 #handles logic for when the button is actually pressed.
+#aka change the scenes and bring data over
 func _on_pressed() -> void:
-	var sceneInstance = gameCustomizeScene.instantiate()
-	
-	sceneInstance.wordChoice = wordChoice
-	sceneInstance.lives = lives
-	sceneInstance.timeLimit = timeLimit
-	
-	get_tree().change_scene_to_packed(sceneInstance)
-	#todo: complete this thing
+	GlobalVariables.wordChoice = wordChoice
+	GlobalVariables.lives = lives
+	GlobalVariables.timeLimit = timeLimit
+	get_tree().change_scene_to_file("res://Scenes/GameCustomize.tscn")
 
 
 #checks whether or not all the input fields have valid properties

@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.14, 0.14, 0.28, 1)
 config/icon="res://Media/Sprites/GameIcon.jpg"
 
+[autoload]
+
+GlobalVariables="*res://Scripts/GlobalVariables.gd"
+
 [display]
 
 window/size/viewport_width=1920
