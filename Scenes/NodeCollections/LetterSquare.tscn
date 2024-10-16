@@ -28,8 +28,11 @@ font_size = 100
 
 [node name="LetterSquare" type="Panel"]
 custom_minimum_size = Vector2(175, 175)
-offset_right = 175.0
-offset_bottom = 175.0
+offset_left = -87.0
+offset_top = -87.0
+offset_right = 88.0
+offset_bottom = 88.0
+pivot_offset = Vector2(87, 87)
 theme = SubResource("Theme_vh8v0")
 theme_override_styles/panel = SubResource("StyleBoxFlat_msjnq")
 script = ExtResource("1_04k8w")

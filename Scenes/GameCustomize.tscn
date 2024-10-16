@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://d534c33ufvdx"]
 
 [ext_resource type="Script" path="res://Scripts/GameCustomize/GameCustomize.gd" id="1_rm477"]
-[ext_resource type="PackedScene" uid="uid://bpbj22hk53d7r" path="res://Scenes/NodeCollections/Row.tscn" id="2_ay58d"]
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="3_0m4i0"]
 [ext_resource type="StyleBox" uid="uid://bm1yes0bdp23s" path="res://ThemeOverrides/TextEdit/TextEditFocus.tres" id="4_nntpx"]
+[ext_resource type="Script" path="res://Scripts/GameCustomize/WordSubmission.gd" id="5_rf85h"]
 [ext_resource type="StyleBox" uid="uid://btr1rmm8f8e4h" path="res://ThemeOverrides/TextEdit/TextEditDefault.tres" id="5_t344b"]
 
 [node name="GameCustomize" type="Control"]
@@ -37,9 +37,9 @@ anchor_top = 0.144
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 34.0
-offset_top = 0.480011
+offset_top = 18.48
 offset_right = -33.0
-offset_bottom = -221.0
+offset_bottom = -203.0
 grow_horizontal = 2
 follow_focus = true
 horizontal_scroll_mode = 0
@@ -50,9 +50,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 35
 alignment = 2
-
-[node name="Row0" parent="Scrolling/VerticalContainer" instance=ExtResource("2_ay58d")]
-layout_mode = 2
 
 [node name="WordSubmission" type="LineEdit" parent="."]
 layout_mode = 1
@@ -78,3 +75,7 @@ deselect_on_focus_loss_enabled = false
 caret_blink = true
 caret_blink_interval = 0.5
 caret_mid_grapheme = true
+script = ExtResource("5_rf85h")
+
+[connection signal="text_changed" from="WordSubmission" to="WordSubmission" method="_on_text_changed"]
+[connection signal="text_submitted" from="WordSubmission" to="WordSubmission" method="_on_text_submitted"]
