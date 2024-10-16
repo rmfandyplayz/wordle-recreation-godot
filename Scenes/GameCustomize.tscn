@@ -71,10 +71,13 @@ placeholder_text = "submit word here"
 alignment = 1
 max_length = 8
 context_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
 deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
 caret_blink = true
 caret_blink_interval = 0.5
-caret_mid_grapheme = true
 script = ExtResource("5_rf85h")
 
 [connection signal="text_changed" from="WordSubmission" to="WordSubmission" method="_on_text_changed"]

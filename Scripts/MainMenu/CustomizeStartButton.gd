@@ -12,7 +12,7 @@ var validationRequirements : Array = [0, 0, 0]
 
 
 func _on_word_choice_input_text_changed(new_text: String) -> void:
-	if new_text.length() > 0:
+	if new_text.length() >= 2:
 		wordChoice = new_text
 		validationRequirements[0] = 1
 		StartButtonValidation()

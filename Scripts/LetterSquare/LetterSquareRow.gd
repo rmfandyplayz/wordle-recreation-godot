@@ -22,12 +22,33 @@ func CloneSquares(cloneAmount : int):
 
 #change the stuff in each letter square
 func ChangeSquaresText(oldText : String, newText : String):
-	if oldText != newText:
-		var letterSquares = letterSquareParent.get_children()
-		var letters : Array = newText.split()
-		
-		for i in range(len(letterSquares)):
-			letterSquares[i].SetText(letters[i])
+	var squaresList = letterSquareParent.get_children()
+	var newTextList = newText.split()
+	var oldTextList = oldText.split()
+	
+	for i in range(len(squaresList)):
+		if i < len(newTextList):
+			if (i >= len(oldTextList)): #new text is longer
+				squaresList[i].SetText(newTextList[i])
+			elif(newTextList[i] != oldTextList[i]): # new text not the same as old text
+				squaresList[i].SetText(newTextList[i])
+		else:
+			squaresList[i].RemoveText()
 			
+	
+	#print(currentSquarePosition)
+	#
+	#if oldText != newText:
+		#if newText.length() > oldText.length(): #added letter
+			#squaresList[currentSquarePosition].SetText(newTextList[currentSquarePosition])
+			#currentSquarePosition += 1
+		#elif newText.length() < oldText.length(): #deleted letter
+			#currentSquarePosition -= 1
+			#squaresList[currentSquarePosition].RkemoveText()
+			#
+	#else: #word is changed but somehow is the same length (used insert key???)
+		#pass
+	#
+	#print(currentSquarePosition)
 			
 		

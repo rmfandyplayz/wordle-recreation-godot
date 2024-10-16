@@ -13,11 +13,12 @@ var currentRowNumber : int = 0
 @onready var rowScene = preload("res://Scenes/NodeCollections/Row.tscn")
 @onready var rowParent = $Scrolling/VerticalContainer
 
-@onready var currentText = "" #used for comparing the new and previous text
+@onready var currentText : String = "" #used for comparing the new and previous text
 
 
 func _ready() -> void:
 	CloneRow()
+	$WordSubmission.max_length = wordLength
 	
 	print("Word Choice: %s" % wordChoice)
 	print("Lives: %d" % lives)
@@ -40,3 +41,4 @@ func CloneRow() -> void:
 #change the current row's text according to input from word submission
 func ChangeText(newText : String):
 	currentRow.ChangeSquaresText(currentText, newText)
+	currentText = newText
