@@ -12,43 +12,65 @@ var currentSquareNumber : int = 0 #for use in cloning
 
 #clones the number of squares per row according to the word length from the global variables
 func CloneSquares(cloneAmount : int):
+	#clone them
 	for i in range(cloneAmount):
 		var newSquare =  letterSquare.instantiate()
-		newSquare.name = "LetterSquare%d" % currentSquareNumber
 		letterSquareParent.add_child(newSquare)
-		
+		newSquare.name = "LetterSquare%d" % currentSquareNumber
 		currentSquareNumber += 1
+	
+	#fade them in
+	var squares = letterSquareParent.get_children()
+	for i in squares:
+		var tween = create_tween()
+		tween.tween_property(i, "self_modulate", Color("67671fff"), .8)
+
+		await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.1 * len(squares)).timeout
+	
 
 
 #change the stuff in each letter square
 func ChangeSquaresText(oldText : String, newText : String):
 	var squaresList = letterSquareParent.get_children()
-	var newTextList = newText.split()
-	var oldTextList = oldText.split()
+	var newTextList : Array = newText.split()
+	var oldTextList : Array = oldText.split()
 	
 	for i in range(len(squaresList)):
-		if i < len(newTextList):
-			if (i >= len(oldTextList)): #new text is longer
+		if i < len(newTextList): #prevent from going out of range
+			if (i >= len(oldTextList)): #add letters
 				squaresList[i].SetText(newTextList[i])
-			elif(newTextList[i] != oldTextList[i]): # new text not the same as old text
+			elif(newTextList[i] != oldTextList[i]): # new text not the same as old text. replace letter
 				squaresList[i].SetText(newTextList[i])
-		else:
-			squaresList[i].RemoveText()
-			
+			if(i == 0 and newText == ""):
+				squaresList[i].RemoveText()
+		else: #remove letters
+			if(squaresList[i].GetText() != ""):
+				squaresList[i].RemoveText()
+
+
+
+#plays the animation and returns true/false if the player has won
+func CheckSquares(submittedText : String) -> bool:
+	var correctWord : String = GlobalVariables.wordChoice
+	var squaresList = letterSquareParent.get_children()
 	
-	#print(currentSquarePosition)
-	#
-	#if oldText != newText:
-		#if newText.length() > oldText.length(): #added letter
-			#squaresList[currentSquarePosition].SetText(newTextList[currentSquarePosition])
-			#currentSquarePosition += 1
-		#elif newText.length() < oldText.length(): #deleted letter
-			#currentSquarePosition -= 1
-			#squaresList[currentSquarePosition].RkemoveText()
-			#
-	#else: #word is changed but somehow is the same length (used insert key???)
-		#pass
-	#
-	#print(currentSquarePosition)
-			
+	
+	for i in range(len(submittedText)):
+		var inputLetter = submittedText[i]
+		var correctLetter = correctWord[i]
+		var currentSquare = squaresList[i]
+	
+		if inputLetter == correctLetter:
+			currentSquare.SetCorrect()
+		elif inputLetter in correctWord:
+			currentSquare.SetExistsWrongPlace()
+		else:
+			currentSquare.SetDoesntExist()
 		
+		await get_tree().create_timer(0.25).timeout
+			
+	if submittedText == correctWord: 
+		return true
+	else:
+		return false

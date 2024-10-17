@@ -1,13 +1,12 @@
 extends LineEdit
 
 
-
-
-func _on_text_submitted(new_text: String) -> void:
-	print("[TEXT SUBMITTED] Text: %s" % new_text)
-
-
-func _on_text_changed(new_text: String) -> void:
-	print("[TEXT CHANGED] New Text: %s" % new_text)
+func _on_focus_entered() -> void:
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self, "scale", Vector2(1.1, 1.1), 0.4)
 	
-	$"..".ChangeText(new_text)
+
+func _on_focus_exited() -> void:
+	var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(self, "scale", Vector2(1, 1), 0.4)
+	

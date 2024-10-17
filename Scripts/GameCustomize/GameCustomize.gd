@@ -1,6 +1,6 @@
 extends Control
 
-#this script controls some aspects in this scene. it also receives the three variable values from mainmenu
+#handles a majority of the logic for this scene
 
 var wordChoice : String = GlobalVariables.wordChoice
 var lives : int = GlobalVariables.lives
@@ -17,8 +17,10 @@ var currentRowNumber : int = 0
 
 
 func _ready() -> void:
-	CloneRow()
 	$WordSubmission.max_length = wordLength
+	$WordSubmission.editable = false
+	await CloneRow()
+	$WordSubmission.editable = true
 	
 	print("Word Choice: %s" % wordChoice)
 	print("Lives: %d" % lives)
@@ -30,15 +32,62 @@ func CloneRow() -> void:
 	var newRow = rowScene.instantiate()
 	newRow.name = "Row%d" % currentRowNumber
 	rowParent.add_child(newRow)
-	newRow.CloneSquares(wordLength)
+	await newRow.CloneSquares(wordLength)
 	currentRow = newRow
 	currentRowNumber += 1
+
+
+
+
+#refers to WordSubmission's signal
+#updates the squares correctly and plays the correct animations
+var preventSignal = false
+func _on_text_changed(new_text: String) -> void:
+	if preventSignal == false:
+		currentRow.ChangeSquaresText(currentText, new_text)
+		currentText = new_text
+
+
+#refers to WordSubmission's signal
+#checks the correctness of the word and does stuff appropriately
+var makeInactive = false
+func _on_text_submitted(new_text: String) -> void:
+	#check if they even entered all the words
+	if(len($WordSubmission.text) != wordLength and makeInactive == false):
+		makeInactive = true
+		$WordSubmission.editable = false
+		$WordSubmission.self_modulate = Color("#ff6666")
+		
+		var tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+		var original_position = $WordSubmission.position
+		
+		for i in range(1, 7):
+			tween.tween_property($WordSubmission, "position", original_position + Vector2(48 - 8*i, 0), 0.06)
+			tween.tween_property($WordSubmission, "position", original_position - Vector2(48 - 8*i, 0), 0.06)
+		
+		
+		await tween.finished
+		makeInactive = false
+		$WordSubmission.self_modulate = Color("#ffffff")
+		$WordSubmission.editable = true
+		return
 	
-	print("Row Number: ", currentRowNumber)
-	print("Current Row: ", currentRow.name)
-
-
-#change the current row's text according to input from word submission
-func ChangeText(newText : String):
-	currentRow.ChangeSquaresText(currentText, newText)
-	currentText = newText
+	#otherwise, do the actual checking
+	elif(len($WordSubmission.text) == wordLength and makeInactive == false):
+		preventSignal = true
+		makeInactive = true
+		$WordSubmission.editable = false
+		var playerWon : bool = await currentRow.CheckSquares(new_text)
+		
+		if playerWon == true:
+			pass #more logic here
+		else:
+			#more logic later
+			await CloneRow()
+			$Scrolling.scroll_vertical = $Scrolling.get_v_scroll_bar().max_value
+			currentText = "" #to prevent THAT bug
+			$WordSubmission.clear()
+			$WordSubmission.editable = true
+			preventSignal = false
+			makeInactive = false
+	

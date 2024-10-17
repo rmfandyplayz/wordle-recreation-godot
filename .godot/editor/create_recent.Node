@@ -1,3 +1,4 @@
+Timer
 CenterContainer
 CanvasLayer
 GridContainer
@@ -12,4 +13,3 @@ ColorRect
 ScrollContainer
 VScrollBar
 CodeEdit
-LineEdit

@@ -17,6 +17,11 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msjnq"]
 bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
@@ -27,6 +32,7 @@ font = ExtResource("1_5hotk")
 font_size = 100
 
 [node name="LetterSquare" type="Panel"]
+self_modulate = Color(0.403922, 0.403922, 0.121569, 0)
 custom_minimum_size = Vector2(175, 175)
 offset_left = -87.0
 offset_top = -87.0

@@ -12,3 +12,9 @@ res://Scenes/NodeCollections/LetterSquare.tscn
 res://Scenes/GameDefault.tscn
 res://Scenes/MainMenu.tscn
 res://Scripts/LetterSquare/LetterSquareRow.gd
+res://Scripts/GameCustomize/WordSubmission.gd
+res://Scripts/LetterSquare/LetterSquare.gd
+res://Scripts/GameCustomize/GameCustomize.gd
+res://ThemeOverrides/LetterSquare/ExistsRightPlace.tres
+res://ThemeOverrides/LetterSquare/DoesntExist.tres
+res://ThemeOverrides/LetterSquare/ExistsWrongPlace.tres

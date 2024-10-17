@@ -1,10 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://d534c33ufvdx"]
+[gd_scene load_steps=7 format=3 uid="uid://d534c33ufvdx"]
 
 [ext_resource type="Script" path="res://Scripts/GameCustomize/GameCustomize.gd" id="1_rm477"]
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="3_0m4i0"]
 [ext_resource type="StyleBox" uid="uid://bm1yes0bdp23s" path="res://ThemeOverrides/TextEdit/TextEditFocus.tres" id="4_nntpx"]
 [ext_resource type="Script" path="res://Scripts/GameCustomize/WordSubmission.gd" id="5_rf85h"]
 [ext_resource type="StyleBox" uid="uid://btr1rmm8f8e4h" path="res://ThemeOverrides/TextEdit/TextEditDefault.tres" id="5_t344b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqxg1"]
+content_margin_left = 20.0
+bg_color = Color(0.59, 0.2478, 0.2478, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="GameCustomize" type="Control"]
 layout_mode = 3
@@ -31,6 +44,7 @@ color = Color(0.109804, 0.109804, 0.211765, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Scrolling" type="ScrollContainer" parent="."]
+clip_contents = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.144
@@ -47,7 +61,7 @@ horizontal_scroll_mode = 0
 [node name="VerticalContainer" type="VBoxContainer" parent="Scrolling"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
+size_flags_vertical = 2
 theme_override_constants/separation = 35
 alignment = 2
 
@@ -66,19 +80,18 @@ pivot_offset = Vector2(300, 40)
 theme_override_fonts/font = ExtResource("3_0m4i0")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = ExtResource("4_nntpx")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_aqxg1")
 theme_override_styles/normal = ExtResource("5_t344b")
-placeholder_text = "submit word here"
+placeholder_text = "[enter] submit word"
 alignment = 1
 max_length = 8
 context_menu_enabled = false
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-selecting_enabled = false
 deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
 caret_blink = true
 caret_blink_interval = 0.5
 script = ExtResource("5_rf85h")
 
-[connection signal="text_changed" from="WordSubmission" to="WordSubmission" method="_on_text_changed"]
-[connection signal="text_submitted" from="WordSubmission" to="WordSubmission" method="_on_text_submitted"]
+[connection signal="focus_entered" from="WordSubmission" to="WordSubmission" method="_on_focus_entered"]
+[connection signal="focus_exited" from="WordSubmission" to="WordSubmission" method="_on_focus_exited"]
+[connection signal="text_changed" from="WordSubmission" to="." method="_on_text_changed"]
+[connection signal="text_submitted" from="WordSubmission" to="." method="_on_text_submitted"]
