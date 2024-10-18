@@ -1,10 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://d534c33ufvdx"]
+[gd_scene load_steps=25 format=3 uid="uid://d534c33ufvdx"]
 
 [ext_resource type="Script" path="res://Scripts/GameCustomize/GameCustomize.gd" id="1_rm477"]
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="3_0m4i0"]
 [ext_resource type="StyleBox" uid="uid://bm1yes0bdp23s" path="res://ThemeOverrides/TextEdit/TextEditFocus.tres" id="4_nntpx"]
 [ext_resource type="Script" path="res://Scripts/GameCustomize/WordSubmission.gd" id="5_rf85h"]
 [ext_resource type="StyleBox" uid="uid://btr1rmm8f8e4h" path="res://ThemeOverrides/TextEdit/TextEditDefault.tres" id="5_t344b"]
+[ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="6_rfjjx"]
+[ext_resource type="Script" path="res://Scripts/GameCustomize/BackButton.gd" id="7_tpu2r"]
+[ext_resource type="Texture2D" uid="uid://dy8x85rugcse" path="res://Media/UserInterface/Back Arrow.png" id="8_r4qcl"]
+[ext_resource type="Texture2D" uid="uid://xqri72prgkvh" path="res://Media/UserInterface/Warning.png" id="9_ickrr"]
+[ext_resource type="Texture2D" uid="uid://cbuf4lsqyhkg6" path="res://Media/UserInterface/Timer.png" id="10_2rlk0"]
+[ext_resource type="FontFile" uid="uid://doxkha0tkud0g" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Thin.otf" id="11_hwyrr"]
+[ext_resource type="FontFile" uid="uid://b8yr40s8yv6du" path="res://Media/Fonts/SF Pro/SF-Pro-Italic.ttf" id="12_krtvx"]
+[ext_resource type="FontFile" uid="uid://dnb3ub7ek6sqr" path="res://Media/Fonts/SF Pro/SF-Pro-Display-HeavyItalic.otf" id="13_4jpn8"]
+[ext_resource type="FontFile" uid="uid://b1u8eh4cchdr0" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Heavy.otf" id="14_2odev"]
+[ext_resource type="Texture2D" uid="uid://bw8ak0bf0mdjy" path="res://Media/UserInterface/Heart.png" id="15_0hhm4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqxg1"]
 content_margin_left = 20.0
@@ -19,7 +29,77 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_je0de"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58a2q"]
+bg_color = Color(0.497, 0.497, 0.7, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.88, 0.898, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xo1al"]
+bg_color = Color(0.1562, 0.1562, 0.22, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vuw4"]
+bg_color = Color(0.4047, 0.4047, 0.57, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5hkm"]
+bg_color = Color(0.2698, 0.2698, 0.38, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hewcl"]
+bg_color = Color(0.497, 0.497, 0.7, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_ytnj7"]
+font = ExtResource("3_0m4i0")
+font_size = 60
+shadow_size = 0
+shadow_color = Color(0.1988, 0.1988, 0.28, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vah7m"]
+content_margin_left = 20.0
+bg_color = Color(0.186, 0.186, 0.3, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.48, 0.8, 0.32, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw1qg"]
+content_margin_left = 20.0
+bg_color = Color(0.186, 0.186, 0.3, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.24, 0.24, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="GameCustomize" type="Control"]
 layout_mode = 3
@@ -28,6 +108,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(960, 540)
 script = ExtResource("1_rm477")
 
 [node name="Background Color" type="ColorRect" parent="."]
@@ -93,20 +174,191 @@ caret_blink = true
 caret_blink_interval = 0.5
 script = ExtResource("5_rf85h")
 
-[node name="Topbar" type="PanelContainer" parent="."]
+[node name="Topbar" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.018
+anchor_top = 0.034
+anchor_right = 0.983
+anchor_bottom = 0.13
+offset_left = -0.560001
+offset_top = 0.279999
+offset_right = -0.360107
+offset_bottom = 0.599991
+
+[node name="Back Button" type="Button" parent="Topbar"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.018
-anchor_top = 0.03
-anchor_right = 0.983
-anchor_bottom = 0.133
-offset_left = -0.560001
-offset_top = -0.400002
-offset_right = -0.360107
-offset_bottom = 0.360001
-theme_override_styles/panel = SubResource("StyleBoxEmpty_je0de")
+offset_right = 260.0
+offset_bottom = 104.0
+pivot_offset = Vector2(0, 52)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_rfjjx")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxFlat_58a2q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xo1al")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6vuw4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r5hkm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hewcl")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+alignment = 0
+text_direction = 1
+script = ExtResource("7_tpu2r")
+
+[node name="Text" type="Label" parent="Topbar/Back Button"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 103.0
+offset_top = -51.0
+offset_right = 229.0
+offset_bottom = 52.0
+grow_vertical = 2
+text = "Back"
+label_settings = SubResource("LabelSettings_ytnj7")
+vertical_alignment = 1
+justification_flags = 1
+
+[node name="Back Icon" type="TextureRect" parent="Topbar/Back Button"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = -39.0
+offset_right = 94.0
+offset_bottom = 41.0
+grow_vertical = 2
+texture = ExtResource("8_r4qcl")
+expand_mode = 1
+
+[node name="Confirm Icon" type="TextureRect" parent="Topbar/Back Button"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -88.0
+offset_right = 6.60002e+06
+offset_bottom = 6.59997e+06
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(55, 55)
+texture = ExtResource("9_ickrr")
+
+[node name="Time Panel" type="Panel" parent="Topbar"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -489.0
+offset_right = 0.00012207
+offset_bottom = 104.0
+grow_horizontal = 0
+pivot_offset = Vector2(244, 52)
+theme_override_styles/panel = SubResource("StyleBoxFlat_vah7m")
+
+[node name="Time Icon" type="TextureRect" parent="Topbar/Time Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -32.0
+offset_right = 88.0
+offset_bottom = 38.0
+grow_vertical = 2
+texture = ExtResource("10_2rlk0")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="Topbar/Time Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -36.0
+offset_right = 472.0
+offset_bottom = 36.0
+grow_vertical = 2
+pivot_offset = Vector2(189, 36)
+theme_override_fonts/normal_font = ExtResource("3_0m4i0")
+theme_override_fonts/mono_font = ExtResource("11_hwyrr")
+theme_override_fonts/italics_font = ExtResource("12_krtvx")
+theme_override_fonts/bold_italics_font = ExtResource("13_4jpn8")
+theme_override_fonts/bold_font = ExtResource("14_2odev")
+theme_override_font_sizes/bold_italics_font_size = 60
+theme_override_font_sizes/italics_font_size = 60
+theme_override_font_sizes/mono_font_size = 60
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+text = "time text∞"
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+drag_and_drop_selection_enabled = false
+
+[node name="Lives Panel" type="Panel" parent="Topbar"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1028.0
+offset_right = -571.0
+offset_bottom = 104.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sw1qg")
+
+[node name="Heart Icon" type="TextureRect" parent="Topbar/Lives Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -31.0
+offset_right = 88.0
+offset_bottom = 39.0
+grow_vertical = 2
+texture = ExtResource("15_0hhm4")
+expand_mode = 1
+
+[node name="Text" type="RichTextLabel" parent="Topbar/Lives Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -36.0
+offset_right = 436.0
+offset_bottom = 36.0
+grow_vertical = 2
+pivot_offset = Vector2(171, 36)
+theme_override_fonts/normal_font = ExtResource("3_0m4i0")
+theme_override_fonts/mono_font = ExtResource("11_hwyrr")
+theme_override_fonts/italics_font = ExtResource("12_krtvx")
+theme_override_fonts/bold_italics_font = ExtResource("13_4jpn8")
+theme_override_fonts/bold_font = ExtResource("14_2odev")
+theme_override_font_sizes/bold_italics_font_size = 60
+theme_override_font_sizes/italics_font_size = 60
+theme_override_font_sizes/mono_font_size = 60
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+text = "health text∞"
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+drag_and_drop_selection_enabled = false
 
 [connection signal="focus_entered" from="WordSubmission" to="WordSubmission" method="_on_focus_entered"]
 [connection signal="focus_exited" from="WordSubmission" to="WordSubmission" method="_on_focus_exited"]
 [connection signal="text_changed" from="WordSubmission" to="." method="_on_text_changed"]
 [connection signal="text_submitted" from="WordSubmission" to="." method="_on_text_submitted"]
+[connection signal="pressed" from="Topbar/Back Button" to="Topbar/Back Button" method="_on_pressed"]

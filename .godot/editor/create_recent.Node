@@ -1,3 +1,8 @@
+RichTextLabel
+Panel
+Control
+AspectRatioContainer
+Container
 PanelContainer
 Timer
 CenterContainer
@@ -6,10 +11,5 @@ GridContainer
 HBoxContainer
 ColorPicker
 VBoxContainer
-Control
 Label
-Panel
 ColorPickerButton
-ColorRect
-ScrollContainer
-VScrollBar

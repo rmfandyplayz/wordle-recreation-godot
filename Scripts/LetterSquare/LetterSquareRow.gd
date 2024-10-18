@@ -14,7 +14,7 @@ var currentSquareNumber : int = 0 #for use in cloning
 func CloneSquares(cloneAmount : int):
 	#clone them
 	for i in range(cloneAmount):
-		var newSquare =  letterSquare.instantiate()
+		var newSquare = letterSquare.instantiate()
 		letterSquareParent.add_child(newSquare)
 		newSquare.name = "LetterSquare%d" % currentSquareNumber
 		currentSquareNumber += 1
@@ -26,7 +26,7 @@ func CloneSquares(cloneAmount : int):
 		tween.tween_property(i, "self_modulate", Color("67671fff"), .8)
 
 		await get_tree().create_timer(0.1).timeout
-	await get_tree().create_timer(0.1 * len(squares)).timeout
+	await get_tree().create_timer(0.7 + 0.1*cloneAmount).timeout
 	
 
 
