@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=49 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://4gem1vaktu4t" path="res://Media/UserInterface/Skull.png" id="14_j6uud"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/KinneyJumpscare.gd" id="18_rcfa2"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/Customize.gd" id="20_s55qk"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/Settings.gd" id="27_u85r4"]
 [ext_resource type="Material" uid="uid://fq7cjre7t2d8" path="res://Shaders/Blur.tres" id="28_uxq5y"]
 [ext_resource type="StyleBox" uid="uid://ctf2j8fuup86y" path="res://ThemeOverrides/Panels/PanelPrimaryCol.tres" id="29_23b5b"]
 [ext_resource type="Texture2D" uid="uid://c7rttn0xbmgyo" path="res://Media/UserInterface/X.png" id="30_vuehy"]
@@ -144,6 +145,7 @@ grow_vertical = 2
 [node name="JumpscareAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_0kli2")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="Background Color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -403,6 +405,7 @@ icon = ExtResource("13_op5nv")
 alignment = 0
 clip_text = true
 text_direction = 1
+script = ExtResource("27_u85r4")
 
 [node name="Mr Kinney Jumpscare" type="Button" parent="Buttons"]
 anchors_preset = -1
@@ -453,10 +456,10 @@ mouse_default_cursor_shape = 8
 [node name="Panel" type="Panel" parent="Customize Game Options/Blur BG"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.49
-anchor_top = 0.499
-anchor_right = 0.49
-anchor_bottom = 0.499
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -335.8
 offset_top = -404.92
 offset_right = 334.2
@@ -684,13 +687,105 @@ texture = ExtResource("7_wydoj")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
+[node name="Settings" type="Node" parent="."]
+
+[node name="Blur BG" type="Panel" parent="Settings"]
+top_level = true
+z_index = 10
+z_as_relative = false
+material = ExtResource("28_uxq5y")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 8
+
+[node name="Panel" type="Panel" parent="Settings/Blur BG"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -262.0
+offset_right = 530.0
+offset_bottom = 263.0
+pivot_offset = Vector2(530, 262)
+theme_override_styles/panel = ExtResource("29_23b5b")
+
+[node name="Close Button" type="Button" parent="Settings/Blur BG/Panel"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -94.0001
+offset_top = 46.0
+offset_right = -44.0001
+offset_bottom = 96.0
+pivot_offset = Vector2(25, 25)
+mouse_default_cursor_shape = 2
+script = ExtResource("31_btlme")
+
+[node name="Close Icon" type="TextureRect" parent="Settings/Blur BG/Panel/Close Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.88
+anchor_top = -0.92
+anchor_right = 1.88
+anchor_bottom = -0.92
+offset_left = -129.0
+offset_top = 11.0
+offset_right = -9.00001
+offset_bottom = 131.0
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(60, 60)
+mouse_filter = 2
+texture = ExtResource("30_vuehy")
+
+[node name="Customize Icon" type="TextureRect" parent="Settings/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 130.0
+offset_bottom = 130.0
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(60, 60)
+texture = ExtResource("13_op5nv")
+
+[node name="Customize Text" type="Label" parent="Settings/Blur BG/Panel"]
+layout_mode = 1
+offset_left = 130.0
+offset_top = 5.0
+offset_right = 503.0
+offset_bottom = 135.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_fo4v4")
+vertical_alignment = 1
+justification_flags = 1
+
+[node name="HSlider" type="HSlider" parent="Settings/Blur BG/Panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 199.0
+offset_right = 1039.0
+offset_bottom = 268.0
+
 [connection signal="mouse_entered" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Play/Customize" to="Buttons/Play/Customize" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Settings" to="Buttons/Settings" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Mr Kinney Jumpscare" to="Buttons/Mr Kinney Jumpscare" method="_on_pressed"]
 [connection signal="pressed" from="Customize Game Options/Blur BG/Panel/Close Button" to="Customize Game Options/Blur BG/Panel/Close Button" method="_on_pressed"]
 [connection signal="text_changed" from="Customize Game Options/Blur BG/Panel/WordChoiceInput" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_word_choice_input_text_changed"]
 [connection signal="text_changed" from="Customize Game Options/Blur BG/Panel/LivesInput" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_lives_input_text_changed"]
 [connection signal="text_changed" from="Customize Game Options/Blur BG/Panel/TimeLimitInput" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_time_limit_input_text_changed"]
 [connection signal="pressed" from="Customize Game Options/Blur BG/Panel/Start Button" to="Customize Game Options/Blur BG/Panel/Start Button" method="_on_pressed"]
+[connection signal="pressed" from="Settings/Blur BG/Panel/Close Button" to="Settings/Blur BG/Panel/Close Button" method="_on_pressed"]

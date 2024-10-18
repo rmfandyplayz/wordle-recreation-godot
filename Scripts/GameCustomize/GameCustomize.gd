@@ -135,6 +135,7 @@ func _on_text_submitted(new_text: String) -> void:
 	
 	#check if they even entered all the words
 	if(len($WordSubmission.text) != wordLength and makeInactive == false):
+		#plays the effect on the textbox if they didn't enter all the words needed
 		makeInactive = true
 		$WordSubmission.editable = false
 		$WordSubmission.self_modulate = Color("#ff6666")
@@ -154,7 +155,7 @@ func _on_text_submitted(new_text: String) -> void:
 		$WordSubmission.editable = true
 		return
 	
-	#otherwise, do the actual checking
+	#otherwise, do the actual checking of word correctedness
 	elif(len($WordSubmission.text) == wordLength and makeInactive == false):
 		preventSignal = true
 		makeInactive = true
@@ -168,6 +169,7 @@ func _on_text_submitted(new_text: String) -> void:
 			if infiniteLives == false:
 				TakeDamage()
 			
+			#clone another row of squares and restart the timer if appropriate
 			if gameOver == false:
 				await CloneRow()
 				$Scrolling.scroll_vertical = $Scrolling.get_v_scroll_bar().max_value
@@ -176,5 +178,7 @@ func _on_text_submitted(new_text: String) -> void:
 				$WordSubmission.editable = true
 				preventSignal = false
 				makeInactive = false
-				stopTimer = false
-				StartTimer()
+				
+				if(infiniteTime == false):
+					stopTimer = false
+					StartTimer()

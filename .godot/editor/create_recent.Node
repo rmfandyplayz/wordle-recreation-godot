@@ -1,3 +1,4 @@
+HSlider
 RichTextLabel
 Panel
 Control
@@ -12,4 +13,3 @@ HBoxContainer
 ColorPicker
 VBoxContainer
 Label
-ColorPickerButton
