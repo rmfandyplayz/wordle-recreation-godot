@@ -1,3 +1,4 @@
+PanelContainer
 Timer
 CenterContainer
 CanvasLayer
@@ -12,4 +13,3 @@ ColorPickerButton
 ColorRect
 ScrollContainer
 VScrollBar
-CodeEdit

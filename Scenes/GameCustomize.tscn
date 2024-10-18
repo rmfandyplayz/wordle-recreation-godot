@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d534c33ufvdx"]
+[gd_scene load_steps=8 format=3 uid="uid://d534c33ufvdx"]
 
 [ext_resource type="Script" path="res://Scripts/GameCustomize/GameCustomize.gd" id="1_rm477"]
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="3_0m4i0"]
@@ -18,6 +18,8 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_je0de"]
 
 [node name="GameCustomize" type="Control"]
 layout_mode = 3
@@ -90,6 +92,19 @@ deselect_on_focus_loss_enabled = false
 caret_blink = true
 caret_blink_interval = 0.5
 script = ExtResource("5_rf85h")
+
+[node name="Topbar" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.03
+anchor_right = 0.983
+anchor_bottom = 0.133
+offset_left = -0.560001
+offset_top = -0.400002
+offset_right = -0.360107
+offset_bottom = 0.360001
+theme_override_styles/panel = SubResource("StyleBoxEmpty_je0de")
 
 [connection signal="focus_entered" from="WordSubmission" to="WordSubmission" method="_on_focus_entered"]
 [connection signal="focus_exited" from="WordSubmission" to="WordSubmission" method="_on_focus_exited"]

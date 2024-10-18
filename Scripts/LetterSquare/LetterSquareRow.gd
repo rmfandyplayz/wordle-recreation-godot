@@ -52,7 +52,7 @@ func ChangeSquaresText(oldText : String, newText : String):
 
 #plays the animation and returns true/false if the player has won
 func CheckSquares(submittedText : String) -> bool:
-	var correctWord : String = GlobalVariables.wordChoice
+	var correctWord : String = GlobalVariables.wordChoice.to_upper()
 	var squaresList = letterSquareParent.get_children()
 	
 	

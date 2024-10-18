@@ -2,7 +2,7 @@ extends Control
 
 #handles a majority of the logic for this scene
 
-var wordChoice : String = GlobalVariables.wordChoice
+var wordChoice : String = GlobalVariables.wordChoice.to_upper()
 var lives : int = GlobalVariables.lives
 var timeLimit : int = GlobalVariables.timeLimit
 
@@ -17,6 +17,8 @@ var currentRowNumber : int = 0
 
 
 func _ready() -> void:
+	#GlobalVariables.wordChoice = GlobalVariables.wordChoice.to_upper()
+	
 	$WordSubmission.max_length = wordLength
 	$WordSubmission.editable = false
 	await CloneRow()
@@ -43,6 +45,8 @@ func CloneRow() -> void:
 #updates the squares correctly and plays the correct animations
 var preventSignal = false
 func _on_text_changed(new_text: String) -> void:
+	new_text = new_text.to_upper()
+	
 	if preventSignal == false:
 		currentRow.ChangeSquaresText(currentText, new_text)
 		currentText = new_text
@@ -52,6 +56,8 @@ func _on_text_changed(new_text: String) -> void:
 #checks the correctness of the word and does stuff appropriately
 var makeInactive = false
 func _on_text_submitted(new_text: String) -> void:
+	new_text = new_text.to_upper()
+	
 	#check if they even entered all the words
 	if(len($WordSubmission.text) != wordLength and makeInactive == false):
 		makeInactive = true
