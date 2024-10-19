@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=56 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://4gem1vaktu4t" path="res://Media/UserInterface/Skull.png" id="14_j6uud"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/KinneyJumpscare.gd" id="18_rcfa2"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/Customize.gd" id="20_s55qk"]
-[ext_resource type="Script" path="res://Scripts/MainMenu/Settings.gd" id="27_u85r4"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/OpenSettingsButton.gd" id="27_u85r4"]
 [ext_resource type="Material" uid="uid://fq7cjre7t2d8" path="res://Shaders/Blur.tres" id="28_uxq5y"]
 [ext_resource type="StyleBox" uid="uid://ctf2j8fuup86y" path="res://ThemeOverrides/Panels/PanelPrimaryCol.tres" id="29_23b5b"]
 [ext_resource type="Texture2D" uid="uid://c7rttn0xbmgyo" path="res://Media/UserInterface/X.png" id="30_vuehy"]
@@ -36,6 +36,10 @@
 [ext_resource type="StyleBox" uid="uid://bm1yes0bdp23s" path="res://ThemeOverrides/TextEdit/TextEditFocus.tres" id="31_nahbe"]
 [ext_resource type="StyleBox" uid="uid://btr1rmm8f8e4h" path="res://ThemeOverrides/TextEdit/TextEditDefault.tres" id="31_v7rbi"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/CustomizeStartButton.gd" id="33_8bybv"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/Settings.gd" id="37_21dpp"]
+[ext_resource type="Texture2D" uid="uid://dl162m5jfis3b" path="res://Media/UserInterface/Volume.png" id="37_jl2xf"]
+[ext_resource type="Texture2D" uid="uid://lh7cck1268pu" path="res://Media/UserInterface/Music Note.png" id="38_r1h1b"]
+[ext_resource type="Texture2D" uid="uid://c0ioprdylcesp" path="res://Media/UserInterface/Sound.png" id="39_kpqqe"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0kli2"]
 playback_mode = 1
@@ -133,6 +137,33 @@ font = ExtResource("9_cag5l")
 font_size = 60
 shadow_size = 0
 shadow_color = Color(0.1988, 0.1988, 0.28, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mjva"]
+bg_color = Color(0.176471, 0.176471, 0.25098, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytw8h"]
+bg_color = Color(0.1953, 0.390915, 0.63, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxnsp"]
+bg_color = Color(0.133333, 0.494118, 0.941176, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -688,6 +719,7 @@ expand_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="Settings" type="Node" parent="."]
+script = ExtResource("37_21dpp")
 
 [node name="Blur BG" type="Panel" parent="Settings"]
 top_level = true
@@ -770,12 +802,121 @@ label_settings = SubResource("LabelSettings_fo4v4")
 vertical_alignment = 1
 justification_flags = 1
 
-[node name="HSlider" type="HSlider" parent="Settings/Blur BG/Panel"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 199.0
-offset_right = 1039.0
-offset_bottom = 268.0
+[node name="Master Volume" type="HSlider" parent="Settings/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.503
+anchor_right = 0.5
+anchor_bottom = 0.503
+offset_left = -428.0
+offset_top = -77.075
+offset_right = 429.0
+offset_bottom = 42.925
+grow_horizontal = 2
+pivot_offset = Vector2(428, 60)
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("37_jl2xf")
+theme_override_icons/grabber_highlight = ExtResource("37_jl2xf")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4mjva")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ytw8h")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pxnsp")
+value = 80.0
+rounded = true
+
+[node name="Master Volume Text" type="Label" parent="Settings/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.096
+anchor_top = 0.5
+anchor_right = 0.096
+anchor_bottom = 0.5
+offset_left = 14.24
+offset_top = -68.5
+offset_right = 291.24
+offset_bottom = -31.5
+text = "MASTER VOLUME"
+label_settings = SubResource("LabelSettings_gn5ru")
+vertical_alignment = 1
+justification_flags = 1
+
+[node name="Music Volume" type="HSlider" parent="Settings/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285
+anchor_top = 0.752
+anchor_right = 0.285
+anchor_bottom = 0.752
+offset_left = -200.1
+offset_top = -59.8
+offset_right = 199.9
+offset_bottom = 60.2
+grow_horizontal = 2
+pivot_offset = Vector2(200, 60)
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("38_r1h1b")
+theme_override_icons/grabber_highlight = ExtResource("38_r1h1b")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4mjva")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ytw8h")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pxnsp")
+value = 20.0
+rounded = true
+
+[node name="Music Volume Text" type="Label" parent="Settings/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.474
+anchor_top = 0.752
+anchor_right = 0.474
+anchor_bottom = 0.752
+offset_left = -290.44
+offset_top = -52.8
+offset_right = -13.44
+offset_bottom = -15.8
+text = "MUSIC"
+label_settings = SubResource("LabelSettings_gn5ru")
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 1
+text_direction = 1
+
+[node name="SFX Volume" type="HSlider" parent="Settings/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.716
+anchor_top = 0.752
+anchor_right = 0.716
+anchor_bottom = 0.752
+offset_left = -199.96
+offset_top = -59.8
+offset_right = 200.04
+offset_bottom = 60.2
+grow_horizontal = 2
+pivot_offset = Vector2(200, 60)
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("39_kpqqe")
+theme_override_icons/grabber_highlight = ExtResource("39_kpqqe")
+theme_override_styles/slider = SubResource("StyleBoxFlat_4mjva")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ytw8h")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pxnsp")
+value = 75.0
+rounded = true
+
+[node name="SFX Volume Text" type="Label" parent="Settings/Blur BG/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.527
+anchor_top = 0.751
+anchor_right = 0.527
+anchor_bottom = 0.751
+offset_left = 13.38
+offset_top = -52.275
+offset_right = 290.38
+offset_bottom = -15.275
+text = "SFX"
+label_settings = SubResource("LabelSettings_gn5ru")
+vertical_alignment = 1
+justification_flags = 1
 
 [connection signal="mouse_entered" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_exited"]

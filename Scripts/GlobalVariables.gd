@@ -1,6 +1,8 @@
 extends Node
 
-var volume : int
+var masterVolume
+var musicVolume
+var sfxVolume
 
 var wordChoice : String
 var lives : int
