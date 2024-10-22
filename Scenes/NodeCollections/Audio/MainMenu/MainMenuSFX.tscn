@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c66nfmb02p35t"]
+
+[ext_resource type="AudioStream" uid="uid://clev7p0c35pq3" path="res://Media/Audio/Sounds/MainMenu/aughhhhh.mp3" id="1_28i2n"]
+[ext_resource type="AudioStream" uid="uid://b711ykb5eiyln" path="res://Media/Audio/Sounds/MainMenu/Get out.mp3" id="2_v0tp2"]
+[ext_resource type="AudioStream" uid="uid://bjsxsqjqncpow" path="res://Media/Audio/Sounds/MainMenu/megalovania first 4 notes.mp3" id="3_2d5u4"]
+[ext_resource type="AudioStream" uid="uid://cj8nty2ma3053" path="res://Media/Audio/Sounds/MainMenu/undertale button hover.mp3" id="4_qviwy"]
+
+[node name="MainMenuSfx" type="Node"]
+
+[node name="Aughhhhh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_28i2n")
+
+[node name="GetOut" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_v0tp2")
+
+[node name="MegalovaniaFirst4Notes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2d5u4")
+
+[node name="UndertaleButtonHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qviwy")
