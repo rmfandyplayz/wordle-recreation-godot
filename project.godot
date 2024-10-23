@@ -32,6 +32,10 @@ window/vsync/vsync_mode=2
 
 project/assembly_name="Project 1 - Wordle"
 
+[global_group]
+
+buttonHover=""
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -1,8 +1,11 @@
-[gd_scene load_steps=56 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=59 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
+[ext_resource type="PackedScene" uid="uid://c66nfmb02p35t" path="res://Scenes/NodeCollections/Audio/MainMenu/MainMenuSFX.tscn" id="1_4y6x6"]
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="1_gk1ax"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/MainMenu.gd" id="1_n58w0"]
+[ext_resource type="Script" path="res://Scripts/DataManager.gd" id="2_1b432"]
 [ext_resource type="AudioStream" uid="uid://cdcqajf0mhxku" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf2.mp3" id="2_d5ssk"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="2_x0tv6"]
 [ext_resource type="StyleBox" uid="uid://dipna67hs4di4" path="res://ThemeOverrides/Button - General/ButtonFocus.tres" id="3_h0sxj"]
@@ -172,6 +175,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n58w0")
+
+[node name="DataSaveManager" type="Node" parent="."]
+editor_description = "handles saving/loading of user data such as stuff from the options menu so they dont gotta change that stuff 24/7"
+script = ExtResource("2_1b432")
+
+[node name="MainMenuSfx" parent="." instance=ExtResource("1_4y6x6")]
 
 [node name="JumpscareAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_0kli2")
@@ -230,7 +240,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Buttons" type="Node" parent="."]
 
-[node name="Play" type="Button" parent="Buttons"]
+[node name="Play" type="Button" parent="Buttons" groups=["buttonHover"]]
 anchors_preset = -1
 anchor_left = 0.055
 anchor_top = 0.523
@@ -300,7 +310,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(55, 55)
 texture = ExtResource("10_q5nhp")
 
-[node name="Default Preset" type="Button" parent="Buttons/Play"]
+[node name="Default Preset" type="Button" parent="Buttons/Play" groups=["buttonHover"]]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -354,7 +364,7 @@ offset_bottom = 60.0
 grow_vertical = 2
 texture = ExtResource("7_wydoj")
 
-[node name="Customize" type="Button" parent="Buttons/Play"]
+[node name="Customize" type="Button" parent="Buttons/Play" groups=["buttonHover"]]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -411,7 +421,7 @@ scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(60, 60)
 texture = ExtResource("11_jmyay")
 
-[node name="Settings" type="Button" parent="Buttons"]
+[node name="Settings" type="Button" parent="Buttons" groups=["buttonHover"]]
 anchors_preset = -1
 anchor_left = 0.055
 anchor_top = 0.676
@@ -438,7 +448,7 @@ clip_text = true
 text_direction = 1
 script = ExtResource("27_u85r4")
 
-[node name="Mr Kinney Jumpscare" type="Button" parent="Buttons"]
+[node name="Mr Kinney Jumpscare" type="Button" parent="Buttons" groups=["buttonHover"]]
 anchors_preset = -1
 anchor_left = 0.055
 anchor_top = 0.829
@@ -499,7 +509,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(335, 405)
 theme_override_styles/panel = ExtResource("29_23b5b")
 
-[node name="Close Button" type="Button" parent="Customize Game Options/Blur BG/Panel"]
+[node name="Close Button" type="Button" parent="Customize Game Options/Blur BG/Panel" groups=["buttonHover"]]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -659,7 +669,7 @@ caret_blink = true
 caret_blink_interval = 0.5
 caret_mid_grapheme = true
 
-[node name="Start Button" type="Button" parent="Customize Game Options/Blur BG/Panel"]
+[node name="Start Button" type="Button" parent="Customize Game Options/Blur BG/Panel" groups=["buttonHover"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -720,6 +730,9 @@ metadata/_edit_lock_ = true
 
 [node name="Settings" type="Node" parent="."]
 script = ExtResource("37_21dpp")
+masterBusIndex = null
+musicBusIndex = null
+sfxBusIndex = null
 
 [node name="Blur BG" type="Panel" parent="Settings"]
 top_level = true
@@ -748,7 +761,7 @@ offset_bottom = 263.0
 pivot_offset = Vector2(530, 262)
 theme_override_styles/panel = ExtResource("29_23b5b")
 
-[node name="Close Button" type="Button" parent="Settings/Blur BG/Panel"]
+[node name="Close Button" type="Button" parent="Settings/Blur BG/Panel" groups=["buttonHover"]]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -821,8 +834,9 @@ theme_override_icons/grabber_highlight = ExtResource("37_jl2xf")
 theme_override_styles/slider = SubResource("StyleBoxFlat_4mjva")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ytw8h")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pxnsp")
-value = 80.0
-rounded = true
+max_value = 1.0
+step = 0.001
+value = 0.5
 
 [node name="Master Volume Text" type="Label" parent="Settings/Blur BG/Panel"]
 layout_mode = 1
@@ -859,8 +873,9 @@ theme_override_icons/grabber_highlight = ExtResource("38_r1h1b")
 theme_override_styles/slider = SubResource("StyleBoxFlat_4mjva")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ytw8h")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pxnsp")
-value = 20.0
-rounded = true
+max_value = 1.0
+step = 0.01
+value = 0.25
 
 [node name="Music Volume Text" type="Label" parent="Settings/Blur BG/Panel"]
 layout_mode = 1
@@ -899,8 +914,9 @@ theme_override_icons/grabber_highlight = ExtResource("39_kpqqe")
 theme_override_styles/slider = SubResource("StyleBoxFlat_4mjva")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ytw8h")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pxnsp")
-value = 75.0
-rounded = true
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="SFX Volume Text" type="Label" parent="Settings/Blur BG/Panel"]
 layout_mode = 1

@@ -9,12 +9,16 @@
 
 [node name="Aughhhhh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_28i2n")
+bus = &"SFX"
 
 [node name="GetOut" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_v0tp2")
+bus = &"SFX"
 
 [node name="MegalovaniaFirst4Notes" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2d5u4")
+bus = &"SFX"
 
 [node name="UndertaleButtonHover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qviwy")
+bus = &"SFX"
