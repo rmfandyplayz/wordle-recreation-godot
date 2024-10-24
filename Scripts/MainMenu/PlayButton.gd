@@ -86,12 +86,13 @@ func SwitchToPlayOptionsMenu() -> void:
 	await tween2.finished
 	tween2.kill()
 	
-	#enable play options menu (default, customize, etc)
+	#enable play options menu (default, customize, etc) - slide and fade in
 	#note: position is + 35
 	var tween4 = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	$"Default Preset".position.x -= 35
 	$Customize.position.x -= 35
 	
+	get_node("../../MainMenuSfx/MogusTaskOpen").play()
 	$"Default Preset".visible = true
 	$Customize.visible = true
 	tween4.tween_property($"Default Preset", "position", defPresetPos, 0.3)
@@ -114,10 +115,11 @@ func SwitchToPlayOptionsMenu() -> void:
 #this function restores the original buttons' properties
 func SwitchBackToPlayButton():
 	disabled = true
-	get_node("../../MainMenuSfx/Oof").play()
+	get_node("../../MainMenuSfx/Oof").play(0.02)
 	
-	#disable play options button (default, customize, etc)
+	#disable play options button (default, customize, etc) - slide and fade out
 	var tween4 = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	get_node("../../MainMenuSfx/MogusTaskClose").play()
 	tween4.tween_property($"Default Preset", "position", Vector2(defPresetPos.x - 35, defPresetPos.y), 0.3)
 	tween4.parallel().tween_property($Customize, "position", Vector2(customizePos.x - 35, customizePos.y), 0.3)
 	tween4.parallel().tween_property($"Default Preset", "modulate", Color.TRANSPARENT, 0.3)
