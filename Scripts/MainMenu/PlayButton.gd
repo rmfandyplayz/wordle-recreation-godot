@@ -61,12 +61,13 @@ func _on_mouse_exited() -> void:
 		
 		
 		
-#animates the transition to show the buttons that allow the player 
+#animates the transition to show the customize/default buttons
 func SwitchToPlayOptionsMenu() -> void:
 	emit_signal("mouse_entered")
 	disabled = true
 	$"../Settings".disabled = true
 	$"../Mr Kinney Jumpscare".disabled = true
+	get_node("../../MainMenuSfx/PlayButtonSound").play()
 	#note: the size for the buttons post-pressing-play should be 156 pixels in height.
 	
 	#play button transitions
@@ -113,6 +114,7 @@ func SwitchToPlayOptionsMenu() -> void:
 #this function restores the original buttons' properties
 func SwitchBackToPlayButton():
 	disabled = true
+	get_node("../../MainMenuSfx/Oof").play()
 	
 	#disable play options button (default, customize, etc)
 	var tween4 = create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)

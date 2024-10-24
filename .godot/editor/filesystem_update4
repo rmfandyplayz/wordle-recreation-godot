@@ -1,4 +1,5 @@
-res://Scenes/NodeCollections/Audio/MainMenu/MainMenuSFX.tscn
+res://Scripts/MainMenu/Settings.gd
+res://Scenes/MainMenu.tscn
 res://ThemeOverrides/Button - General/ButtonFocus.tres
 res://ThemeOverrides/Accent Button/AccentButtonDefault.tres
 res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres
@@ -7,10 +8,11 @@ res://ThemeOverrides/TextEdit/TextEditFocus.tres
 res://ThemeOverrides/TextEdit/TextEditDefault.tres
 res://ThemeOverrides/LetterSquare/Answered.tres
 res://ThemeOverrides/LetterSquare/Unanswered.tres
-res://Scenes/MainMenu.tscn
 res://Scripts/MainMenu/MainMenu.gd
+res://Scripts/ConfigFile.gd
+res://Scenes/NodeCollections/Audio/MainMenu/MainMenuSFX.tscn
 res://Scenes/GameCustomize.tscn
 res://Scenes/NodeCollections/Row.tscn
 res://Scenes/NodeCollections/LetterSquare.tscn
-res://Scripts/MainMenu/Settings.gd
-res://Scripts/DataManager.gd
+res://Scripts/GlobalVariables.gd
+res://Scripts/MainMenu/PlayButton.gd

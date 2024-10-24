@@ -1,11 +1,10 @@
-[gd_scene load_steps=59 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=58 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
 [ext_resource type="PackedScene" uid="uid://c66nfmb02p35t" path="res://Scenes/NodeCollections/Audio/MainMenu/MainMenuSFX.tscn" id="1_4y6x6"]
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="1_gk1ax"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/MainMenu.gd" id="1_n58w0"]
-[ext_resource type="Script" path="res://Scripts/DataManager.gd" id="2_1b432"]
 [ext_resource type="AudioStream" uid="uid://cdcqajf0mhxku" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf2.mp3" id="2_d5ssk"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="2_x0tv6"]
 [ext_resource type="StyleBox" uid="uid://dipna67hs4di4" path="res://ThemeOverrides/Button - General/ButtonFocus.tres" id="3_h0sxj"]
@@ -177,16 +176,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n58w0")
 
-[node name="DataSaveManager" type="Node" parent="."]
-editor_description = "handles saving/loading of user data such as stuff from the options menu so they dont gotta change that stuff 24/7"
-script = ExtResource("2_1b432")
-
 [node name="MainMenuSfx" parent="." instance=ExtResource("1_4y6x6")]
 
 [node name="JumpscareAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_0kli2")
 volume_db = -10.0
-bus = &"SFX"
 
 [node name="Background Color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -730,11 +724,9 @@ metadata/_edit_lock_ = true
 
 [node name="Settings" type="Node" parent="."]
 script = ExtResource("37_21dpp")
-masterBusIndex = null
-musicBusIndex = null
-sfxBusIndex = null
 
 [node name="Blur BG" type="Panel" parent="Settings"]
+visible = false
 top_level = true
 z_index = 10
 z_as_relative = false
@@ -758,6 +750,7 @@ offset_left = -530.0
 offset_top = -262.0
 offset_right = 530.0
 offset_bottom = 263.0
+scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(530, 262)
 theme_override_styles/panel = ExtResource("29_23b5b")
 
@@ -916,7 +909,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ytw8h")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_pxnsp")
 max_value = 1.0
 step = 0.01
-value = 0.5
+value = 0.2
 
 [node name="SFX Volume Text" type="Label" parent="Settings/Blur BG/Panel"]
 layout_mode = 1

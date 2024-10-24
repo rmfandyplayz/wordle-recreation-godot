@@ -20,6 +20,7 @@ config/icon="res://Media/Sprites/GameIcon.jpg"
 [autoload]
 
 GlobalVariables="*res://Scripts/GlobalVariables.gd"
+GlobalConfigFile="*res://Scripts/ConfigFile.gd"
 
 [display]
 

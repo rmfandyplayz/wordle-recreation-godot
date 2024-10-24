@@ -1,9 +1,9 @@
 extends Control
 
-#extra logic for main menu
+#extra logic for main menu that doesn't really fit anywhere else
 
 
-#this region of code applies a hover sound to every button here
+#this region of code applies a 
 #region Hover Sound Logic
 var hoverSound : AudioStreamPlayer
 
