@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dloqjqk3sm2jl"
+path="res://.godot/imported/Leonz - Among Us Drip Theme Song (Low Quality).mp3-35740e7b23b5fc73905058a40d7b7563.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/Leonz - Among Us Drip Theme Song (Low Quality).mp3"
+dest_files=["res://.godot/imported/Leonz - Among Us Drip Theme Song (Low Quality).mp3-35740e7b23b5fc73905058a40d7b7563.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

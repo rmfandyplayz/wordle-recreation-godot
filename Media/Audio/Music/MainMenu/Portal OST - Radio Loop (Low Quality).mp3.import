@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djmffe2m4pnsl"
+path="res://.godot/imported/Portal OST - Radio Loop (Low Quality).mp3-5a90807cc378e35d7681d78517a21951.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/Portal OST - Radio Loop (Low Quality).mp3"
+dest_files=["res://.godot/imported/Portal OST - Radio Loop (Low Quality).mp3-5a90807cc378e35d7681d78517a21951.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cufib1fbfbjl7"
+path="res://.godot/imported/Bad Piggies OST - Main Theme.mp3-a5c755d2f5342fa72ae36c07b1ba2aee.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/Bad Piggies OST - Main Theme.mp3"
+dest_files=["res://.godot/imported/Bad Piggies OST - Main Theme.mp3-a5c755d2f5342fa72ae36c07b1ba2aee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

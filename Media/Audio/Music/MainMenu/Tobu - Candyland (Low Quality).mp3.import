@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://detj358l7dnul"
+path="res://.godot/imported/Tobu - Candyland (Low Quality).mp3-9cab26f45c9628a0a09b9b7665d2fb8f.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/Tobu - Candyland (Low Quality).mp3"
+dest_files=["res://.godot/imported/Tobu - Candyland (Low Quality).mp3-9cab26f45c9628a0a09b9b7665d2fb8f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -24,7 +24,7 @@ func _ready() -> void:
 	musicVolSlider.value = db_to_linear(audioSettings.musicVolume)
 	AudioServer.set_bus_volume_db(musicBusIndex, audioSettings.musicVolume)
 	sfxVolSlider.value = db_to_linear(audioSettings.sfxVolume)
-	AudioServer.set_bus_bypass_effects(sfxBusIndex, audioSettings.sfxVolume)
+	AudioServer.set_bus_volume_db(sfxBusIndex, audioSettings.sfxVolume)
 	
 
 

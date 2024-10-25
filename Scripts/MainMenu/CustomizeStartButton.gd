@@ -78,6 +78,10 @@ func _on_pressed() -> void:
 	GlobalVariables.wordChoice = wordChoice
 	GlobalVariables.lives = lives
 	GlobalVariables.timeLimit = timeLimit
+	get_node("../../../../MainMenuSfx/StartGameSound").play()
+	
+	#"get ready" thingamajig before actually switching scene lol
+	
 	get_tree().change_scene_to_file("res://Scenes/GameCustomize.tscn")
 
 

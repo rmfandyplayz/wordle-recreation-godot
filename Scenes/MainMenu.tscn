@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=76 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
@@ -7,30 +7,46 @@
 [ext_resource type="Script" path="res://Scripts/MainMenu/MainMenu.gd" id="1_n58w0"]
 [ext_resource type="AudioStream" uid="uid://cdcqajf0mhxku" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf2.mp3" id="2_d5ssk"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="2_x0tv6"]
+[ext_resource type="AudioStream" uid="uid://djmffe2m4pnsl" path="res://Media/Audio/Music/MainMenu/Portal OST - Radio Loop (Low Quality).mp3" id="3_3twrj"]
 [ext_resource type="StyleBox" uid="uid://dipna67hs4di4" path="res://ThemeOverrides/Button - General/ButtonFocus.tres" id="3_h0sxj"]
 [ext_resource type="StyleBox" uid="uid://cd6rkfv3wd2ps" path="res://ThemeOverrides/Accent Button/AccentButtonHover.tres" id="3_rio16"]
 [ext_resource type="AudioStream" uid="uid://bcbmhoajsv6sd" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf3.mp3" id="3_sdtju"]
 [ext_resource type="StyleBox" uid="uid://bt8pb53s1st4b" path="res://ThemeOverrides/Accent Button/AccentButtonDefault.tres" id="3_ts10y"]
 [ext_resource type="AudioStream" uid="uid://ckkuerhd050q7" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf4.mp3" id="4_8deyp"]
 [ext_resource type="StyleBox" uid="uid://owgu1gepyuat" path="res://ThemeOverrides/Accent Button/AccentButtonPressed.tres" id="4_p3q3x"]
+[ext_resource type="AudioStream" uid="uid://b02t5orj4845n" path="res://Media/Audio/Music/MainMenu/Angry Birds OST - Main Theme (Low Quality).mp3" id="4_rue5s"]
 [ext_resource type="StyleBox" uid="uid://c0ymi86m77o7l" path="res://ThemeOverrides/DefaultButton/DefaultButtonNormal.tres" id="5_5r77x"]
 [ext_resource type="AudioStream" uid="uid://dam7xvojou6cj" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf5SL-1.mp3" id="5_csjwt"]
+[ext_resource type="AudioStream" uid="uid://bru15oqw7lkkr" path="res://Media/Audio/Music/MainMenu/Silent Partner - Spring In My Step (Low Quality).mp3" id="5_p1qji"]
+[ext_resource type="AudioStream" uid="uid://cufib1fbfbjl7" path="res://Media/Audio/Music/MainMenu/Bad Piggies OST - Main Theme.mp3" id="5_sylcd"]
 [ext_resource type="AudioStream" uid="uid://cmrgeb5tw4m3g" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf5SL-2.mp3" id="6_h4kco"]
+[ext_resource type="AudioStream" uid="uid://535q50kqtkxy" path="res://Media/Audio/Music/MainMenu/Gorillaz - 19-2000 Instrumental (Low Quality).mp3" id="6_n2r3a"]
+[ext_resource type="AudioStream" uid="uid://cwkeaj1gb5g8h" path="res://Media/Audio/Music/MainMenu/Subway Surfers OST - Main Theme (Low Quality).mp3" id="6_or8q1"]
 [ext_resource type="AudioStream" uid="uid://p5o0mj0h1185" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf6.mp3" id="7_12ggn"]
 [ext_resource type="StyleBox" uid="uid://bt4ndit5325vf" path="res://ThemeOverrides/DefaultButton/DefaultButtonHover.tres" id="7_abux4"]
+[ext_resource type="AudioStream" uid="uid://dfi0s51o2833p" path="res://Media/Audio/Music/MainMenu/TheFatRat - Xenogenesis (Low Quality).mp3" id="7_clkup"]
 [ext_resource type="Texture2D" uid="uid://bpavbjfxyn6dm" path="res://Media/UserInterface/Play.png" id="7_wydoj"]
 [ext_resource type="AudioStream" uid="uid://blgco4imjlf40" path="res://Media/Audio/Sounds/KinneyJumpscare/fnafSB.mp3" id="8_hk3py"]
 [ext_resource type="StyleBox" uid="uid://dicuqqcid0d4t" path="res://ThemeOverrides/DefaultButton/DefaultButtonPressed.tres" id="8_nn2vb"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/PlayButton.gd" id="8_ns634"]
+[ext_resource type="AudioStream" uid="uid://srhbbo4b8e45" path="res://Media/Audio/Music/MainMenu/Thomas the Tank Engine - Main Theme (Low Quality).mp3" id="8_xsijr"]
 [ext_resource type="FontFile" uid="uid://bfstxbx3ew00a" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Black.otf" id="9_cag5l"]
+[ext_resource type="AudioStream" uid="uid://dkovlv05k1j54" path="res://Media/Audio/Music/MainMenu/TheFatRat - Unity (Low Quality).mp3" id="9_gnlxd"]
 [ext_resource type="StyleBox" uid="uid://jewnl8tw2lwc" path="res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres" id="9_k5nsv"]
 [ext_resource type="Texture2D" uid="uid://bxy6tm303yx18" path="res://Media/UserInterface/Back.png" id="10_q5nhp"]
 [ext_resource type="Texture2D" uid="uid://cgwysqs26w0hq" path="res://Media/UserInterface/Wrench.png" id="11_jmyay"]
+[ext_resource type="AudioStream" uid="uid://detj358l7dnul" path="res://Media/Audio/Music/MainMenu/Tobu - Candyland (Low Quality).mp3" id="12_v4wiq"]
+[ext_resource type="AudioStream" uid="uid://bgoov76x482bo" path="res://Media/Audio/Music/MainMenu/Pharrell Williams - Happy (Low Quality).mp3" id="13_l12wq"]
 [ext_resource type="Texture2D" uid="uid://cywsdgcl07rm2" path="res://Media/UserInterface/Settings.png" id="13_op5nv"]
+[ext_resource type="AudioStream" uid="uid://2aggl36vs20w" path="res://Media/Audio/Music/MainMenu/Geometry Dash OST - Practice Mode (Low Quality).mp3" id="14_6fhwr"]
 [ext_resource type="Texture2D" uid="uid://4gem1vaktu4t" path="res://Media/UserInterface/Skull.png" id="14_j6uud"]
+[ext_resource type="AudioStream" uid="uid://dloqjqk3sm2jl" path="res://Media/Audio/Music/MainMenu/Leonz - Among Us Drip Theme Song (Low Quality).mp3" id="15_267bl"]
+[ext_resource type="AudioStream" uid="uid://cshn0ns5ndmu4" path="res://Media/Audio/Music/MainMenu/Itro & Tobu - Cloud 9 (Low Quality).mp3" id="16_kdweh"]
+[ext_resource type="AudioStream" uid="uid://df41hss8bchy" path="res://Media/Audio/Music/MainMenu/CaptainSparklez - Revenge (Low Quality).mp3" id="17_725us"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/KinneyJumpscare.gd" id="18_rcfa2"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/Customize.gd" id="20_s55qk"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/OpenSettingsButton.gd" id="27_u85r4"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/GameTitle.gd" id="28_lb7h5"]
 [ext_resource type="Material" uid="uid://fq7cjre7t2d8" path="res://Shaders/Blur.tres" id="28_uxq5y"]
 [ext_resource type="StyleBox" uid="uid://ctf2j8fuup86y" path="res://ThemeOverrides/Panels/PanelPrimaryCol.tres" id="29_23b5b"]
 [ext_resource type="Texture2D" uid="uid://c7rttn0xbmgyo" path="res://Media/UserInterface/X.png" id="30_vuehy"]
@@ -42,6 +58,27 @@
 [ext_resource type="Texture2D" uid="uid://dl162m5jfis3b" path="res://Media/UserInterface/Volume.png" id="37_jl2xf"]
 [ext_resource type="Texture2D" uid="uid://lh7cck1268pu" path="res://Media/UserInterface/Music Note.png" id="38_r1h1b"]
 [ext_resource type="Texture2D" uid="uid://c0ioprdylcesp" path="res://Media/UserInterface/Sound.png" id="39_kpqqe"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/WelcomeScreen.gd" id="42_e1h7w"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_qhbrl"]
+shuffle = true
+fade_time = 1.0
+stream_count = 15
+stream_0 = ExtResource("3_3twrj")
+stream_1 = ExtResource("4_rue5s")
+stream_2 = ExtResource("5_sylcd")
+stream_3 = ExtResource("6_n2r3a")
+stream_4 = ExtResource("12_v4wiq")
+stream_5 = ExtResource("13_l12wq")
+stream_6 = ExtResource("14_6fhwr")
+stream_7 = ExtResource("15_267bl")
+stream_8 = ExtResource("16_kdweh")
+stream_9 = ExtResource("17_725us")
+stream_10 = ExtResource("5_p1qji")
+stream_11 = ExtResource("6_or8q1")
+stream_12 = ExtResource("7_clkup")
+stream_13 = ExtResource("8_xsijr")
+stream_14 = ExtResource("9_gnlxd")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0kli2"]
 playback_mode = 1
@@ -178,6 +215,11 @@ script = ExtResource("1_n58w0")
 
 [node name="MainMenuSfx" parent="." instance=ExtResource("1_4y6x6")]
 
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_qhbrl")
+volume_db = -10.0
+bus = &"Music"
+
 [node name="JumpscareAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_0kli2")
 volume_db = -10.0
@@ -197,39 +239,31 @@ scale = Vector2(0.997855, 0.997649)
 color = Color(0.109804, 0.109804, 0.211765, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="MrKinneyJumpscare" type="TextureRect" parent="."]
-visible = false
-z_index = 1000
-z_as_relative = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_1iw1j")
-expand_mode = 1
-
 [node name="Game Title" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0546875
-anchor_top = 0.0453704
-anchor_right = 0.950333
+anchor_top = 0.045
+anchor_right = 0.531
 anchor_bottom = 0.378556
-offset_right = -549.64
+offset_top = 0.400028
+offset_right = -0.52002
 offset_bottom = 0.159973
 grow_vertical = 2
+pivot_offset = Vector2(457, 180)
 theme_override_fonts/normal_font = ExtResource("1_gk1ax")
 theme_override_fonts/bold_font = ExtResource("2_x0tv6")
 theme_override_font_sizes/bold_italics_font_size = 150
 theme_override_font_sizes/normal_font_size = 150
 theme_override_font_sizes/bold_font_size = 150
 bbcode_enabled = true
-text = "[b]andy's funny wordle gaem.[/b]"
+text = "[b]andy's funny 
+wordle gaem.[/b]"
 fit_content = true
 scroll_active = false
+autowrap_mode = 0
 shortcut_keys_enabled = false
+script = ExtResource("28_lb7h5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Buttons" type="Node" parent="."]
@@ -926,6 +960,94 @@ text = "SFX"
 label_settings = SubResource("LabelSettings_gn5ru")
 vertical_alignment = 1
 justification_flags = 1
+
+[node name="Welcome Screen" type="Node" parent="."]
+script = ExtResource("42_e1h7w")
+
+[node name="Background Color" type="ColorRect" parent="Welcome Screen"]
+visible = false
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 36.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997855, 0.997649)
+mouse_default_cursor_shape = 8
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Welcome Text Afterimage" type="RichTextLabel" parent="Welcome Screen/Background Color"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -443.5
+offset_top = -120.0
+offset_right = 443.5
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(443, 120)
+theme_override_fonts/normal_font = ExtResource("1_gk1ax")
+theme_override_fonts/bold_font = ExtResource("2_x0tv6")
+theme_override_font_sizes/bold_italics_font_size = 200
+theme_override_font_sizes/normal_font_size = 200
+theme_override_font_sizes/bold_font_size = 200
+bbcode_enabled = true
+text = "[b]welcome!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="Welcome Text" type="RichTextLabel" parent="Welcome Screen/Background Color"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -443.5
+offset_top = -120.0
+offset_right = 443.5
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(443, 120)
+theme_override_fonts/normal_font = ExtResource("1_gk1ax")
+theme_override_fonts/bold_font = ExtResource("2_x0tv6")
+theme_override_font_sizes/bold_italics_font_size = 200
+theme_override_font_sizes/normal_font_size = 200
+theme_override_font_sizes/bold_font_size = 200
+bbcode_enabled = true
+text = "[b]welcome!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="MrKinneyJumpscare" type="TextureRect" parent="."]
+visible = false
+z_index = 1000
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1iw1j")
+expand_mode = 1
 
 [connection signal="mouse_entered" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_exited"]

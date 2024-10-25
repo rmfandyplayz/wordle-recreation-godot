@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwkeaj1gb5g8h"
+path="res://.godot/imported/Subway Surfers OST - Main Theme (Low Quality).mp3-b5df37efbc86a476f2c959c0187394d6.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/Subway Surfers OST - Main Theme (Low Quality).mp3"
+dest_files=["res://.godot/imported/Subway Surfers OST - Main Theme (Low Quality).mp3-b5df37efbc86a476f2c959c0187394d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

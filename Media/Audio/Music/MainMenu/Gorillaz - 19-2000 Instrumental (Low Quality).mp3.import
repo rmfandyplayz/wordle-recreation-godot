@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://535q50kqtkxy"
+path="res://.godot/imported/Gorillaz - 19-2000 Instrumental (Low Quality).mp3-f8c989a11ca7ffe7c4972075cdcd5ee9.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/Gorillaz - 19-2000 Instrumental (Low Quality).mp3"
+dest_files=["res://.godot/imported/Gorillaz - 19-2000 Instrumental (Low Quality).mp3-f8c989a11ca7ffe7c4972075cdcd5ee9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

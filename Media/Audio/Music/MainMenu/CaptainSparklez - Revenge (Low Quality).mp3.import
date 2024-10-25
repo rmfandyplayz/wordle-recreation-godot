@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://df41hss8bchy"
+path="res://.godot/imported/CaptainSparklez - Revenge (Low Quality).mp3-32f5998bad296ffb31cd87c8a1c7d21b.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/CaptainSparklez - Revenge (Low Quality).mp3"
+dest_files=["res://.godot/imported/CaptainSparklez - Revenge (Low Quality).mp3-32f5998bad296ffb31cd87c8a1c7d21b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c66nfmb02p35t"]
+[gd_scene load_steps=12 format=3 uid="uid://c66nfmb02p35t"]
 
 [ext_resource type="AudioStream" uid="uid://clev7p0c35pq3" path="res://Media/Audio/Sounds/MainMenu/aughhhhh.mp3" id="1_28i2n"]
 [ext_resource type="AudioStream" uid="uid://b711ykb5eiyln" path="res://Media/Audio/Sounds/MainMenu/Get out.mp3" id="2_v0tp2"]
@@ -8,6 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://v47h8btll78j" path="res://Media/Audio/Sounds/MainMenu/oof.mp3" id="5_iokr6"]
 [ext_resource type="AudioStream" uid="uid://clg1bjf6vc5qh" path="res://Media/Audio/Sounds/MainMenu/mogusTaskClose.mp3" id="7_cgwsx"]
 [ext_resource type="AudioStream" uid="uid://bv7sd16eh3805" path="res://Media/Audio/Sounds/MainMenu/mogusTaskOpen.mp3" id="8_bf7ip"]
+[ext_resource type="AudioStream" uid="uid://bbemjmn8c1674" path="res://Media/Audio/Sounds/MainMenu/fnafMonitor.mp3" id="9_vshdp"]
+[ext_resource type="AudioStream" uid="uid://dwuw5mwp6bx8q" path="res://Media/Audio/Sounds/MainMenu/StartGameSound.mp3" id="10_w20ul"]
+[ext_resource type="AudioStream" uid="uid://ce2tk5k5ji0a0" path="res://Media/Audio/Sounds/MainMenu/UTEntranceSound.mp3" id="11_uni1p"]
 
 [node name="MainMenuSfx" type="Node"]
 
@@ -20,6 +23,7 @@ bus = &"SFX"
 
 [node name="MegalovaniaFirst4Notes" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2d5u4")
+volume_db = -10.0
 bus = &"Music"
 
 [node name="UndertaleButtonHover" type="AudioStreamPlayer" parent="."]
@@ -44,4 +48,19 @@ bus = &"SFX"
 [node name="MogusTaskOpen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_bf7ip")
 volume_db = -2.0
+bus = &"SFX"
+
+[node name="FnafMonitor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vshdp")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="StartGameSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_w20ul")
+volume_db = -9.0
+bus = &"SFX"
+
+[node name="UtEntranceSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_uni1p")
+volume_db = -5.0
 bus = &"SFX"

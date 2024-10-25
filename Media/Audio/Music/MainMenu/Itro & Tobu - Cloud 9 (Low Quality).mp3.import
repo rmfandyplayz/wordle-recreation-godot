@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cshn0ns5ndmu4"
+path="res://.godot/imported/Itro & Tobu - Cloud 9 (Low Quality).mp3-fa70a0d84e8dd11e60b560b86eebe283.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/Itro & Tobu - Cloud 9 (Low Quality).mp3"
+dest_files=["res://.godot/imported/Itro & Tobu - Cloud 9 (Low Quality).mp3-fa70a0d84e8dd11e60b560b86eebe283.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

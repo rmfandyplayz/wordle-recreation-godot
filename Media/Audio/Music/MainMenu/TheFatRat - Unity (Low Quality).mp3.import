@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dkovlv05k1j54"
+path="res://.godot/imported/TheFatRat - Unity (Low Quality).mp3-a55a6e8db0b7599a9c40ee5288b2245b.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/TheFatRat - Unity (Low Quality).mp3"
+dest_files=["res://.godot/imported/TheFatRat - Unity (Low Quality).mp3-a55a6e8db0b7599a9c40ee5288b2245b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

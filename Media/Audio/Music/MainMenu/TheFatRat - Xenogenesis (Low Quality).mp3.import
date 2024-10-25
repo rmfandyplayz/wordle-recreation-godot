@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfi0s51o2833p"
+path="res://.godot/imported/TheFatRat - Xenogenesis (Low Quality).mp3-032a74daa9e153fb2bb4757a065f26ef.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/TheFatRat - Xenogenesis (Low Quality).mp3"
+dest_files=["res://.godot/imported/TheFatRat - Xenogenesis (Low Quality).mp3-032a74daa9e153fb2bb4757a065f26ef.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,5 +1,6 @@
-Node
 AudioStreamPlayer2D
+AudioStreamPlayer
+Node
 HSlider
 Control
 RichTextLabel
@@ -11,5 +12,3 @@ Timer
 CenterContainer
 CanvasLayer
 GridContainer
-HBoxContainer
-ColorPicker
