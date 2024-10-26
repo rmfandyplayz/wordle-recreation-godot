@@ -80,7 +80,11 @@ func _on_pressed() -> void:
 	GlobalVariables.timeLimit = timeLimit
 	get_node("../../../../MainMenuSfx/StartGameSound").play()
 	
-	#"get ready" thingamajig before actually switching scene lol
+	#scene transition + button animation
+	await create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property(self, "scale", Vector2(1.2, 1.2), 0.1).finished
+	create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property(self, "scale", Vector2.ONE, 0.5)
+	await get_tree().create_timer(1).timeout
+	
 	
 	get_tree().change_scene_to_file("res://Scenes/GameCustomize.tscn")
 

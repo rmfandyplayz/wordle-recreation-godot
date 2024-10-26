@@ -239,7 +239,7 @@ scale = Vector2(0.997855, 0.997649)
 color = Color(0.109804, 0.109804, 0.211765, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Game Title" type="RichTextLabel" parent="."]
+[node name="Game Title" type="RichTextLabel" parent="." node_paths=PackedStringArray("objectToPulse")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0546875
@@ -264,6 +264,10 @@ scroll_active = false
 autowrap_mode = 0
 shortcut_keys_enabled = false
 script = ExtResource("28_lb7h5")
+objectToPulse = NodePath(".")
+pulseSensitivity = 5.0
+maxScale = 1.2
+minFrequency = 10.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Buttons" type="Node" parent="."]
@@ -708,7 +712,7 @@ offset_left = -355.0
 offset_top = -151.0
 offset_right = -43.0001
 offset_bottom = -47.0
-pivot_offset = Vector2(0, 52)
+pivot_offset = Vector2(156, 52)
 mouse_default_cursor_shape = 2
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.498039, 0.498039, 0.698039, 1)
@@ -1035,6 +1039,8 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 shortcut_keys_enabled = false
+
+[node name="Scene Transition" type="Node" parent="."]
 
 [node name="MrKinneyJumpscare" type="TextureRect" parent="."]
 visible = false

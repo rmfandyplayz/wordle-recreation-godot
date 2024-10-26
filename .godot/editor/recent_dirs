@@ -1,3 +1,4 @@
+res://Media/Sprites
 res://Scripts/MainMenu
 res://Scenes/NodeCollections
 res://ThemeOverrides/LetterSquare/
@@ -7,4 +8,3 @@ res://ThemeOverrides/Accent Button
 res://ThemeOverrides/TextEdit
 res://ThemeOverrides/Panels
 res://Shaders
-res://Media/Sprites
