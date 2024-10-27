@@ -73,18 +73,25 @@ func _on_time_limit_input_text_changed(new_text: String) -> void:
 
 
 #handles logic for when the button is actually pressed.
-#aka change the scenes and bring data over
+#aka play animations, change the scenes and bring data over
 func _on_pressed() -> void:
 	GlobalVariables.wordChoice = wordChoice
 	GlobalVariables.lives = lives
 	GlobalVariables.timeLimit = timeLimit
 	get_node("../../../../MainMenuSfx/StartGameSound").play()
 	
-	#scene transition + button animation
+	#scene transition + button animation + stop music
 	await create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property(self, "scale", Vector2(1.2, 1.2), 0.1).finished
 	create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property(self, "scale", Vector2.ONE, 0.5)
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(.6).timeout
 	
+	$"../Close Button".emit_signal("pressed")
+	await get_tree().create_timer(0.4).timeout
+	$"../../../..".StopMenuMusic(1.5)
+	$"../../../../Scene Transition/Background Color".visible = true
+	create_tween().tween_property($"../../../../Scene Transition/Background Color", "modulate", Color.WHITE, 0.5)
+	
+	await get_tree().create_timer(RandomNumberGenerator.new().randf_range(1.5, 3)).timeout
 	
 	get_tree().change_scene_to_file("res://Scenes/GameCustomize.tscn")
 

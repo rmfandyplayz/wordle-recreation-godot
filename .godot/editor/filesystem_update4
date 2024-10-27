@@ -1,16 +1,15 @@
+res://default_bus_layout.tres
 res://Scenes/MainMenu.tscn
-res://ThemeOverrides/LetterSquare/Answered.tres
-res://ThemeOverrides/LetterSquare/Unanswered.tres
 res://ThemeOverrides/Button - General/ButtonFocus.tres
 res://ThemeOverrides/Accent Button/AccentButtonDefault.tres
 res://ThemeOverrides/DefaultButton/DefaultButtonDisabled.tres
 res://Shaders/Blur.tres
 res://ThemeOverrides/TextEdit/TextEditFocus.tres
 res://ThemeOverrides/TextEdit/TextEditDefault.tres
+res://ThemeOverrides/LetterSquare/Answered.tres
+res://ThemeOverrides/LetterSquare/Unanswered.tres
 res://Scenes/NodeCollections/Audio/MainMenu/MainMenuSFX.tscn
 res://Scenes/GameCustomize.tscn
 res://Scenes/NodeCollections/Row.tscn
 res://Scenes/NodeCollections/LetterSquare.tscn
-res://Scripts/MainMenu/GameTitle.gd
-res://default_bus_layout.tres
-res://Scripts/MainMenu/CustomizeStartButton.gd
+res://Scripts/MainMenu/MainMenu.gd

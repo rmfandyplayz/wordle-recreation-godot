@@ -11,9 +11,31 @@ func _ready() -> void:
 		button.connect("mouse_entered", _on_button_hover)
 		
 	#plays music after a short random period of time
-	await get_tree().create_timer(RandomNumberGenerator.new().randi_range(3, 9)).timeout
-	$"MainMenuMusic".play()
+	StartMenuMusic()
+
+func _process(delta: float) -> void:
+	if isMusicFadingOut == true:
+		fadeOutTimer += delta
+		$MainMenuMusic.volume_db = lerp(-10, -80, fadeOutTimer / fadeDuration)
+		if fadeOutTimer >= fadeDuration:
+			$MainMenuMusic.stop()
+			isMusicFadingOut == false
 		
 		
 func _on_button_hover() -> void:
 	hoverSound.play()
+
+
+
+func StartMenuMusic():
+	await get_tree().create_timer(RandomNumberGenerator.new().randi_range(3, 9)).timeout
+	$"MainMenuMusic".play()
+
+
+var isMusicFadingOut : bool = false
+var fadeOutTimer : float = 0
+var fadeDuration : float = 0
+func StopMenuMusic(fadeOutDuration : float):
+	fadeDuration = fadeOutDuration
+	fadeOutTimer = 0
+	isMusicFadingOut = true
