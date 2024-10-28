@@ -78,6 +78,19 @@ func _on_pressed() -> void:
 	GlobalVariables.wordChoice = wordChoice
 	GlobalVariables.lives = lives
 	GlobalVariables.timeLimit = timeLimit
+	
+	#disable all the buttons
+	disabled = true
+	$"Default Text".self_modulate = Color("707070")
+	$"Default Icon".self_modulate = Color("707070")
+	$"../Close Button".disabled = true
+	$"../../../../Buttons/Play".disabled = true
+	$"../../../../Buttons/Settings".disabled = true
+	$"../../../../Buttons/Mr Kinney Jumpscare".disabled = true
+	$"../../../../Buttons/Play/Default Preset".disabled = true
+	$"../../../../Buttons/Play/Customize".disabled = true
+	
+	#play sound
 	get_node("../../../../MainMenuSfx/StartGameSound").play()
 	
 	#scene transition + button animation + stop music
@@ -91,7 +104,7 @@ func _on_pressed() -> void:
 	$"../../../../Scene Transition/Background Color".visible = true
 	create_tween().tween_property($"../../../../Scene Transition/Background Color", "modulate", Color.WHITE, 0.5)
 	
-	await get_tree().create_timer(RandomNumberGenerator.new().randf_range(1.5, 3)).timeout
+	await get_tree().create_timer(RandomNumberGenerator.new().randf_range(1.6, 2.5)).timeout
 	
 	get_tree().change_scene_to_file("res://Scenes/GameCustomize.tscn")
 
@@ -99,7 +112,12 @@ func _on_pressed() -> void:
 #checks whether or not all the input fields have valid properties
 func StartButtonValidation():
 	if validationRequirements.count(1) == 3:
+		#enable the button to be clicked
 		disabled = false
+		$"Default Text".self_modulate = Color("ffffff")
+		$"Default Icon".self_modulate = Color("ffffff")
 	else: 
 		disabled = true
+		$"Default Text".self_modulate = Color("707070")
+		$"Default Icon".self_modulate = Color("707070")
 		

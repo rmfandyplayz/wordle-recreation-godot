@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bit7nkp1lmmwh"
+path="res://.godot/imported/Nintento Wii OST - Mii Channel Theme (Low Quality).mp3-d4171f1cc07da58fc9aede72d92f6926.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/MainMenu/Nintento Wii OST - Mii Channel Theme (Low Quality).mp3"
+dest_files=["res://.godot/imported/Nintento Wii OST - Mii Channel Theme (Low Quality).mp3-d4171f1cc07da58fc9aede72d92f6926.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -9,6 +9,7 @@ func SetText(text : String):
 	$LetterText.text = text
 	$LetterText.self_modulate = Color("#000000")
 	self_modulate = Color("#b8c449")
+	get_node("../../../../../GameSfx/IPhoneKeyboardType").play()
 	PlayZoomInEffect(0.1, Vector2(1.1, 1.1))
 	
 	
@@ -17,6 +18,7 @@ func RemoveText():
 	self_modulate = Color("#67671f")
 	$LetterText.text = ""
 	$LetterText.self_modulate = Color("#ffffff")
+	get_node("../../../../../GameSfx/IPhoneKeyboardDelete").play()
 	PlayZoomOutEffect(0.1)
 	
 
@@ -29,6 +31,7 @@ func GetText():
 func SetCorrect():
 	$LetterText.self_modulate = Color("#ffffff")
 	self_modulate = Color("#227ef0")
+	get_node("../../../../../GameSfx/FullyCorrect").play()
 	PlayZoomInEffect(0.175, Vector2(1.3, 1.3))
 	PlayRotateShakeEffect(0.175/2, 7, 2)
 	
@@ -38,6 +41,7 @@ func SetExistsWrongPlace():
 	$LetterText.self_modulate = Color("#000000")
 	self_modulate = Color("#144d91")
 	$LetterText.self_modulate = Color("#3680d9")
+	get_node("../../../../../GameSfx/PartiallyCorrect").play()
 	PlayZoomInEffect(0.175, Vector2(1.15, 1.15))
 
 
@@ -45,6 +49,7 @@ func SetExistsWrongPlace():
 func SetDoesntExist():
 	$LetterText.self_modulate = Color("#000000")
 	self_modulate = Color("#0e3361")
+	get_node("../../../../../GameSfx/IncorrectUt").play()
 	PlayZoomInEffect(0.175, Vector2(1.05, 1.05))
 
 

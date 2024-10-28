@@ -26,7 +26,7 @@ func _ready() -> void:
 		print("[GameTitle.gd > _ready()] oh noes! audio spectrum can't be found!")
 
 func _process(delta: float) -> void:
-	if audioSpectrum:
+	if audioSpectrum and GlobalVariables.mainMenuMusicPlaying == true: 
 		var amplitude = audioSpectrum.get_magnitude_for_frequency_range(minFrequency, maxFrequency)
 		
 		#used for targetScale

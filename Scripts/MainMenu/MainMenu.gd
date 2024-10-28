@@ -19,7 +19,8 @@ func _process(delta: float) -> void:
 		$MainMenuMusic.volume_db = lerp(-10, -80, fadeOutTimer / fadeDuration)
 		if fadeOutTimer >= fadeDuration:
 			$MainMenuMusic.stop()
-			isMusicFadingOut == false
+			isMusicFadingOut = false
+			GlobalVariables.mainMenuMusicPlaying = false
 		
 		
 func _on_button_hover() -> void:
@@ -30,6 +31,7 @@ func _on_button_hover() -> void:
 func StartMenuMusic():
 	await get_tree().create_timer(RandomNumberGenerator.new().randi_range(3, 9)).timeout
 	$"MainMenuMusic".play()
+	GlobalVariables.mainMenuMusicPlaying = true
 
 
 var isMusicFadingOut : bool = false

@@ -12,4 +12,15 @@ res://Scenes/NodeCollections/Audio/MainMenu/MainMenuSFX.tscn
 res://Scenes/GameCustomize.tscn
 res://Scenes/NodeCollections/Row.tscn
 res://Scenes/NodeCollections/LetterSquare.tscn
+res://Scripts/MainMenu/CustomizeStartButton.gd
+res://Scripts/GameCustomize/BackButton.gd
+res://Scripts/LetterSquare/LetterSquareRow.gd
+res://Scripts/LetterSquare/LetterSquare.gd
+res://Scripts/GameCustomize/GameCustomize.gd
 res://Scripts/MainMenu/MainMenu.gd
+res://Scripts/GameCustomize/Scrolling.gd
+res://Scripts/GlobalVariables.gd
+res://Scripts/MainMenu/GameTitle.gd
+res://Scenes/NodeCollections/Audio/Game/GameSFX.tscn
+res://Scripts/MainMenu/SceneTransition.gd
+res://Scripts/MainMenu/Settings.gd

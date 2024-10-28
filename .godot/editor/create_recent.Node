@@ -1,9 +1,10 @@
+AudioStreamPlayer
+Label
+RichTextLabel
 Node
 AudioStreamPlayer2D
-AudioStreamPlayer
 HSlider
 Control
-RichTextLabel
 Panel
 AspectRatioContainer
 Container
@@ -11,4 +12,3 @@ PanelContainer
 Timer
 CenterContainer
 CanvasLayer
-GridContainer

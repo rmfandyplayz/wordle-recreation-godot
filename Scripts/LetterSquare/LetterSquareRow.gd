@@ -5,28 +5,44 @@ extends CenterContainer
 @onready var letterSquare = preload("res://Scenes/NodeCollections/LetterSquare.tscn")
 @onready var letterSquareParent = $Grid
 
+@onready var scrollRect : ScrollContainer = get_node("../../")
+
 var currentSquarePosition : int = 0 #for use in changeSquaresText as an index number type thing
 var currentSquareNumber : int = 0 #for use in cloning
 
+var currentCorrectPitch : int = 1 #max 1.5 - determines the pitch of the sound for getting a letter fully correct
+var correctLetterSFX : AudioStreamPlayer #the sfx for the correct sound. correlates to the above
+
+
+
+func _ready() -> void:
+	correctLetterSFX = get_node("../../../GameSfx/FullyCorrect")
 
 
 #clones the number of squares per row according to the word length from the global variables
 func CloneSquares(cloneAmount : int):
-	#clone them
+	#clone squares (but dont make them visible)
 	for i in range(cloneAmount):
 		var newSquare = letterSquare.instantiate()
 		letterSquareParent.add_child(newSquare)
 		newSquare.name = "LetterSquare%d" % currentSquareNumber
 		currentSquareNumber += 1
 	
-	#fade them in
+	
+	var scrolled : bool = false #did the scrollcontainer already scroll?
+	
+	#fade squares in
 	var squares = letterSquareParent.get_children()
 	for i in squares:
 		var tween = create_tween()
 		tween.tween_property(i, "self_modulate", Color("67671fff"), .8)
+		if scrolled == false:
+			scrollRect.ScrollDown()
+			scrolled = true
 
 		await get_tree().create_timer(0.1).timeout
-	await get_tree().create_timer(0.7 + 0.1*cloneAmount).timeout
+	await get_tree().create_timer(.8).timeout
+	#await get_tree().create_timer(0.6 + 0.1*cloneAmount).timeout
 	
 
 
@@ -63,6 +79,7 @@ func CheckSquares(submittedText : String) -> bool:
 	
 		if inputLetter == correctLetter:
 			currentSquare.SetCorrect()
+			correctLetterSFX.pitch_scale += (0.5 / wordLength)
 		elif inputLetter in correctWord:
 			currentSquare.SetExistsWrongPlace()
 		else:

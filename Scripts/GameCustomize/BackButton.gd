@@ -9,6 +9,7 @@ func _on_pressed() -> void:
 		#plays animation
 		alreadyActive = true
 		disabled = true
+		$"../../GameSfx/MogusTaskOpen".play()
 		FadeOut($Text, 0.3)
 		FadeOut($"Back Icon", 0.3)
 		ChangeObjectSize(self, Vector2(365, size.y), 0.3)
@@ -31,7 +32,10 @@ func _on_pressed() -> void:
 		FadeOut($"Confirm Icon", 0.3)
 		await get_tree().create_timer(.3).timeout
 		
+		$"../../GameSfx/MogusTaskClose".play()
 		ChangeObjectSize(self, Vector2(260, size.y), 0.3)
+		await get_tree().create_timer(.3).timeout
+		
 		$Text.text = "Back"
 		$"Back Icon".visible = true
 		$"Confirm Icon".visible = false
@@ -44,7 +48,17 @@ func _on_pressed() -> void:
 
 #disable music, play transition, etc.
 func BackToMenu():
-	print("back to menu pressed")
+	$"../../Scene Transition/Background Color".modulate = Color.TRANSPARENT
+	$"../../Scene Transition/Background Color".visible = true
+	$"../../WordSubmission".editable = false
+	GlobalVariables.isSceneTransitioning = true
+	$"../..".stopTimer = true
+	
+	$"../../GameSfx/MogusTaskOpen".play()
+	create_tween().tween_property($"../../Scene Transition/Background Color", "modulate", Color.WHITE, 0.5)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(0))
+	
+	await get_tree().create_timer(RandomNumberGenerator.new().randf_range(1.6, 2.5)).timeout
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	
 	

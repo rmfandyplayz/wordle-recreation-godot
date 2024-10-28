@@ -1,0 +1,121 @@
+[gd_scene load_steps=27 format=3 uid="uid://dt543bgny1q0i"]
+
+[ext_resource type="AudioStream" uid="uid://cdeql6o5hxvnk" path="res://Media/Audio/Sounds/GameSounds/PVZReadySetPlant.mp3" id="1_fdl86"]
+[ext_resource type="AudioStream" uid="uid://bl0dy6e1aom0a" path="res://Media/Audio/Sounds/GameSounds/robloxTrowel.mp3" id="1_nfvxr"]
+[ext_resource type="AudioStream" uid="uid://b3353m7fchxic" path="res://Media/Audio/Sounds/GameSounds/TimeUp.mp3" id="2_igfk7"]
+[ext_resource type="AudioStream" uid="uid://c6ea5tn8ld0rw" path="res://Media/Audio/Sounds/GameSounds/iPhoneKeyboardDelete.mp3" id="4_kxx0v"]
+[ext_resource type="AudioStream" uid="uid://cuc3tcafpgoc6" path="res://Media/Audio/Sounds/GameSounds/iPhoneKeyboardType.mp3" id="5_f1v7p"]
+[ext_resource type="AudioStream" uid="uid://do471xofh4lfh" path="res://Media/Audio/Sounds/GameSounds/IncorrectUT.wav" id="6_e2cvj"]
+[ext_resource type="AudioStream" uid="uid://chs2a5obi4wtr" path="res://Media/Audio/Sounds/GameSounds/PartiallyCorrect.mp3" id="7_6y6b0"]
+[ext_resource type="AudioStream" uid="uid://bdcu1yc3wm06j" path="res://Media/Audio/Sounds/GameSounds/FullyCorrect.mp3" id="7_fe0wy"]
+[ext_resource type="AudioStream" uid="uid://l2w704xsj7tc" path="res://Media/Audio/Sounds/GameSounds/LoseHealth/Bump/bump1.mp3" id="9_wjo4r"]
+[ext_resource type="AudioStream" uid="uid://d2q1ylim2a0hd" path="res://Media/Audio/Sounds/GameSounds/LoseHealth/Bump/bump2.mp3" id="10_b2bnr"]
+[ext_resource type="AudioStream" uid="uid://bem0nhjcvcewt" path="res://Media/Audio/Sounds/GameSounds/LoseHealth/Bump/bump3.mp3" id="11_mihs4"]
+[ext_resource type="AudioStream" uid="uid://dm72qdopurma6" path="res://Media/Audio/Sounds/GameSounds/LoseHealth/Bump/bump4.mp3" id="12_oq8pp"]
+[ext_resource type="AudioStream" uid="uid://wighdkintugk" path="res://Media/Audio/Sounds/GameSounds/LoseHealth/Bump/bump5.mp3" id="13_nxmci"]
+[ext_resource type="AudioStream" uid="uid://d0ilywpx1ivo4" path="res://Media/Audio/Sounds/GameSounds/LoseHealth/Crack/crack1.mp3" id="14_oxr88"]
+[ext_resource type="AudioStream" uid="uid://wujne5aj2dkt" path="res://Media/Audio/Sounds/GameSounds/LoseHealth/Crack/crack2.mp3" id="15_41jn7"]
+[ext_resource type="AudioStream" uid="uid://kvg17gh5h5ii" path="res://Media/Audio/Sounds/GameSounds/LoseHealth/Crack/crack3.mp3" id="16_usy4x"]
+[ext_resource type="AudioStream" uid="uid://cg66u5ekd3ad7" path="res://Media/Audio/Sounds/GameSounds/LoseHealth/Crack/crack4.mp3" id="17_xyq72"]
+[ext_resource type="AudioStream" uid="uid://bpjsce2qdae4v" path="res://Media/Audio/Sounds/GameSounds/VineBoom.mp3" id="18_al1s7"]
+[ext_resource type="AudioStream" uid="uid://cy3enw4ccbpl" path="res://Media/Audio/Sounds/GameSounds/LowOnTime.mp3" id="19_u5mus"]
+[ext_resource type="AudioStream" uid="uid://clg1bjf6vc5qh" path="res://Media/Audio/Sounds/MainMenu/mogusTaskClose.mp3" id="20_a3g65"]
+[ext_resource type="AudioStream" uid="uid://bv7sd16eh3805" path="res://Media/Audio/Sounds/MainMenu/mogusTaskOpen.mp3" id="21_qkdni"]
+[ext_resource type="AudioStream" uid="uid://vv4upwl5b7we" path="res://Media/Audio/Sounds/GameSounds/Death/Death1.wav" id="22_n21b2"]
+[ext_resource type="AudioStream" uid="uid://ccfpbgfacbq7l" path="res://Media/Audio/Sounds/GameSounds/Death/Death2.wav" id="23_fwpto"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_afbpw"]
+streams_count = 5
+stream_0/stream = ExtResource("9_wjo4r")
+stream_1/stream = ExtResource("10_b2bnr")
+stream_2/stream = ExtResource("11_mihs4")
+stream_3/stream = ExtResource("12_oq8pp")
+stream_4/stream = ExtResource("13_nxmci")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n0hr6"]
+streams_count = 4
+stream_0/stream = ExtResource("14_oxr88")
+stream_1/stream = ExtResource("15_41jn7")
+stream_2/stream = ExtResource("16_usy4x")
+stream_3/stream = ExtResource("17_xyq72")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_b6y5q"]
+streams_count = 2
+stream_0/stream = ExtResource("22_n21b2")
+stream_1/stream = ExtResource("23_fwpto")
+
+[node name="GameSfx" type="Node"]
+
+[node name="RobloxTrowel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_nfvxr")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="TimeUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_igfk7")
+bus = &"SFX"
+
+[node name="PvzReadySetPlant" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_fdl86")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="IPhoneKeyboardDelete" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kxx0v")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="IPhoneKeyboardType" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_f1v7p")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="IncorrectUt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_e2cvj")
+volume_db = -12.0
+bus = &"SFX"
+
+[node name="PartiallyCorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_6y6b0")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="FullyCorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_fe0wy")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="HurtBump" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_afbpw")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HurtCrack" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_n0hr6")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="VineBoom" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_al1s7")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="LowOnTime" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_u5mus")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="MogusTaskClose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_a3g65")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="MogusTaskOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_qkdni")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="Death" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_b6y5q")
+volume_db = -8.0
+bus = &"SFX"
