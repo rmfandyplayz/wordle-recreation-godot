@@ -139,13 +139,15 @@ func TakeDamage():
 	$"GameSfx/HurtBump".play()
 	$"GameSfx/HurtCrack".play()
 	SetLivesText(lives)
+			
+	if lives <= 2:
+		$"Topbar/Lives Panel/Text".self_modulate = Color.RED
 	
 	#plays that low health SFX and starts low health music (and other logic)
 	if (lives == 2 or lives == 1) and lowLives != true and lowTime != true:
 		lowLives = true
 		$Vignette.modulate = Color.TRANSPARENT
 		$Vignette.visible = true
-		$"Topbar/Lives Panel/Text".self_modulate = Color.RED
 		create_tween().tween_property($Vignette, "modulate", Color.WHITE, 0.8)
 		$"GameSfx/LowLives".play()
 		
@@ -164,9 +166,8 @@ func TakeDamage():
 		$Vignette.visible = true
 		if(lowLives != true and lowTime != true): await create_tween().tween_property($Vignette, "modulate", Color.TRANSPARENT, 1).finished
 		$Vignette.visible = false
-		
-		
-		
+	
+	
 	
 	if lives == 0:
 		GameOverDeath()
