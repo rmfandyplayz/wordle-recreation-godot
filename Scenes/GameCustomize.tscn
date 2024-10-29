@@ -1,31 +1,65 @@
-[gd_scene load_steps=28 format=3 uid="uid://d534c33ufvdx"]
+[gd_scene load_steps=48 format=3 uid="uid://d534c33ufvdx"]
 
 [ext_resource type="Script" path="res://Scripts/GameCustomize/GameCustomize.gd" id="1_rm477"]
+[ext_resource type="PackedScene" uid="uid://cqaciypm4waow" path="res://Scenes/NodeCollections/Audio/Game/GameSpecialMusic.tscn" id="2_0avj4"]
 [ext_resource type="PackedScene" uid="uid://dt543bgny1q0i" path="res://Scenes/NodeCollections/Audio/Game/GameSFX.tscn" id="2_38hvo"]
+[ext_resource type="AudioStream" uid="uid://8altbgean8ou" path="res://Media/Audio/Music/Game/Normal/Deltarune OST - My Castle Town.mp3" id="2_n6s4d"]
 [ext_resource type="Script" path="res://Scripts/GameCustomize/Scrolling.gd" id="2_yyb8r"]
 [ext_resource type="FontFile" uid="uid://ccfj421arqtql" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Regular.otf" id="3_0m4i0"]
+[ext_resource type="AudioStream" uid="uid://bh41g6u8o556d" path="res://Media/Audio/Music/Game/Normal/Deltarune OST - WELCOME TO THE CITY.mp3" id="3_v26dl"]
 [ext_resource type="StyleBox" uid="uid://bm1yes0bdp23s" path="res://ThemeOverrides/TextEdit/TextEditFocus.tres" id="4_nntpx"]
+[ext_resource type="AudioStream" uid="uid://beksa02nadd6u" path="res://Media/Audio/Music/Game/Normal/Undertale Yellow OST - Vigorous Terrain.mp3" id="4_sf4gt"]
+[ext_resource type="AudioStream" uid="uid://boralbhn35cth" path="res://Media/Audio/Music/Game/Normal/Undertale Yellow OST- Meltdown.mp3" id="5_e2kfg"]
 [ext_resource type="Script" path="res://Scripts/GameCustomize/WordSubmission.gd" id="5_rf85h"]
 [ext_resource type="StyleBox" uid="uid://btr1rmm8f8e4h" path="res://ThemeOverrides/TextEdit/TextEditDefault.tres" id="5_t344b"]
 [ext_resource type="FontFile" uid="uid://deifif008djay" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Bold.otf" id="6_rfjjx"]
+[ext_resource type="AudioStream" uid="uid://c8e0wqbb7d0cs" path="res://Media/Audio/Music/Game/Normal/Wii OST - Shop Channel Main Theme.mp3" id="6_wyp7d"]
+[ext_resource type="AudioStream" uid="uid://bgck2fi0glepb" path="res://Media/Audio/Music/Game/Normal/Kevin MacLeod - Investigations.mp3" id="7_k70xw"]
 [ext_resource type="Script" path="res://Scripts/GameCustomize/BackButton.gd" id="7_tpu2r"]
 [ext_resource type="Texture2D" uid="uid://dy8x85rugcse" path="res://Media/UserInterface/Back Arrow.png" id="8_r4qcl"]
+[ext_resource type="AudioStream" uid="uid://3vvo08clxbaf" path="res://Media/Audio/Music/Game/Normal/Kevin MacLeod - Local Forecast.mp3" id="8_uq1fi"]
+[ext_resource type="AudioStream" uid="uid://chmsdh2kf8aav" path="res://Media/Audio/Music/Game/Normal/Kevin MacLeod - Scheming Weasel.mp3" id="9_ibjkg"]
 [ext_resource type="Texture2D" uid="uid://xqri72prgkvh" path="res://Media/UserInterface/Warning.png" id="9_ickrr"]
 [ext_resource type="Texture2D" uid="uid://cbuf4lsqyhkg6" path="res://Media/UserInterface/Timer.png" id="10_2rlk0"]
+[ext_resource type="AudioStream" uid="uid://d3igux0t0enuq" path="res://Media/Audio/Music/Game/Normal/Kevin MacLeod - Sneaky Snitch.mp3" id="10_ol18n"]
+[ext_resource type="AudioStream" uid="uid://145t0mc3r76r" path="res://Media/Audio/Music/Game/Normal/Plants vs Zombies 2 OST - Demonstration Minigame (Lost City).mp3" id="11_8aplo"]
 [ext_resource type="FontFile" uid="uid://doxkha0tkud0g" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Thin.otf" id="11_hwyrr"]
+[ext_resource type="AudioStream" uid="uid://cm2tjb1schdri" path="res://Media/Audio/Music/Game/Normal/Plants vs Zombies 2 OST - Demonstration Minigame (Pirate Seas).mp3" id="12_1wjay"]
 [ext_resource type="FontFile" uid="uid://b8yr40s8yv6du" path="res://Media/Fonts/SF Pro/SF-Pro-Italic.ttf" id="12_krtvx"]
 [ext_resource type="FontFile" uid="uid://dnb3ub7ek6sqr" path="res://Media/Fonts/SF Pro/SF-Pro-Display-HeavyItalic.otf" id="13_4jpn8"]
+[ext_resource type="AudioStream" uid="uid://c0l6he3t3clvd" path="res://Media/Audio/Music/Game/Normal/Undertale OST - Hotel.mp3" id="13_qdh6h"]
 [ext_resource type="FontFile" uid="uid://b1u8eh4cchdr0" path="res://Media/Fonts/SF Pro/SF-Pro-Display-Heavy.otf" id="14_2odev"]
+[ext_resource type="AudioStream" uid="uid://b2yiwj32nv4gj" path="res://Media/Audio/Music/Game/Normal/Undertale OST - It's Raining Somewhere Else.mp3" id="14_hjgnx"]
 [ext_resource type="Texture2D" uid="uid://bw8ak0bf0mdjy" path="res://Media/UserInterface/Heart.png" id="15_0hhm4"]
+[ext_resource type="Texture2D" uid="uid://xgr0f5it3yhu" path="res://Media/UserInterface/Vignette.png" id="19_1w3ki"]
+[ext_resource type="Shader" path="res://Shaders/SpeedLines.gdshader" id="33_c60m5"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0iyfd"]
+shuffle = true
+fade_time = 1.0
+stream_count = 13
+stream_0 = ExtResource("2_n6s4d")
+stream_1 = ExtResource("3_v26dl")
+stream_2 = ExtResource("7_k70xw")
+stream_3 = ExtResource("8_uq1fi")
+stream_4 = ExtResource("9_ibjkg")
+stream_5 = ExtResource("10_ol18n")
+stream_6 = ExtResource("11_8aplo")
+stream_7 = ExtResource("12_1wjay")
+stream_8 = ExtResource("13_qdh6h")
+stream_9 = ExtResource("14_hjgnx")
+stream_10 = ExtResource("4_sf4gt")
+stream_11 = ExtResource("5_e2kfg")
+stream_12 = ExtResource("6_wyp7d")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqxg1"]
 content_margin_left = 20.0
-bg_color = Color(0.59, 0.2478, 0.2478, 1)
+bg_color = Color(0, 0, 0, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(1, 1, 1, 1)
+border_color = Color(1, 0, 0, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
@@ -109,6 +143,23 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8ptq4"]
+frequency = 0.4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ny44w"]
+noise = SubResource("FastNoiseLite_8ptq4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gncnd"]
+shader = ExtResource("33_c60m5")
+shader_parameter/line_color = Color(1, 1, 1, 0.478431)
+shader_parameter/line_count = 2.0
+shader_parameter/line_density = 0.0
+shader_parameter/line_faloff = 0.45
+shader_parameter/mask_size = 0.0
+shader_parameter/mask_edge = 0.5
+shader_parameter/animation_speed = 19.0
+shader_parameter/noise = SubResource("NoiseTexture2D_ny44w")
+
 [node name="GameCustomize" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -118,6 +169,13 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(960, 540)
 script = ExtResource("1_rm477")
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_0iyfd")
+volume_db = -8.0
+bus = &"Music"
+
+[node name="GameSpecialMusic" parent="." instance=ExtResource("2_0avj4")]
 
 [node name="GameSfx" parent="." instance=ExtResource("2_38hvo")]
 
@@ -371,7 +429,7 @@ offset_top = -36.0
 offset_right = 94.0
 offset_bottom = 37.0
 grow_vertical = 2
-pivot_offset = Vector2(171, 36)
+pivot_offset = Vector2(0, 36)
 theme_override_fonts/normal_font = ExtResource("3_0m4i0")
 theme_override_fonts/mono_font = ExtResource("11_hwyrr")
 theme_override_fonts/italics_font = ExtResource("12_krtvx")
@@ -391,6 +449,28 @@ hint_underlined = false
 drag_and_drop_selection_enabled = false
 text_direction = 1
 
+[node name="Vignette" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("19_1w3ki")
+
+[node name="Speed Lines" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gncnd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997855, 0.997649)
+mouse_filter = 2
+
 [node name="Game Over OutOfTime" type="Node" parent="."]
 
 [node name="Background Color" type="ColorRect" parent="Game Over OutOfTime"]
@@ -408,7 +488,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.997855, 0.997649)
 mouse_default_cursor_shape = 8
-color = Color(0, 0, 0, 0.6)
+color = Color(0, 0, 0, 0.745098)
 metadata/_edit_use_anchors_ = true
 
 [node name="OutOfTime" type="RichTextLabel" parent="Game Over OutOfTime/Background Color"]
@@ -540,7 +620,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.997855, 0.997649)
 mouse_default_cursor_shape = 8
-color = Color(0, 0, 0, 0.6)
+color = Color(0, 0, 0, 0.745098)
 metadata/_edit_use_anchors_ = true
 
 [node name="Dead" type="RichTextLabel" parent="Game Over Death/Background Color"]
@@ -654,6 +734,137 @@ grow_vertical = 2
 texture = ExtResource("8_r4qcl")
 expand_mode = 1
 
+[node name="Game Won" type="Node" parent="."]
+
+[node name="Background Color" type="ColorRect" parent="Game Won"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 36.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997855, 0.997649)
+mouse_default_cursor_shape = 8
+color = Color(0, 0, 0, 0.745098)
+metadata/_edit_use_anchors_ = true
+
+[node name="Won" type="RichTextLabel" parent="Game Won/Background Color"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -461.0
+offset_top = -275.5
+offset_right = 461.0
+offset_bottom = -95.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(461, 90)
+theme_override_fonts/normal_font = ExtResource("3_0m4i0")
+theme_override_fonts/bold_font = ExtResource("6_rfjjx")
+theme_override_font_sizes/bold_italics_font_size = 150
+theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/bold_font_size = 150
+bbcode_enabled = true
+text = "[center][b]You Won!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="SocialCredit" type="RichTextLabel" parent="Game Won/Background Color"]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -537.0
+offset_top = -89.5
+offset_right = 538.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(537, 55)
+theme_override_fonts/normal_font = ExtResource("3_0m4i0")
+theme_override_fonts/bold_font = ExtResource("6_rfjjx")
+theme_override_font_sizes/bold_italics_font_size = 75
+theme_override_font_sizes/normal_font_size = 75
+theme_override_font_sizes/bold_font_size = 75
+bbcode_enabled = true
+text = "[center]+1115 social credit"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="Menu Button" type="Button" parent="Game Won/Background Color"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.5
+offset_top = 126.419
+offset_right = 139.5
+offset_bottom = 230.419
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 52)
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_rfjjx")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxFlat_58a2q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xo1al")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6vuw4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r5hkm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hewcl")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+alignment = 0
+text_direction = 1
+
+[node name="Text" type="Label" parent="Game Won/Background Color/Menu Button"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 103.0
+offset_top = -51.0
+offset_right = 229.0
+offset_bottom = 52.0
+grow_vertical = 2
+text = "Menu
+"
+label_settings = SubResource("LabelSettings_ytnj7")
+vertical_alignment = 1
+justification_flags = 1
+
+[node name="Back Icon" type="TextureRect" parent="Game Won/Background Color/Menu Button"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = -39.0
+offset_right = 94.0
+offset_bottom = 41.0
+grow_vertical = 2
+texture = ExtResource("8_r4qcl")
+expand_mode = 1
+
 [node name="Scene Transition" type="Node" parent="."]
 
 [node name="Background Color" type="ColorRect" parent="Scene Transition"]
@@ -707,3 +918,4 @@ shortcut_keys_enabled = false
 [connection signal="pressed" from="Topbar/Back Button" to="Topbar/Back Button" method="_on_pressed"]
 [connection signal="pressed" from="Game Over OutOfTime/Background Color/Menu Button" to="." method="_on_gameOverTimeOut_menu_button_pressed"]
 [connection signal="pressed" from="Game Over Death/Background Color/Menu Button" to="." method="_on_gameOverDeath_menu_button_pressed"]
+[connection signal="pressed" from="Game Won/Background Color/Menu Button" to="." method="_on_gameWon_menu_button_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3igux0t0enuq"
+path="res://.godot/imported/Kevin MacLeod - Sneaky Snitch.mp3-7c690bc41b57b8c7aaa6ede3c085db1a.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/Normal/Kevin MacLeod - Sneaky Snitch.mp3"
+dest_files=["res://.godot/imported/Kevin MacLeod - Sneaky Snitch.mp3-7c690bc41b57b8c7aaa6ede3c085db1a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

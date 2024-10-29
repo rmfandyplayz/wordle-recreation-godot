@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8e0wqbb7d0cs"
+path="res://.godot/imported/Wii OST - Shop Channel Main Theme.mp3-64330f8cdf467673592e5118d9d0d64a.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/Normal/Wii OST - Shop Channel Main Theme.mp3"
+dest_files=["res://.godot/imported/Wii OST - Shop Channel Main Theme.mp3-64330f8cdf467673592e5118d9d0d64a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

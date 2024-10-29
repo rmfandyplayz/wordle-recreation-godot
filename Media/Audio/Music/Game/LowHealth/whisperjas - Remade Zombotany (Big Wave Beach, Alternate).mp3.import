@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dg3cu7nslsoc0"
+path="res://.godot/imported/whisperjas - Remade Zombotany (Big Wave Beach, Alternate).mp3-219114eead7139e4406d9a5ff52d85e6.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/LowHealth/whisperjas - Remade Zombotany (Big Wave Beach, Alternate).mp3"
+dest_files=["res://.godot/imported/whisperjas - Remade Zombotany (Big Wave Beach, Alternate).mp3-219114eead7139e4406d9a5ff52d85e6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

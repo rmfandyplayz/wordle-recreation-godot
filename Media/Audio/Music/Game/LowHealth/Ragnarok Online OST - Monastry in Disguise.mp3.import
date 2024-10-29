@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3issxxte5gii"
+path="res://.godot/imported/Ragnarok Online OST - Monastry in Disguise.mp3-513c0dd2e430bf72356daed42b80c9fc.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/LowHealth/Ragnarok Online OST - Monastry in Disguise.mp3"
+dest_files=["res://.godot/imported/Ragnarok Online OST - Monastry in Disguise.mp3-513c0dd2e430bf72356daed42b80c9fc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

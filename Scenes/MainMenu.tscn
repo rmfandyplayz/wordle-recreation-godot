@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=80 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
@@ -50,12 +50,14 @@
 [ext_resource type="Script" path="res://Scripts/MainMenu/GameTitle.gd" id="28_lb7h5"]
 [ext_resource type="Material" uid="uid://fq7cjre7t2d8" path="res://Shaders/Blur.tres" id="28_uxq5y"]
 [ext_resource type="StyleBox" uid="uid://ctf2j8fuup86y" path="res://ThemeOverrides/Panels/PanelPrimaryCol.tres" id="29_23b5b"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/extra_buttons.gd" id="30_tmkrm"]
 [ext_resource type="Texture2D" uid="uid://c7rttn0xbmgyo" path="res://Media/UserInterface/X.png" id="30_vuehy"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/CustomizeCloseButton.gd" id="31_btlme"]
 [ext_resource type="StyleBox" uid="uid://bm1yes0bdp23s" path="res://ThemeOverrides/TextEdit/TextEditFocus.tres" id="31_nahbe"]
 [ext_resource type="StyleBox" uid="uid://btr1rmm8f8e4h" path="res://ThemeOverrides/TextEdit/TextEditDefault.tres" id="31_v7rbi"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/CustomizeStartButton.gd" id="33_8bybv"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/Settings.gd" id="37_21dpp"]
+[ext_resource type="Texture2D" uid="uid://dnpjf71p2y3vn" path="res://Media/UserInterface/Github.png" id="37_epic0"]
 [ext_resource type="Texture2D" uid="uid://dl162m5jfis3b" path="res://Media/UserInterface/Volume.png" id="37_jl2xf"]
 [ext_resource type="Texture2D" uid="uid://lh7cck1268pu" path="res://Media/UserInterface/Music Note.png" id="38_r1h1b"]
 [ext_resource type="Texture2D" uid="uid://c0ioprdylcesp" path="res://Media/UserInterface/Sound.png" id="39_kpqqe"]
@@ -272,6 +274,50 @@ pulseSensitivity = 5.0
 maxScale = 1.2
 minFrequency = 10.0
 metadata/_edit_use_anchors_ = true
+
+[node name="ExtraButtons" type="Node" parent="."]
+script = ExtResource("30_tmkrm")
+
+[node name="Github" type="Button" parent="ExtraButtons" groups=["buttonHover"]]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -219.0
+offset_top = 80.0
+offset_right = -89.0
+offset_bottom = 210.0
+grow_horizontal = 0
+pivot_offset = Vector2(65, 65)
+mouse_default_cursor_shape = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/icon_max_width = 80
+theme_override_fonts/font = ExtResource("1_gk1ax")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = ExtResource("3_h0sxj")
+theme_override_styles/disabled = ExtResource("9_k5nsv")
+theme_override_styles/hover = ExtResource("7_abux4")
+theme_override_styles/pressed = ExtResource("8_nn2vb")
+theme_override_styles/normal = ExtResource("5_5r77x")
+text = "
+"
+alignment = 0
+clip_text = true
+text_direction = 1
+
+[node name="Play Button Image" type="TextureRect" parent="ExtraButtons/Github"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.535
+anchor_right = 0.5
+anchor_bottom = 0.535
+offset_left = -42.0
+offset_top = -46.55
+offset_right = 43.0
+offset_bottom = 38.45
+grow_vertical = 2
+texture = ExtResource("37_epic0")
+expand_mode = 1
 
 [node name="Buttons" type="Node" parent="."]
 
@@ -1107,6 +1153,7 @@ grow_vertical = 2
 texture = ExtResource("1_1iw1j")
 expand_mode = 1
 
+[connection signal="pressed" from="ExtraButtons/Github" to="ExtraButtons" method="_on_github_pressed"]
 [connection signal="mouse_entered" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_pressed"]

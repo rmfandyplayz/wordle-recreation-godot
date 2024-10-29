@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c66nfmb02p35t"]
+[gd_scene load_steps=13 format=3 uid="uid://c66nfmb02p35t"]
 
 [ext_resource type="AudioStream" uid="uid://clev7p0c35pq3" path="res://Media/Audio/Sounds/MainMenu/aughhhhh.mp3" id="1_28i2n"]
 [ext_resource type="AudioStream" uid="uid://b711ykb5eiyln" path="res://Media/Audio/Sounds/MainMenu/Get out.mp3" id="2_v0tp2"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bbemjmn8c1674" path="res://Media/Audio/Sounds/MainMenu/fnafMonitor.mp3" id="9_vshdp"]
 [ext_resource type="AudioStream" uid="uid://dwuw5mwp6bx8q" path="res://Media/Audio/Sounds/MainMenu/StartGameSound.mp3" id="10_w20ul"]
 [ext_resource type="AudioStream" uid="uid://ce2tk5k5ji0a0" path="res://Media/Audio/Sounds/MainMenu/UTEntranceSound.mp3" id="11_uni1p"]
+[ext_resource type="AudioStream" uid="uid://c5ephojnn3o3c" path="res://Media/Audio/Sounds/MainMenu/URLClick.mp3" id="12_e5oph"]
 
 [node name="MainMenuSfx" type="Node"]
 
@@ -63,4 +64,9 @@ bus = &"SFX"
 [node name="UtEntranceSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_uni1p")
 volume_db = -5.0
+bus = &"SFX"
+
+[node name="UrlClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_e5oph")
+volume_db = -4.0
 bus = &"SFX"

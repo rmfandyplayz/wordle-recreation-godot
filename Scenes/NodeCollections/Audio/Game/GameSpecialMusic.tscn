@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://cqaciypm4waow"]
+
+[ext_resource type="Script" path="res://Scripts/Audio/GameMusicManager.gd" id="1_i4q6n"]
+[ext_resource type="AudioStream" uid="uid://bq3sxi27p70bu" path="res://Media/Audio/Music/Game/LowHealth/IDUTSHANE OST - Egodeath.mp3" id="2_s2mwg"]
+[ext_resource type="AudioStream" uid="uid://b3issxxte5gii" path="res://Media/Audio/Music/Game/LowHealth/Ragnarok Online OST - Monastry in Disguise.mp3" id="3_01i32"]
+[ext_resource type="AudioStream" uid="uid://be6jrjyjamuh0" path="res://Media/Audio/Music/Game/LowHealth/Rock Candy - Interstellar Retribution.mp3" id="4_n78tx"]
+[ext_resource type="AudioStream" uid="uid://o0f7pyrtcsme" path="res://Media/Audio/Music/Game/LowHealth/The Battle Cats OST - The Big Bang.mp3" id="5_823v3"]
+[ext_resource type="AudioStream" uid="uid://3n537txhq1sg" path="res://Media/Audio/Music/Game/LowHealth/Undertale Yellow OST - END OF THE LINE_.mp3" id="6_js0bf"]
+[ext_resource type="AudioStream" uid="uid://dg3cu7nslsoc0" path="res://Media/Audio/Music/Game/LowHealth/whisperjas - Remade Zombotany (Big Wave Beach, Alternate).mp3" id="7_1r02n"]
+[ext_resource type="AudioStream" uid="uid://87fghbmakelt" path="res://Media/Audio/Music/Game/LowHealth/whisperjas - Remade Zombotany (Pirate Seas).mp3" id="8_t68f2"]
+[ext_resource type="AudioStream" uid="uid://cr5eoqle7clep" path="res://Media/Audio/Music/Game/LowTime/Super Bomb Survival OST - Last 30 (Danger!).mp3" id="9_yyr52"]
+[ext_resource type="AudioStream" uid="uid://crbqbq5p6of7f" path="res://Media/Audio/Music/Game/LowTime/Super Bomb Survival OST - Last 30 (Intense).mp3" id="10_vvahr"]
+
+[node name="GameSpecialMusic" type="Node"]
+script = ExtResource("1_i4q6n")
+
+[node name="LowHealth" type="Node" parent="."]
+
+[node name="Egodeath" type="AudioStreamPlayer" parent="LowHealth"]
+stream = ExtResource("2_s2mwg")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="MonastryInDisguise" type="AudioStreamPlayer" parent="LowHealth"]
+stream = ExtResource("3_01i32")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="InterstellarRetribution" type="AudioStreamPlayer" parent="LowHealth"]
+stream = ExtResource("4_n78tx")
+volume_db = -9.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="BattleCatsBigBang" type="AudioStreamPlayer" parent="LowHealth"]
+stream = ExtResource("5_823v3")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="EndOfTheLine" type="AudioStreamPlayer" parent="LowHealth"]
+stream = ExtResource("6_js0bf")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="ZombotanyBigWave" type="AudioStreamPlayer" parent="LowHealth"]
+stream = ExtResource("7_1r02n")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="ZombotanyPirate" type="AudioStreamPlayer" parent="LowHealth"]
+stream = ExtResource("8_t68f2")
+volume_db = -6.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="LowTime" type="Node" parent="."]
+
+[node name="Last30Danger" type="AudioStreamPlayer" parent="LowTime"]
+stream = ExtResource("9_yyr52")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="Last30Intense" type="AudioStreamPlayer" parent="LowTime"]
+stream = ExtResource("10_vvahr")
+volume_db = -6.0
+bus = &"SFX"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2yiwj32nv4gj"
+path="res://.godot/imported/Undertale OST - It's Raining Somewhere Else.mp3-2507beca1548f7f50723830e17a3c193.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/Normal/Undertale OST - It's Raining Somewhere Else.mp3"
+dest_files=["res://.godot/imported/Undertale OST - It's Raining Somewhere Else.mp3-2507beca1548f7f50723830e17a3c193.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3vvo08clxbaf"
+path="res://.godot/imported/Kevin MacLeod - Local Forecast.mp3-f1abdc17f387020308b9e3fd62a492a2.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/Normal/Kevin MacLeod - Local Forecast.mp3"
+dest_files=["res://.godot/imported/Kevin MacLeod - Local Forecast.mp3-f1abdc17f387020308b9e3fd62a492a2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

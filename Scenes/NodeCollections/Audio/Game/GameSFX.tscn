@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://dt543bgny1q0i"]
+[gd_scene load_steps=30 format=3 uid="uid://dt543bgny1q0i"]
 
+[ext_resource type="Script" path="res://Scripts/Audio/GameSFXManager.gd" id="1_0px3u"]
 [ext_resource type="AudioStream" uid="uid://cdeql6o5hxvnk" path="res://Media/Audio/Sounds/GameSounds/PVZReadySetPlant.mp3" id="1_fdl86"]
 [ext_resource type="AudioStream" uid="uid://bl0dy6e1aom0a" path="res://Media/Audio/Sounds/GameSounds/robloxTrowel.mp3" id="1_nfvxr"]
 [ext_resource type="AudioStream" uid="uid://b3353m7fchxic" path="res://Media/Audio/Sounds/GameSounds/TimeUp.mp3" id="2_igfk7"]
@@ -23,6 +24,8 @@
 [ext_resource type="AudioStream" uid="uid://bv7sd16eh3805" path="res://Media/Audio/Sounds/MainMenu/mogusTaskOpen.mp3" id="21_qkdni"]
 [ext_resource type="AudioStream" uid="uid://vv4upwl5b7we" path="res://Media/Audio/Sounds/GameSounds/Death/Death1.wav" id="22_n21b2"]
 [ext_resource type="AudioStream" uid="uid://ccfpbgfacbq7l" path="res://Media/Audio/Sounds/GameSounds/Death/Death2.wav" id="23_fwpto"]
+[ext_resource type="AudioStream" uid="uid://imjrackrwfm6" path="res://Media/Audio/Sounds/GameSounds/Health Related/LowLives.mp3" id="25_nlhts"]
+[ext_resource type="AudioStream" uid="uid://bvo8j7bvtkjda" path="res://Media/Audio/Sounds/GameSounds/GameWon.mp3" id="26_1k08k"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_afbpw"]
 streams_count = 5
@@ -45,6 +48,7 @@ stream_0/stream = ExtResource("22_n21b2")
 stream_1/stream = ExtResource("23_fwpto")
 
 [node name="GameSfx" type="Node"]
+script = ExtResource("1_0px3u")
 
 [node name="RobloxTrowel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_nfvxr")
@@ -118,4 +122,14 @@ bus = &"SFX"
 [node name="Death" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_b6y5q")
 volume_db = -8.0
+bus = &"SFX"
+
+[node name="LowLives" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_nlhts")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="GameWon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_1k08k")
+volume_db = -7.0
 bus = &"SFX"

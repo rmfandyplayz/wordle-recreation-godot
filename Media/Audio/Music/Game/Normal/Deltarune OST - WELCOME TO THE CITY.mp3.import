@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bh41g6u8o556d"
+path="res://.godot/imported/Deltarune OST - WELCOME TO THE CITY.mp3-903ab2de903bdc6450dee143769b885c.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/Normal/Deltarune OST - WELCOME TO THE CITY.mp3"
+dest_files=["res://.godot/imported/Deltarune OST - WELCOME TO THE CITY.mp3-903ab2de903bdc6450dee143769b885c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

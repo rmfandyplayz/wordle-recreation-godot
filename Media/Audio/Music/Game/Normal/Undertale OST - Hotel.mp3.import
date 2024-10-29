@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0l6he3t3clvd"
+path="res://.godot/imported/Undertale OST - Hotel.mp3-71d149c73a21aea0cd9b71cfb69eba86.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/Normal/Undertale OST - Hotel.mp3"
+dest_files=["res://.godot/imported/Undertale OST - Hotel.mp3-71d149c73a21aea0cd9b71cfb69eba86.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

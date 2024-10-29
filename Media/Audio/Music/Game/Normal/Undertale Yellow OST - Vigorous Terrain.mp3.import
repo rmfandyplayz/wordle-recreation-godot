@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://beksa02nadd6u"
+path="res://.godot/imported/Undertale Yellow OST - Vigorous Terrain.mp3-7802d2fbafd190e1a7efac28320f64ec.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/Normal/Undertale Yellow OST - Vigorous Terrain.mp3"
+dest_files=["res://.godot/imported/Undertale Yellow OST - Vigorous Terrain.mp3-7802d2fbafd190e1a7efac28320f64ec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

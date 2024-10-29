@@ -48,15 +48,21 @@ func _on_pressed() -> void:
 
 #disable music, play transition, etc.
 func BackToMenu():
+	var speedLines = $"../../Speed Lines".material
+	create_tween().tween_property(speedLines, "shader_parameter/line_density", 0, 1)
+	create_tween().tween_property($"../../Vignette", "modulate", Color.TRANSPARENT, 1)
+	
 	$"../../Scene Transition/Background Color".modulate = Color.TRANSPARENT
 	$"../../Scene Transition/Background Color".visible = true
 	$"../../WordSubmission".editable = false
 	GlobalVariables.isSceneTransitioning = true
 	$"../..".stopTimer = true
 	
+	#plays audio and fades out any sound/music that's playing
 	$"../../GameSfx/MogusTaskOpen".play()
 	create_tween().tween_property($"../../Scene Transition/Background Color", "modulate", Color.WHITE, 0.5)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(0))
+	$"../../GameSfx".FadeOutAllSounds(1.5)
+	$"../../GameSpecialMusic".FadeOutAllMusic(1.5)
 	
 	await get_tree().create_timer(RandomNumberGenerator.new().randf_range(1.6, 2.5)).timeout
 	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")

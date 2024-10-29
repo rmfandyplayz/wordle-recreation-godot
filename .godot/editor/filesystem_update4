@@ -1,4 +1,3 @@
-res://default_bus_layout.tres
 res://Scenes/MainMenu.tscn
 res://ThemeOverrides/Button - General/ButtonFocus.tres
 res://ThemeOverrides/Accent Button/AccentButtonDefault.tres
@@ -8,19 +7,19 @@ res://ThemeOverrides/TextEdit/TextEditFocus.tres
 res://ThemeOverrides/TextEdit/TextEditDefault.tres
 res://ThemeOverrides/LetterSquare/Answered.tres
 res://ThemeOverrides/LetterSquare/Unanswered.tres
-res://Scenes/NodeCollections/Audio/MainMenu/MainMenuSFX.tscn
 res://Scenes/GameCustomize.tscn
 res://Scenes/NodeCollections/Row.tscn
 res://Scenes/NodeCollections/LetterSquare.tscn
-res://Scripts/MainMenu/CustomizeStartButton.gd
+res://Scenes/NodeCollections/Audio/Game/GameSFX.tscn
 res://Scripts/GameCustomize/BackButton.gd
-res://Scripts/LetterSquare/LetterSquareRow.gd
-res://Scripts/LetterSquare/LetterSquare.gd
 res://Scripts/GameCustomize/GameCustomize.gd
 res://Scripts/MainMenu/MainMenu.gd
-res://Scripts/GameCustomize/Scrolling.gd
-res://Scripts/GlobalVariables.gd
-res://Scripts/MainMenu/GameTitle.gd
-res://Scenes/NodeCollections/Audio/Game/GameSFX.tscn
-res://Scripts/MainMenu/SceneTransition.gd
-res://Scripts/MainMenu/Settings.gd
+res://Scripts/Audio/GameSFXManager.gd
+res://Scripts/ConfigFile.gd
+res://Scenes/NodeCollections/Audio/Game/GameMusic.tscn
+res://Scripts/Audio/GameMusicManager.gd
+res://Scenes/NodeCollections/Audio/Game/GameSpecialMusic.tscn
+res://Shaders/SpeedLines.tres
+res://Shaders/SpeedLines.gdshader
+res://Scripts/MainMenu/extra_buttons.gd
+res://Scenes/NodeCollections/Audio/MainMenu/MainMenuSFX.tscn

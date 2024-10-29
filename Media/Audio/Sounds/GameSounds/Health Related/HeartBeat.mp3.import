@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0gimu5tepsav"
+path="res://.godot/imported/HeartBeat.mp3-e44b7b27643ec12d79bfa71bd29a35f1.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Sounds/GameSounds/Health Related/HeartBeat.mp3"
+dest_files=["res://.godot/imported/HeartBeat.mp3-e44b7b27643ec12d79bfa71bd29a35f1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

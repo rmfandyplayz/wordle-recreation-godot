@@ -1,7 +1,8 @@
+Node
+TextureRect
 AudioStreamPlayer
 Label
 RichTextLabel
-Node
 AudioStreamPlayer2D
 HSlider
 Control
@@ -11,4 +12,3 @@ Container
 PanelContainer
 Timer
 CenterContainer
-CanvasLayer

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://boralbhn35cth"
+path="res://.godot/imported/Undertale Yellow OST- Meltdown.mp3-4324dc5039c029b0e08922cfec7ee0c2.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/Normal/Undertale Yellow OST- Meltdown.mp3"
+dest_files=["res://.godot/imported/Undertale Yellow OST- Meltdown.mp3-4324dc5039c029b0e08922cfec7ee0c2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

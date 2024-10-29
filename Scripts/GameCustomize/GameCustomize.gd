@@ -11,6 +11,9 @@ var infiniteTime : bool = false
 var stopTimer : bool = false
 var gameOver : bool = false
 
+var lowLives : bool = false
+var lowTime : bool = false
+
 @onready var wordLength : int = wordChoice.length()
 
 var currentRow : CenterContainer
@@ -19,6 +22,8 @@ var currentRowNumber : int = 0
 @onready var rowParent = $Scrolling/VerticalContainer
 
 @onready var currentText : String = "" #used for comparing the new and previous text (used for some functions inside LetterSquareRow.gd)
+
+
 
 func _ready() -> void:
 	#initializations
@@ -44,7 +49,6 @@ func _ready() -> void:
 	
 	#start the game
 	StartGame()
-	
 
 
 #the logic that's needed to start the game itself
@@ -73,6 +77,10 @@ func StartGame():
 	
 	if(infiniteTime == false):
 		StartTimer()
+	
+	await get_tree().create_timer(RandomNumberGenerator.new().randi_range(3, 6)).timeout
+	$GameMusic.play()
+
 
 	
 #clones a row of letter squares and sets them to the appropriate number
@@ -88,26 +96,77 @@ func CloneRow() -> void:
 
 #starts the timer and runs its logic
 func StartTimer():
-	var outOfTime = false
-	
-	while outOfTime == false and stopTimer == false:
-		await get_tree().create_timer(1).timeout
+	while stopTimer == false and gameOver == false:
 		timeLimit -= 1
+		await get_tree().create_timer(1).timeout
 		SetTimeText(timeLimit)
 		
+		#aka only do this gimmick thing if the player chooses a time limit over that
+		if timeLimit == 31 and gameOver != true:
+			lowTime = true
+			
+			if lowLives == true:
+				$GameSpecialMusic.FadeOutLowHealthMusic(1)
+				$"GameSpecialMusic/LowTime/Last30Danger".play()
+			else:
+				$Vignette.modulate = Color.TRANSPARENT
+				$Vignette.visible = true
+				create_tween().tween_property($Vignette, "modulate", Color.WHITE, 1)
+				
+				create_tween().tween_property($GameMusic, "volume_db", -60, 1)
+				$"GameSpecialMusic/LowTime/Last30Intense".play()
+				
+				#does that anime effect
+				var speedLines = $"Speed Lines".material
+				if(lowLives != true): create_tween().tween_property(speedLines, "shader_parameter/line_density", .4, 1)
+		
+		#change health text color
+		if timeLimit == 30 and gameOver != true:
+			$"GameSfx/LowOnTime".play()
+			$"Topbar/Time Panel/Text".self_modulate = Color.RED
+			$Vignette.modulate = Color.WHITE
+		
 		if timeLimit == 0:
-			outOfTime = true
 			stopTimer = true
 			GameOverOutOfTime()
-			
+
+
+
 #takes away a life and runs other logic tied with it
 func TakeDamage():
 	lives -= 1
 	
 	$"GameSfx/HurtBump".play()
 	$"GameSfx/HurtCrack".play()
-	
 	SetLivesText(lives)
+	
+	#plays that low health SFX and starts low health music (and other logic)
+	if (lives == 2 or lives == 1) and lowLives != true and lowTime != true:
+		lowLives = true
+		$Vignette.modulate = Color.TRANSPARENT
+		$Vignette.visible = true
+		$"Topbar/Lives Panel/Text".self_modulate = Color.RED
+		create_tween().tween_property($Vignette, "modulate", Color.WHITE, 0.8)
+		$"GameSfx/LowLives".play()
+		
+		#does that anime effect
+		var speedLines = $"Speed Lines".material
+		if(lowTime != true): create_tween().tween_property(speedLines, "shader_parameter/line_density", .4, 1)
+		
+		await create_tween().tween_property($GameMusic, "volume_db", -60, 4).finished
+		await get_tree().create_timer(RandomNumberGenerator.new().randi_range(1, 3)).timeout
+		
+		if lowTime != true: get_node("GameSpecialMusic/LowHealth").get_children().pick_random().play()
+
+	#does that vignette thing every single time as long as if health isn't low
+	if lowLives != true and lowTime != true:
+		$Vignette.modulate = Color(1, 1, 1, 0.4)
+		$Vignette.visible = true
+		if(lowLives != true and lowTime != true): await create_tween().tween_property($Vignette, "modulate", Color.TRANSPARENT, 1).finished
+		$Vignette.visible = false
+		
+		
+		
 	
 	if lives == 0:
 		GameOverDeath()
@@ -116,12 +175,12 @@ func TakeDamage():
 
 
 #runs logic for when player lost due to running out of lives
-#TODO: stop music when music gets added
 func GameOverDeath():
 	if gameOver == false:
 		gameOver = true
 		#disable everything that's interactable
 		$WordSubmission.editable = false
+		$WordSubmission.release_focus()
 		$"Topbar/Back Button".disabled = true
 		stopTimer = true
 		
@@ -131,11 +190,18 @@ func GameOverDeath():
 		$"Game Over Death/Background Color/Menu Button".modulate = Color.TRANSPARENT
 		$"Game Over Death/Background Color/Dead".modulate = Color.TRANSPARENT
 		
-		#play animation
+		#play animation + sounds/music logic
 		$"GameSfx/Death".play()
 		$"Game Over Death/Background Color".visible = true
 		$"Game Over Death/Background Color".self_modulate = Color.WHITE
 		$"Game Over Death/Background Color/Dead".modulate = Color.WHITE
+		
+		var speedLines = $"Speed Lines".material
+		create_tween().tween_property(speedLines, "shader_parameter/line_density", 0, 1)
+		create_tween().tween_property($Vignette, "modulate", Color.TRANSPARENT, 1)
+		
+		create_tween().tween_property($GameMusic, "volume_db", -60, .25)
+		$GameSpecialMusic.FadeOutAllMusic(1.5)
 		await get_tree().create_timer(.5).timeout
 		create_tween().tween_property($"Game Over Death/Background Color/TheWord", "self_modulate", Color.WHITE, 0.3)
 		create_tween().tween_property($"Game Over Death/Background Color/Menu Button", "modulate", Color.WHITE, 0.3)
@@ -143,12 +209,12 @@ func GameOverDeath():
 	
 	
 #runs logic for when player lost due to running out of time
-#TODO: stop music when music gets added and finish the animations
 func GameOverOutOfTime():
 	if gameOver == false:
 		gameOver = true
 		#disable everything that's interactable
 		$WordSubmission.editable = false
+		$WordSubmission.release_focus()
 		$"Topbar/Back Button".disabled = true
 		
 		#additional initializations
@@ -156,9 +222,16 @@ func GameOverOutOfTime():
 		$"Game Over OutOfTime/Background Color/TheWord".self_modulate = Color.TRANSPARENT
 		$"Game Over OutOfTime/Background Color/Menu Button".modulate = Color.TRANSPARENT
 		
-		#play animation
+		#play animation + sounds/music logic
+		create_tween().tween_property($GameMusic, "volume_db", -60, .25)
+		$GameSpecialMusic.FadeOutAllMusic(1.5)
 		$"GameSfx/TimeUp".play()
 		$"Game Over OutOfTime/Background Color".visible = true
+		
+		var speedLines = $"Speed Lines".material
+		create_tween().tween_property(speedLines, "shader_parameter/line_density", 0, 1)
+		create_tween().tween_property($Vignette, "modulate", Color.TRANSPARENT, 1)
+		
 		create_tween().tween_property($"Game Over OutOfTime/Background Color", "self_modulate", Color.WHITE, 0.3)
 		await create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property($"Game Over OutOfTime/Background Color/OutOfTime", "scale", Vector2(1, 1), 0.3).finished
 		create_tween().tween_property($"Game Over OutOfTime/Background Color/TheWord", "self_modulate", Color.WHITE, 0.3)
@@ -168,8 +241,31 @@ func GameOverOutOfTime():
 
 #logic for when player wins 
 func GameWon():
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
-	#also temporary
+	if gameOver == false:
+		gameOver = true
+		#disable everything that's interactable
+		$WordSubmission.editable = false
+		$WordSubmission.release_focus()
+		$"Topbar/Back Button".disabled = true
+		
+		#additional initializations
+		$"Game Won/Background Color/SocialCredit".self_modulate = Color.TRANSPARENT
+		$"Game Won/Background Color/Menu Button".modulate = Color.TRANSPARENT
+		
+		#play animation + sounds/music logic
+		create_tween().tween_property($GameMusic, "volume_db", -60, .25)
+		$GameSpecialMusic.FadeOutAllMusic(1.5)
+		$"GameSfx/GameWon".play()
+		$"Game Won/Background Color".visible = true
+		
+		var speedLines = $"Speed Lines".material
+		create_tween().tween_property(speedLines, "shader_parameter/line_density", 0, 1)
+		create_tween().tween_property($Vignette, "modulate", Color.TRANSPARENT, 1)
+		
+		create_tween().tween_property($"Game Won/Background Color", "self_modulate", Color.WHITE, 0.3)
+		await create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property($"Game Won/Background Color/Won", "scale", Vector2(1, 1), 0.3).finished
+		create_tween().tween_property($"Game Won/Background Color/SocialCredit", "self_modulate", Color.WHITE, 0.3)
+		create_tween().tween_property($"Game Won/Background Color/Menu Button", "modulate", Color.WHITE, 0.3)
 
 
 
@@ -182,21 +278,22 @@ func SetLivesText(input):
 	livesText.text = str(input)
 	livesText.pivot_offset.x = livesText.size.x / 2
 	livesText.pivot_offset.y = livesText.size.y / 2
-	await create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUART).tween_property(livesText, "scale", Vector2(1.5, 1.5), .1).finished
+	await create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC).tween_property(livesText, "scale", Vector2(1.85, 1.85), .1).finished
 	create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CIRC).tween_property(livesText, "scale", Vector2.ONE, .4)
 	
 
+#i asked chatgpt to write this for me lol cuz im lazy
 func FormatTime(seconds: int) -> String:
 	var hours = int(seconds / 3600)
 	var minutes = int((seconds % 3600) / 60)
 	var secs = int(seconds % 60)
 
 	if hours > 0:
-		return "%02d:%02d:%02d" % [hours, minutes, secs]
+		return "%2d:%02d:%02d" % [hours, minutes, secs]
 	elif minutes > 0:
-		return "%02d:%02d" % [minutes, secs]
+		return "%2d:%02d" % [minutes, secs]
 	else:
-		return "%02d" % secs
+		return "%2d" % secs
 
 
 
@@ -278,4 +375,10 @@ func _on_gameOverDeath_menu_button_pressed() -> void:
 	$"Game Over Death/Background Color/Menu Button".disabled = true
 	
 	await create_tween().tween_property($"Game Over Death/Background Color", "modulate", Color.TRANSPARENT, 0.3).finished
+	$"Topbar/Back Button".BackToMenu()
+
+func _on_gameWon_menu_button_pressed() -> void:
+	$"Game Won/Background Color/Menu Button".disabled = true
+	
+	await create_tween().tween_property($"Game Won/Background Color", "modulate", Color.TRANSPARENT, 0.3).finished
 	$"Topbar/Back Button".BackToMenu()

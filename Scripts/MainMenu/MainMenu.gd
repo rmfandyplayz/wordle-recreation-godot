@@ -12,15 +12,6 @@ func _ready() -> void:
 		
 	#plays music after a short random period of time
 	StartMenuMusic()
-
-func _process(delta: float) -> void:
-	if isMusicFadingOut == true:
-		fadeOutTimer += delta
-		$MainMenuMusic.volume_db = lerp(-10, -80, fadeOutTimer / fadeDuration)
-		if fadeOutTimer >= fadeDuration:
-			$MainMenuMusic.stop()
-			isMusicFadingOut = false
-			GlobalVariables.mainMenuMusicPlaying = false
 		
 		
 func _on_button_hover() -> void:
@@ -34,10 +25,7 @@ func StartMenuMusic():
 	GlobalVariables.mainMenuMusicPlaying = true
 
 
-var isMusicFadingOut : bool = false
-var fadeOutTimer : float = 0
-var fadeDuration : float = 0
 func StopMenuMusic(fadeOutDuration : float):
-	fadeDuration = fadeOutDuration
-	fadeOutTimer = 0
-	isMusicFadingOut = true
+	await create_tween().tween_property($MainMenuMusic, "volume_db", -60, fadeOutDuration).finished
+	$MainMenuMusic.stop()
+	GlobalVariables.mainMenuMusicPlaying = false

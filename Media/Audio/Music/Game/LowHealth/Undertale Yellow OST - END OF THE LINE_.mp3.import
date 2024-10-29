@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3n537txhq1sg"
+path="res://.godot/imported/Undertale Yellow OST - END OF THE LINE_.mp3-fb01518b093e4b2487480d93dec9e98f.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/LowHealth/Undertale Yellow OST - END OF THE LINE_.mp3"
+dest_files=["res://.godot/imported/Undertale Yellow OST - END OF THE LINE_.mp3-fb01518b093e4b2487480d93dec9e98f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chmsdh2kf8aav"
+path="res://.godot/imported/Kevin MacLeod - Scheming Weasel.mp3-4ac7d57d59640efc3940419e4fc9fca5.mp3str"
+
+[deps]
+
+source_file="res://Media/Audio/Music/Game/Normal/Kevin MacLeod - Scheming Weasel.mp3"
+dest_files=["res://.godot/imported/Kevin MacLeod - Scheming Weasel.mp3-4ac7d57d59640efc3940419e4fc9fca5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
