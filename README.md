@@ -1,5 +1,6 @@
 # [▶️ CLICK HERE TO DOWNLOAD](https://github.com/rmfandyplayz/wordle-recreation-godot/releases/download/Releases/andys-wordle-gaem.zip)
 or jus head to the "release" page and find what u need
+(or just download source code 'n load it into godot so u can check for viruses)
 
 this is literally just a recreation of wordle as my first project for game development class at my school. it's also my first ever project done in godot instead of unity.\
 i don't really give a crap what you do with it, although credits would be nice???????
