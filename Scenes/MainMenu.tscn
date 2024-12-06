@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://cx2prhipw0kqf"]
+[gd_scene load_steps=81 format=3 uid="uid://cx2prhipw0kqf"]
 
 [ext_resource type="Texture2D" uid="uid://5wmeyd47o28x" path="res://Media/UserInterface/Kinney.JPG" id="1_1iw1j"]
 [ext_resource type="AudioStream" uid="uid://bqwatigbrqtvm" path="res://Media/Audio/Sounds/KinneyJumpscare/fnaf1.mp3" id="1_3tgra"]
@@ -62,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://lh7cck1268pu" path="res://Media/UserInterface/Music Note.png" id="38_r1h1b"]
 [ext_resource type="Texture2D" uid="uid://c0ioprdylcesp" path="res://Media/UserInterface/Sound.png" id="39_kpqqe"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/WelcomeScreen.gd" id="42_e1h7w"]
+[ext_resource type="Script" path="res://Scripts/Default/default_preset.gd" id="44_a57p6"]
 [ext_resource type="Script" path="res://Scripts/MainMenu/SceneTransition.gd" id="60_seky0"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_qhbrl"]
@@ -418,6 +419,7 @@ shortcut_feedback = false
 shortcut_in_tooltip = false
 alignment = 0
 text_direction = 1
+script = ExtResource("44_a57p6")
 
 [node name="Default Text" type="Label" parent="Buttons/Play/Default Preset"]
 layout_mode = 1
@@ -444,6 +446,8 @@ offset_right = 120.0
 offset_bottom = 60.0
 grow_vertical = 2
 texture = ExtResource("7_wydoj")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Buttons/Play/Default Preset"]
 
 [node name="Customize" type="Button" parent="Buttons/Play" groups=["buttonHover"]]
 visible = false
@@ -1157,6 +1161,7 @@ expand_mode = 1
 [connection signal="mouse_entered" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Play" to="Buttons/Play" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Play/Default Preset" to="Buttons/Play/Default Preset" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Play/Customize" to="Buttons/Play/Customize" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Settings" to="Buttons/Settings" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Mr Kinney Jumpscare" to="Buttons/Mr Kinney Jumpscare" method="_on_pressed"]
